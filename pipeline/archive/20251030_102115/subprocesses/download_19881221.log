@@ -1,0 +1,36 @@
+[2025-10-30 03:07:00] Starting download process for 1988-12-21
+[2025-10-30 03:07:00] PID: 32066
+[2025-10-30 03:07:00] DOWNLOAD START: 1988-12-21
+[2025-10-30 03:07:00] Memory before download: RSS=77.0MB, System=25.0%
+[2025-10-30 03:07:00]   VERBOSE: Time range set: 1988-12-21 00:00:00 to 1988-12-21 23:59:59
+[2025-10-30 03:07:00] Opening dataset for 1988-12-21
+[2025-10-30 03:07:00]   VERBOSE: Asset Href: az://noaa/conus404.zarr
+[2025-10-30 03:07:01]   VERBOSE: fsspec mapper created
+[2025-10-30 03:07:02] ERROR: Failed to open dataset. Exception: Server failed to authenticate the request. Make sure the value of Authorization header is formed correctly including the signature.
+RequestId:d152c68d-a01e-002c-286b-496514000000
+Time:2025-10-30T07:07:02.2832145Z
+ErrorCode:AuthenticationFailed
+authenticationerrordetail:Signature not valid in the specified time frame: Start [Wed, 29 Oct 2025 06:18:06 GMT] - Expiry [Thu, 30 Oct 2025 07:03:06 GMT] - Current [Thu, 30 Oct 2025 07:07:02 GMT]
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthenticationFailed</Code><Message>Server failed to authenticate the request. Make sure the value of Authorization header is formed correctly including the signature.
+RequestId:d152c68d-a01e-002c-286b-496514000000
+Time:2025-10-30T07:07:02.2832145Z</Message><AuthenticationErrorDetail>Signature not valid in the specified time frame: Start [Wed, 29 Oct 2025 06:18:06 GMT] - Expiry [Thu, 30 Oct 2025 07:03:06 GMT] - Current [Thu, 30 Oct 2025 07:07:02 GMT]</AuthenticationErrorDetail></Error>
+[2025-10-30 03:07:02] CRITICAL: Logged failure to failed_jobs/1988-12-21.json
+[2025-10-30 03:07:02] FAILED: Download unsuccessful (see errors above and failure log)
+Traceback (most recent call last):
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 666, in _exitfunc
+    f()
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/fsspec/asyn.py", line 76, in sync
+    raise RuntimeError("Loop is not running")
+RuntimeError: Loop is not running
+Traceback (most recent call last):
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 666, in _exitfunc
+    f()
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/fsspec/asyn.py", line 76, in sync
+    raise RuntimeError("Loop is not running")
+RuntimeError: Loop is not running

@@ -1,0 +1,35 @@
+[2025-10-30 00:40:31] ================================================================================
+[2025-10-30 00:40:31] NOTE: Max concurrent processes for retry is hard-coded to: 2
+[2025-10-30 00:40:31] ================================================================================
+[2025-10-30 00:40:31] Found 10 failed job(s) to retry.
+[2025-10-30 00:40:31] Fetching CONUS404 asset from Planetary Computer...
+[2025-10-30 00:40:33] Asset configuration fetched and saved.
+[2025-10-30 00:40:33] Loaded 10 unique dates to retry.
+[2025-10-30 00:40:33] Memory Stats - Retry Initial: Available=287832.6MB/385074.9MB (25.3% used)
+[2025-10-30 00:40:33] Launching retry 1/10: 1988-03-31
+[2025-10-30 00:40:33] Launched RETRY subprocess PID 43020 for 1988-03-31 (log: logs/subprocesses_retry/download_19880331.log)
+[2025-10-30 00:40:33] Launching retry 2/10: 1988-04-01
+[2025-10-30 00:40:33] Launched RETRY subprocess PID 43021 for 1988-04-01 (log: logs/subprocesses_retry/download_19880401.log)
+[2025-10-30 00:41:03] Memory Stats - Periodic retry check: Available=279247.3MB/385074.9MB (27.5% used)
+[2025-10-30 00:41:03] Active retry subprocesses: 2
+[2025-10-30 00:41:03]   PID 43020: 1988-03-31 | Runtime: 30.0s | Memory: 4150.3MB | Status: running
+[2025-10-30 00:41:03]   PID 43021: 1988-04-01 | Runtime: 30.0s | Memory: 4120.1MB | Status: running
+[2025-10-30 00:41:03] Retry Progress: 0 completed, 0 failed again, 2 active, 8 pending | Elapsed: 30.0s
+[2025-10-30 00:41:33] Memory Stats - Periodic retry check: Available=274326.2MB/385074.9MB (28.8% used)
+[2025-10-30 00:41:33] Active retry subprocesses: 2
+[2025-10-30 00:41:33]   PID 43020: 1988-03-31 | Runtime: 60.0s | Memory: 6481.9MB | Status: sleeping
+[2025-10-30 00:41:33]   PID 43021: 1988-04-01 | Runtime: 60.0s | Memory: 6637.1MB | Status: sleeping
+[2025-10-30 00:41:33] Retry Progress: 0 completed, 0 failed again, 2 active, 8 pending | Elapsed: 60.0s
+[2025-10-30 00:42:03] Memory Stats - Periodic retry check: Available=273254.8MB/385074.9MB (29.0% used)
+[2025-10-30 00:42:03] Active retry subprocesses: 2
+[2025-10-30 00:42:03]   PID 43020: 1988-03-31 | Runtime: 90.0s | Memory: 7314.6MB | Status: sleeping
+[2025-10-30 00:42:03]   PID 43021: 1988-04-01 | Runtime: 90.0s | Memory: 7188.7MB | Status: sleeping
+[2025-10-30 00:42:03] Retry Progress: 0 completed, 0 failed again, 2 active, 8 pending | Elapsed: 90.0s
+[2025-10-30 00:42:12] SUCCESS (RETRY): PID 43021 completed 1988-04-01 in 99.0s
+[2025-10-30 00:42:12]   -> Removed 1988-04-01 from failure list.
+[2025-10-30 00:42:12] Launching retry 3/10: 1988-04-05
+[2025-10-30 00:42:12] Launched RETRY subprocess PID 43358 for 1988-04-05 (log: logs/subprocesses_retry/download_19880405.log)
+[2025-10-30 00:42:15] SUCCESS (RETRY): PID 43020 completed 1988-03-31 in 102.0s
+[2025-10-30 00:42:15]   -> Removed 1988-03-31 from failure list.
+[2025-10-30 00:42:15] Launching retry 4/10: 1988-04-04
+[2025-10-30 00:42:15] Launched RETRY subprocess PID 43370 for 1988-04-04 (log: logs/subprocesses_retry/download_19880404.log)

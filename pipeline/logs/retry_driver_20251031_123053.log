@@ -1,0 +1,7 @@
+[2025-10-31 12:30:53] ================================================================================
+[2025-10-31 12:30:53] Starting Concurrent Failed Job Retry Script
+[2025-10-31 12:30:53] Max concurrent processes: 2
+[2025-10-31 12:30:53] Reading failures from: data/failed_jobs.json
+[2025-10-31 12:30:53] Will write ultimate failures to: ultimate_failures.json
+[2025-10-31 12:30:53] ================================================================================
+[2025-10-31 12:30:53] Failure log is empty. No jobs to retry. Exiting.

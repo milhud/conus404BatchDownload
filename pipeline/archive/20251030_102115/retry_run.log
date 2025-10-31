@@ -1,0 +1,8 @@
+Waiting for driver (PID 48328) to finish...
+bash: line 2: wait: pid 48328 is not a child of this shell
+Driver finished. Now running retry_failed.py...
+[2025-10-30 02:18:05] ================================================================================
+[2025-10-30 02:18:05] NOTE: Max concurrent processes for retry is hard-coded to: 2
+[2025-10-30 02:18:05] ================================================================================
+[2025-10-30 02:18:05] No failure log file found (data/failed_jobs.json). Exiting.
+Retry script finished.

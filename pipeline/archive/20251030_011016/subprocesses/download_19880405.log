@@ -1,0 +1,8 @@
+[2025-10-30 01:06:48] Starting download process for 1988-04-05
+[2025-10-30 01:06:48] PID: 38399
+[2025-10-30 01:06:48] DOWNLOAD START: 1988-04-05
+[2025-10-30 01:06:48] Memory before download: RSS=77.1MB, System=36.2%
+[2025-10-30 01:06:48]   VERBOSE: Time range set: 1988-04-05 00:00:00 to 1988-04-05 23:59:59
+[2025-10-30 01:06:48] Opening dataset for 1988-04-05
+[2025-10-30 01:06:48]   VERBOSE: Asset Href: az://noaa/conus404.zarr
+[2025-10-30 01:06:51]   VERBOSE: fsspec mapper created

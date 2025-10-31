@@ -1,0 +1,22 @@
+[2025-10-30 01:02:28] ================================================================================
+[2025-10-30 01:02:28] NOTE: Max concurrent processes for retry is hard-coded to: 2
+[2025-10-30 01:02:28] ================================================================================
+[2025-10-30 01:02:28] Found 10 failed job(s) to retry.
+[2025-10-30 01:02:28] Fetching CONUS404 asset from Planetary Computer...
+[2025-10-30 01:02:29] Asset configuration fetched and saved.
+[2025-10-30 01:02:29] Loaded 10 unique dates to retry.
+[2025-10-30 01:02:29] Memory Stats - Retry Initial: Available=250023.7MB/385075.0MB (35.1% used)
+[2025-10-30 01:02:29] Launching retry 1/10: 1988-04-07
+[2025-10-30 01:02:29] Launched RETRY subprocess PID 13307 for 1988-04-07 (log: logs/subprocesses_retry/download_19880407.log)
+[2025-10-30 01:02:29] Launching retry 2/10: 1988-04-04
+[2025-10-30 01:02:29] Launched RETRY subprocess PID 13308 for 1988-04-04 (log: logs/subprocesses_retry/download_19880404.log)
+[2025-10-30 01:02:59] Memory Stats - Periodic retry check: Available=244918.0MB/385075.0MB (36.4% used)
+[2025-10-30 01:02:59] Active retry subprocesses: 2
+[2025-10-30 01:02:59]   PID 13307: 1988-04-07 | Runtime: 30.1s | Memory: 501.8MB | Status: running
+[2025-10-30 01:02:59]   PID 13308: 1988-04-04 | Runtime: 30.1s | Memory: 540.1MB | Status: running
+[2025-10-30 01:02:59] Retry Progress: 0 completed, 0 failed again, 2 active, 8 pending | Elapsed: 30.1s
+[2025-10-30 01:03:29] Memory Stats - Periodic retry check: Available=235368.5MB/385075.0MB (38.9% used)
+[2025-10-30 01:03:29] Active retry subprocesses: 2
+[2025-10-30 01:03:29]   PID 13307: 1988-04-07 | Runtime: 60.1s | Memory: 1489.7MB | Status: running
+[2025-10-30 01:03:29]   PID 13308: 1988-04-04 | Runtime: 60.1s | Memory: 1544.9MB | Status: running
+[2025-10-30 01:03:29] Retry Progress: 0 completed, 0 failed again, 2 active, 8 pending | Elapsed: 60.1s

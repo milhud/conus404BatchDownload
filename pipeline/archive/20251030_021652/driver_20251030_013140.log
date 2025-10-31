@@ -1,0 +1,91 @@
+[2025-10-30 01:3140] ================================================================================
+[2025-10-30 01:3140] CONUS404 Download Driver Starting
+[2025-10-30 01:3140] ================================================================================
+[2025-10-30 01:3140] Date range: 1988-03-31 to 1988-04-02
+[2025-10-30 01:3140] Max concurrent processes: 4
+[2025-10-30 01:3140] Log file: logs/driver_20251030_013140.log
+[2025-10-30 01:3140] Checking for and clearing old failure log: data/failed_jobs.json
+[2025-10-30 01:3140] Removed old failure log.
+[2025-10-30 01:3140] Memory Stats - Initial: Available=249155.6MB/385075.0MB (35.3% used)
+[2025-10-30 01:3140] Fetching CONUS404 asset from Planetary Computer...
+[2025-10-30 01:3141] Asset URL: az://noaa/conus404.zarr
+[2025-10-30 01:3141] Asset configuration saved
+[2025-10-30 01:3141] Total dates to process: 3
+[2025-10-30 01:3141] ================================================================================
+[2025-10-30 01:3141] Starting download processes
+[2025-10-30 01:3141] ================================================================================
+[2025-10-30 01:3141] Launching download 1/3: 1988-03-31
+[2025-10-30 01:3141] Launched subprocess PID 34327 for 1988-03-31 (log: logs/subprocesses/download_19880331.log)
+[2025-10-30 01:3141] Active subprocesses: 1
+[2025-10-30 01:3141]   PID 34327: 1988-03-31 | Runtime: 0.0s | Memory: 0.0MB | Status: running
+[2025-10-30 01:3141] Launching download 2/3: 1988-04-01
+[2025-10-30 01:3141] Launched subprocess PID 34328 for 1988-04-01 (log: logs/subprocesses/download_19880401.log)
+[2025-10-30 01:3141] Active subprocesses: 2
+[2025-10-30 01:3141]   PID 34327: 1988-03-31 | Runtime: 0.0s | Memory: 2.2MB | Status: running
+[2025-10-30 01:3141]   PID 34328: 1988-04-01 | Runtime: 0.0s | Memory: 0.4MB | Status: running
+[2025-10-30 01:3141] Launching download 3/3: 1988-04-02
+[2025-10-30 01:3141] Launched subprocess PID 34329 for 1988-04-02 (log: logs/subprocesses/download_19880402.log)
+[2025-10-30 01:3141] Active subprocesses: 3
+[2025-10-30 01:3141]   PID 34327: 1988-03-31 | Runtime: 0.0s | Memory: 3.4MB | Status: running
+[2025-10-30 01:3141]   PID 34328: 1988-04-01 | Runtime: 0.0s | Memory: 2.1MB | Status: running
+[2025-10-30 01:3141]   PID 34329: 1988-04-02 | Runtime: 0.0s | Memory: 0.3MB | Status: running
+[2025-10-30 01:3211] Memory Stats - Periodic check: Available=239475.0MB/385075.0MB (37.8% used)
+[2025-10-30 01:3211] Active subprocesses: 3
+[2025-10-30 01:3211]   PID 34327: 1988-03-31 | Runtime: 30.0s | Memory: 1941.3MB | Status: running
+[2025-10-30 01:3211]   PID 34328: 1988-04-01 | Runtime: 30.0s | Memory: 1971.7MB | Status: running
+[2025-10-30 01:3211]   PID 34329: 1988-04-02 | Runtime: 30.0s | Memory: 1993.8MB | Status: running
+[2025-10-30 01:3211] Progress: 0 completed, 0 failed, 3 active, 0 pending | Elapsed: 30.0s
+[2025-10-30 01:3241] Memory Stats - Periodic check: Available=228639.7MB/385075.0MB (40.6% used)
+[2025-10-30 01:3241] Active subprocesses: 3
+[2025-10-30 01:3241]   PID 34327: 1988-03-31 | Runtime: 60.0s | Memory: 4137.7MB | Status: running
+[2025-10-30 01:3241]   PID 34328: 1988-04-01 | Runtime: 60.0s | Memory: 4141.7MB | Status: running
+[2025-10-30 01:3241]   PID 34329: 1988-04-02 | Runtime: 60.0s | Memory: 4135.8MB | Status: running
+[2025-10-30 01:3241] Progress: 0 completed, 0 failed, 3 active, 0 pending | Elapsed: 60.0s
+[2025-10-30 01:3311] Memory Stats - Periodic check: Available=226962.3MB/385075.0MB (41.1% used)
+[2025-10-30 01:3311] Active subprocesses: 3
+[2025-10-30 01:3311]   PID 34327: 1988-03-31 | Runtime: 90.0s | Memory: 4299.9MB | Status: running
+[2025-10-30 01:3311]   PID 34328: 1988-04-01 | Runtime: 90.0s | Memory: 4770.7MB | Status: running
+[2025-10-30 01:3311]   PID 34329: 1988-04-02 | Runtime: 90.0s | Memory: 4845.1MB | Status: running
+[2025-10-30 01:3311] Progress: 0 completed, 0 failed, 3 active, 0 pending | Elapsed: 90.0s
+[2025-10-30 01:3341] Memory Stats - Periodic check: Available=218344.4MB/385075.0MB (43.3% used)
+[2025-10-30 01:3341] Active subprocesses: 3
+[2025-10-30 01:3341]   PID 34327: 1988-03-31 | Runtime: 120.1s | Memory: 6719.0MB | Status: running
+[2025-10-30 01:3341]   PID 34328: 1988-04-01 | Runtime: 120.1s | Memory: 5313.7MB | Status: sleeping
+[2025-10-30 01:3341]   PID 34329: 1988-04-02 | Runtime: 120.1s | Memory: 5806.9MB | Status: sleeping
+[2025-10-30 01:3341] Progress: 0 completed, 0 failed, 3 active, 0 pending | Elapsed: 120.1s
+[2025-10-30 01:3411] Memory Stats - Periodic check: Available=216199.9MB/385075.0MB (43.9% used)
+[2025-10-30 01:3411] Active subprocesses: 3
+[2025-10-30 01:3411]   PID 34327: 1988-03-31 | Runtime: 150.1s | Memory: 6672.8MB | Status: sleeping
+[2025-10-30 01:3411]   PID 34328: 1988-04-01 | Runtime: 150.1s | Memory: 6735.9MB | Status: sleeping
+[2025-10-30 01:3411]   PID 34329: 1988-04-02 | Runtime: 150.1s | Memory: 6968.1MB | Status: sleeping
+[2025-10-30 01:3411] Progress: 0 completed, 0 failed, 3 active, 0 pending | Elapsed: 150.1s
+[2025-10-30 01:3441] Memory Stats - Periodic check: Available=214618.7MB/385075.0MB (44.3% used)
+[2025-10-30 01:3441] Active subprocesses: 3
+[2025-10-30 01:3441]   PID 34327: 1988-03-31 | Runtime: 180.1s | Memory: 6820.6MB | Status: sleeping
+[2025-10-30 01:3441]   PID 34328: 1988-04-01 | Runtime: 180.1s | Memory: 7152.3MB | Status: sleeping
+[2025-10-30 01:3441]   PID 34329: 1988-04-02 | Runtime: 180.1s | Memory: 7297.1MB | Status: running
+[2025-10-30 01:3441] Progress: 0 completed, 0 failed, 3 active, 0 pending | Elapsed: 180.1s
+[2025-10-30 01:3512] Memory Stats - Periodic check: Available=213140.1MB/385075.0MB (44.6% used)
+[2025-10-30 01:3512] Active subprocesses: 3
+[2025-10-30 01:3512]   PID 34327: 1988-03-31 | Runtime: 210.2s | Memory: 7270.1MB | Status: sleeping
+[2025-10-30 01:3512]   PID 34328: 1988-04-01 | Runtime: 210.2s | Memory: 7252.7MB | Status: sleeping
+[2025-10-30 01:3512]   PID 34329: 1988-04-02 | Runtime: 210.2s | Memory: 7483.7MB | Status: sleeping
+[2025-10-30 01:3512] Progress: 0 completed, 0 failed, 3 active, 0 pending | Elapsed: 210.2s
+[2025-10-30 01:3542] Memory Stats - Periodic check: Available=212648.4MB/385075.0MB (44.8% used)
+[2025-10-30 01:3542] Active subprocesses: 3
+[2025-10-30 01:3542]   PID 34327: 1988-03-31 | Runtime: 240.2s | Memory: 7438.4MB | Status: sleeping
+[2025-10-30 01:3542]   PID 34328: 1988-04-01 | Runtime: 240.2s | Memory: 7284.7MB | Status: sleeping
+[2025-10-30 01:3542]   PID 34329: 1988-04-02 | Runtime: 240.2s | Memory: 7334.9MB | Status: running
+[2025-10-30 01:3542] Progress: 0 completed, 0 failed, 3 active, 0 pending | Elapsed: 240.2s
+[2025-10-30 01:3554] SUCCESS: PID 34329 completed 1988-04-02 in 252.2s
+[2025-10-30 01:3555] SUCCESS: PID 34328 completed 1988-04-01 in 253.2s
+[2025-10-30 01:3602] SUCCESS: PID 34327 completed 1988-03-31 in 260.2s
+[2025-10-30 01:3603] ================================================================================
+[2025-10-30 01:3603] Download Processing Complete
+[2025-10-30 01:3603] ================================================================================
+[2025-10-30 01:3603] Total runtime: 261.2s (4.4 minutes)
+[2025-10-30 01:3603] Completed successfully: 3/3
+[2025-10-30 01:3603] Failed: 0/3
+[2025-10-30 01:3603] No failures to retry.
+[2025-10-30 01:3603] Memory Stats - Final: Available=249262.2MB/385075.0MB (35.3% used)
+[2025-10-30 01:3603] Cleaned up temporary configuration files

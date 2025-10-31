@@ -1,0 +1,86 @@
+[2025-10-30 01:0640] ================================================================================
+[2025-10-30 01:0640] CONUS404 Download Driver Starting
+[2025-10-30 01:0640] ================================================================================
+[2025-10-30 01:0640] Date range: 1988-03-31 to 1988-04-17
+[2025-10-30 01:0640] Max concurrent processes: 8
+[2025-10-30 01:0640] Log file: logs/driver_20251030_010640.log
+[2025-10-30 01:0640] Checking for and clearing old failure log: data/failed_jobs.json
+[2025-10-30 01:0640] Memory Stats - Initial: Available=247549.7MB/385075.0MB (35.7% used)
+[2025-10-30 01:0640] Fetching CONUS404 asset from Planetary Computer...
+[2025-10-30 01:0641] Asset URL: az://noaa/conus404.zarr
+[2025-10-30 01:0641] Asset configuration saved
+[2025-10-30 01:0641] Total dates to process: 18
+[2025-10-30 01:0641] ================================================================================
+[2025-10-30 01:0641] Starting download processes
+[2025-10-30 01:0641] ================================================================================
+[2025-10-30 01:0641] Launching download 1/18: 1988-03-31
+[2025-10-30 01:0641] Launched subprocess PID 38300 for 1988-03-31 (log: logs/subprocesses/download_19880331.log)
+[2025-10-30 01:0641] Active subprocesses: 1
+[2025-10-30 01:0641]   PID 38300: 1988-03-31 | Runtime: 0.0s | Memory: 0.0MB | Status: running
+[2025-10-30 01:0641] Launching download 2/18: 1988-04-01
+[2025-10-30 01:0641] Launched subprocess PID 38301 for 1988-04-01 (log: logs/subprocesses/download_19880401.log)
+[2025-10-30 01:0641] Active subprocesses: 2
+[2025-10-30 01:0641]   PID 38300: 1988-03-31 | Runtime: 0.0s | Memory: 1.6MB | Status: running
+[2025-10-30 01:0641]   PID 38301: 1988-04-01 | Runtime: 0.0s | Memory: 0.4MB | Status: running
+[2025-10-30 01:0641] Launching download 3/18: 1988-04-02
+[2025-10-30 01:0641] Launched subprocess PID 38302 for 1988-04-02 (log: logs/subprocesses/download_19880402.log)
+[2025-10-30 01:0641] Active subprocesses: 3
+[2025-10-30 01:0641]   PID 38300: 1988-03-31 | Runtime: 0.0s | Memory: 2.7MB | Status: running
+[2025-10-30 01:0641]   PID 38301: 1988-04-01 | Runtime: 0.0s | Memory: 2.2MB | Status: running
+[2025-10-30 01:0641]   PID 38302: 1988-04-02 | Runtime: 0.0s | Memory: 0.4MB | Status: running
+[2025-10-30 01:0641] Launching download 4/18: 1988-04-03
+[2025-10-30 01:0641] Launched subprocess PID 38303 for 1988-04-03 (log: logs/subprocesses/download_19880403.log)
+[2025-10-30 01:0641] Active subprocesses: 4
+[2025-10-30 01:0641]   PID 38300: 1988-03-31 | Runtime: 0.0s | Memory: 4.6MB | Status: running
+[2025-10-30 01:0641]   PID 38301: 1988-04-01 | Runtime: 0.0s | Memory: 3.3MB | Status: running
+[2025-10-30 01:0641]   PID 38302: 1988-04-02 | Runtime: 0.0s | Memory: 1.9MB | Status: running
+[2025-10-30 01:0641]   PID 38303: 1988-04-03 | Runtime: 0.0s | Memory: 0.5MB | Status: running
+[2025-10-30 01:0641] Launching download 5/18: 1988-04-04
+[2025-10-30 01:0641] Launched subprocess PID 38304 for 1988-04-04 (log: logs/subprocesses/download_19880404.log)
+[2025-10-30 01:0641] Active subprocesses: 5
+[2025-10-30 01:0641]   PID 38300: 1988-03-31 | Runtime: 0.0s | Memory: 5.3MB | Status: running
+[2025-10-30 01:0641]   PID 38301: 1988-04-01 | Runtime: 0.0s | Memory: 4.7MB | Status: running
+[2025-10-30 01:0641]   PID 38302: 1988-04-02 | Runtime: 0.0s | Memory: 3.2MB | Status: running
+[2025-10-30 01:0641]   PID 38303: 1988-04-03 | Runtime: 0.0s | Memory: 2.5MB | Status: running
+[2025-10-30 01:0641]   PID 38304: 1988-04-04 | Runtime: 0.0s | Memory: 0.5MB | Status: running
+[2025-10-30 01:0641] Launching download 6/18: 1988-04-05
+[2025-10-30 01:0641] Launched subprocess PID 38305 for 1988-04-05 (log: logs/subprocesses/download_19880405.log)
+[2025-10-30 01:0641] Active subprocesses: 6
+[2025-10-30 01:0641]   PID 38300: 1988-03-31 | Runtime: 0.0s | Memory: 6.2MB | Status: running
+[2025-10-30 01:0641]   PID 38301: 1988-04-01 | Runtime: 0.0s | Memory: 5.8MB | Status: running
+[2025-10-30 01:0641]   PID 38302: 1988-04-02 | Runtime: 0.0s | Memory: 5.3MB | Status: running
+[2025-10-30 01:0641]   PID 38303: 1988-04-03 | Runtime: 0.0s | Memory: 4.7MB | Status: running
+[2025-10-30 01:0641]   PID 38304: 1988-04-04 | Runtime: 0.0s | Memory: 3.5MB | Status: running
+[2025-10-30 01:0641]   PID 38305: 1988-04-05 | Runtime: 0.0s | Memory: 2.1MB | Status: running
+[2025-10-30 01:0641] Launching download 7/18: 1988-04-06
+[2025-10-30 01:0641] Launched subprocess PID 38306 for 1988-04-06 (log: logs/subprocesses/download_19880406.log)
+[2025-10-30 01:0641] Active subprocesses: 7
+[2025-10-30 01:0641]   PID 38300: 1988-03-31 | Runtime: 0.0s | Memory: 6.9MB | Status: running
+[2025-10-30 01:0641]   PID 38301: 1988-04-01 | Runtime: 0.0s | Memory: 6.6MB | Status: running
+[2025-10-30 01:0641]   PID 38302: 1988-04-02 | Runtime: 0.0s | Memory: 6.2MB | Status: running
+[2025-10-30 01:0641]   PID 38303: 1988-04-03 | Runtime: 0.0s | Memory: 5.8MB | Status: running
+[2025-10-30 01:0641]   PID 38304: 1988-04-04 | Runtime: 0.0s | Memory: 5.0MB | Status: running
+[2025-10-30 01:0641]   PID 38305: 1988-04-05 | Runtime: 0.0s | Memory: 4.7MB | Status: running
+[2025-10-30 01:0641]   PID 38306: 1988-04-06 | Runtime: 0.0s | Memory: 1.4MB | Status: running
+[2025-10-30 01:0641] Launching download 8/18: 1988-04-07
+[2025-10-30 01:0641] Launched subprocess PID 38307 for 1988-04-07 (log: logs/subprocesses/download_19880407.log)
+[2025-10-30 01:0641] Active subprocesses: 8
+[2025-10-30 01:0641]   PID 38300: 1988-03-31 | Runtime: 0.0s | Memory: 7.1MB | Status: running
+[2025-10-30 01:0641]   PID 38301: 1988-04-01 | Runtime: 0.0s | Memory: 7.1MB | Status: running
+[2025-10-30 01:0641]   PID 38302: 1988-04-02 | Runtime: 0.0s | Memory: 6.5MB | Status: running
+[2025-10-30 01:0641]   PID 38303: 1988-04-03 | Runtime: 0.0s | Memory: 6.3MB | Status: running
+[2025-10-30 01:0641]   PID 38304: 1988-04-04 | Runtime: 0.0s | Memory: 6.1MB | Status: running
+[2025-10-30 01:0641]   PID 38305: 1988-04-05 | Runtime: 0.0s | Memory: 4.9MB | Status: running
+[2025-10-30 01:0641]   PID 38306: 1988-04-06 | Runtime: 0.0s | Memory: 3.2MB | Status: running
+[2025-10-30 01:0641]   PID 38307: 1988-04-07 | Runtime: 0.0s | Memory: 1.5MB | Status: running
+[2025-10-30 01:0711] Memory Stats - Periodic check: Available=239616.0MB/385075.0MB (37.8% used)
+[2025-10-30 01:0711] Active subprocesses: 8
+[2025-10-30 01:0711]   PID 38300: 1988-03-31 | Runtime: 30.2s | Memory: 314.2MB | Status: sleeping
+[2025-10-30 01:0711]   PID 38301: 1988-04-01 | Runtime: 30.2s | Memory: 266.0MB | Status: running
+[2025-10-30 01:0711]   PID 38302: 1988-04-02 | Runtime: 30.2s | Memory: 284.7MB | Status: running
+[2025-10-30 01:0711]   PID 38303: 1988-04-03 | Runtime: 30.2s | Memory: 296.7MB | Status: running
+[2025-10-30 01:0711]   PID 38304: 1988-04-04 | Runtime: 30.2s | Memory: 278.8MB | Status: running
+[2025-10-30 01:0711]   PID 38305: 1988-04-05 | Runtime: 30.2s | Memory: 299.5MB | Status: running
+[2025-10-30 01:0711]   PID 38306: 1988-04-06 | Runtime: 30.2s | Memory: 275.8MB | Status: running
+[2025-10-30 01:0711]   PID 38307: 1988-04-07 | Runtime: 30.2s | Memory: 332.8MB | Status: running
+[2025-10-30 01:0711] Progress: 0 completed, 0 failed, 8 active, 10 pending | Elapsed: 30.2s

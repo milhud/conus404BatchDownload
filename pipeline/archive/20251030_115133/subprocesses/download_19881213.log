@@ -1,0 +1,71 @@
+[2025-10-30 11:10:47] Starting download process for 1988-12-13
+[2025-10-30 11:10:47] PID: 31019
+[2025-10-30 11:10:47] DOWNLOAD START: 1988-12-13
+[2025-10-30 11:10:47] Memory before download: RSS=77.1MB, System=24.5%
+[2025-10-30 11:10:47]   VERBOSE: Time range set: 1988-12-13 00:00:00 to 1988-12-13 23:59:59
+[2025-10-30 11:10:47] Opening dataset for 1988-12-13
+[2025-10-30 11:10:47]   VERBOSE: Asset Href: az://noaa/conus404.zarr
+[2025-10-30 11:10:48]   VERBOSE: fsspec mapper created
+[2025-10-30 11:10:49] ERROR: Failed to open dataset. Exception: Server failed to authenticate the request. Make sure the value of Authorization header is formed correctly including the signature.
+RequestId:5f569b3c-001e-0025-2faf-4920c7000000
+Time:2025-10-30T15:10:49.0626741Z
+ErrorCode:AuthenticationFailed
+authenticationerrordetail:Signature not valid in the specified time frame: Start [Wed, 29 Oct 2025 14:21:27 GMT] - Expiry [Thu, 30 Oct 2025 15:06:27 GMT] - Current [Thu, 30 Oct 2025 15:10:49 GMT]
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthenticationFailed</Code><Message>Server failed to authenticate the request. Make sure the value of Authorization header is formed correctly including the signature.
+RequestId:5f569b3c-001e-0025-2faf-4920c7000000
+Time:2025-10-30T15:10:49.0626741Z</Message><AuthenticationErrorDetail>Signature not valid in the specified time frame: Start [Wed, 29 Oct 2025 14:21:27 GMT] - Expiry [Thu, 30 Oct 2025 15:06:27 GMT] - Current [Thu, 30 Oct 2025 15:10:49 GMT]</AuthenticationErrorDetail></Error>
+[2025-10-30 11:10:49] CRITICAL: Logged failure to failed_jobs/1988-12-13.json
+[2025-10-30 11:10:49] FAILED: Download unsuccessful (see errors above and failure log)
+Traceback (most recent call last):
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 666, in _exitfunc
+    f()
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/fsspec/asyn.py", line 76, in sync
+    raise RuntimeError("Loop is not running")
+RuntimeError: Loop is not running
+Traceback (most recent call last):
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 666, in _exitfunc
+    f()
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/fsspec/asyn.py", line 76, in sync
+    raise RuntimeError("Loop is not running")
+RuntimeError: Loop is not running
+Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<StorePath.get() done, defined at /gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/zarr/storage/_common.py:146> exception=ClientAuthenticationError('Server failed to authenticate the request. Make sure the value of Authorization header is formed correctly including the signature.\nRequestId:465ff55a-601e-000c-44af-491eb3000000\nTime:2025-10-30T15:10:49.0735607Z\nErrorCode:AuthenticationFailed\nauthenticationerrordetail:Signature not valid in the specified time frame: Start [Wed, 29 Oct 2025 14:21:27 GMT] - Expiry [Thu, 30 Oct 2025 15:06:27 GMT] - Current [Thu, 30 Oct 2025 15:10:49 GMT]')>
+Traceback (most recent call last):
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/zarr/storage/_common.py", line 168, in get
+    return await self.store.get(self.path, prototype=prototype, byte_range=byte_range)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/zarr/storage/_fsspec.py", line 299, in get
+    value = prototype.buffer.from_bytes(await self.fs._cat_file(path))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/adlfs/spec.py", line 1500, in _cat_file
+    stream = await bc.download_blob(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/core/tracing/decorator_async.py", line 119, in wrapper_use_tracer
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/storage/blob/aio/_blob_client_async.py", line 793, in download_blob
+    await downloader._setup()  # pylint: disable=protected-access
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/storage/blob/aio/_download_async.py", line 332, in _setup
+    self._response = await self._initial_request()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/storage/blob/aio/_download_async.py", line 414, in _initial_request
+    process_storage_error(error)
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/storage/blob/_shared/response_handlers.py", line 195, in process_storage_error
+    exec("raise error from None")  # pylint: disable=exec-used # nosec
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+azure.core.exceptions.ClientAuthenticationError: Server failed to authenticate the request. Make sure the value of Authorization header is formed correctly including the signature.
+RequestId:465ff55a-601e-000c-44af-491eb3000000
+Time:2025-10-30T15:10:49.0735607Z
+ErrorCode:AuthenticationFailed
+authenticationerrordetail:Signature not valid in the specified time frame: Start [Wed, 29 Oct 2025 14:21:27 GMT] - Expiry [Thu, 30 Oct 2025 15:06:27 GMT] - Current [Thu, 30 Oct 2025 15:10:49 GMT]
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthenticationFailed</Code><Message>Server failed to authenticate the request. Make sure the value of Authorization header is formed correctly including the signature.
+RequestId:465ff55a-601e-000c-44af-491eb3000000
+Time:2025-10-30T15:10:49.0735607Z</Message><AuthenticationErrorDetail>Signature not valid in the specified time frame: Start [Wed, 29 Oct 2025 14:21:27 GMT] - Expiry [Thu, 30 Oct 2025 15:06:27 GMT] - Current [Thu, 30 Oct 2025 15:10:49 GMT]</AuthenticationErrorDetail></Error>

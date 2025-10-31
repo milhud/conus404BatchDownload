@@ -1,0 +1,27 @@
+Traceback (most recent call last):
+  File "/gpfsm/dnb33/hpmille1/pipeline/src/single_download.py", line 12, in <module>
+    import xarray as xr
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/__init__.py", line 3, in <module>
+    from xarray import coders, groupers, indexes, testing, tutorial, ufuncs
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/tutorial.py", line 18, in <module>
+    from xarray.backends.api import open_dataset as _open_dataset
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/backends/__init__.py", line 18, in <module>
+    from xarray.backends.scipy_ import ScipyBackendEntrypoint, ScipyDataStore
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/backends/scipy_.py", line 39, in <module>
+    from scipy.io import netcdf_file as netcdf_file_base
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/scipy/io/__init__.py", line 97, in <module>
+    from .matlab import loadmat, savemat, whosmat
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/scipy/io/matlab/__init__.py", line 47, in <module>
+    from ._mio import loadmat, savemat, whosmat
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/scipy/io/matlab/_mio.py", line 8, in <module>
+    from ._miobase import _get_matfile_version, docfiller
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/scipy/io/matlab/_miobase.py", line 14, in <module>
+    from . import _byteordercodes as boc
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1322, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1262, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1528, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1502, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1629, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 128, in _path_join
+KeyboardInterrupt

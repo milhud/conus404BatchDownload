@@ -1,0 +1,30 @@
+[2025-10-31 12:54:23] Starting process for 1988-02-07 (PID: 29663)
+[2025-10-31 12:54:23] DOWNLOAD START: 1988-02-07
+[2025-10-31 12:54:23] Fetching fresh STAC token from Planetary Computer...
+[2025-10-31 12:54:25] Opening Zarr dataset...
+[2025-10-31 12:57:07] Manually decoding CF conventions (fill values)...
+[2025-10-31 12:57:07] Found 24 hourly records.
+[2025-10-31 12:57:07] Saving daily aggregate to data/unprocessed/daily/conus404_daily_19880207.nc
+[2025-10-31 12:58:36] DOWNLOAD COMPLETE: 1988-02-07
+[2025-10-31 12:58:36] VALIDATION START: data/unprocessed/daily/conus404_daily_19880207.nc
+[2025-10-31 12:58:36]   QC FAIL: LAI min value -999841663821612745218903699395444736.000000 is below threshold -1
+[2025-10-31 12:58:36] FAILED: File data/unprocessed/daily/conus404_daily_19880207.nc was created but FAILED validation.
+[2025-10-31 12:58:36] Cleaned up corrupt file: data/unprocessed/daily/conus404_daily_19880207.nc
+Traceback (most recent call last):
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 666, in _exitfunc
+    f()
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/fsspec/asyn.py", line 76, in sync
+    raise RuntimeError("Loop is not running")
+RuntimeError: Loop is not running
+Traceback (most recent call last):
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 666, in _exitfunc
+    f()
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/fsspec/asyn.py", line 76, in sync
+    raise RuntimeError("Loop is not running")
+RuntimeError: Loop is not running

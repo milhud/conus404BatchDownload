@@ -1,0 +1,246 @@
+[2025-10-29 00:39:05] ================================================================================
+[2025-10-29 00:39:05] CONUS404 Download Driver Starting
+[2025-10-29 00:39:05] ================================================================================
+[2025-10-29 00:39:05] Date range: 1988-03-31 to 1988-04-09
+[2025-10-29 00:39:05] Max concurrent processes: 5
+[2025-10-29 00:39:05] Log file: logs/driver_20251029_003905.log
+[2025-10-29 00:39:05] Memory Stats - Initial: Available=294030.3MB/385074.9MB (23.6% used)
+[2025-10-29 00:39:05] Fetching CONUS404 asset from Planetary Computer...
+[2025-10-29 00:39:06] Asset URL: az://noaa/conus404.zarr
+[2025-10-29 00:39:06] Asset configuration saved
+[2025-10-29 00:39:06] Total dates to process: 10
+[2025-10-29 00:39:06] ================================================================================
+[2025-10-29 00:39:06] Starting download processes
+[2025-10-29 00:39:06] ================================================================================
+[2025-10-29 00:39:06] Launching download 1/10: 1988-03-31
+[2025-10-29 00:39:06] Launched subprocess PID 46388 for 1988-03-31 (log: logs/subprocesses/download_19880331.log)
+[2025-10-29 00:39:06] Active subprocesses: 1
+[2025-10-29 00:39:06]   PID 46388: 1988-03-31 | Runtime: 0.0s | Memory: 0.0MB | Status: running
+[2025-10-29 00:39:06] Launching download 2/10: 1988-04-01
+[2025-10-29 00:39:06] Launched subprocess PID 46389 for 1988-04-01 (log: logs/subprocesses/download_19880401.log)
+[2025-10-29 00:39:06] Active subprocesses: 2
+[2025-10-29 00:39:06]   PID 46388: 1988-03-31 | Runtime: 0.0s | Memory: 3.5MB | Status: running
+[2025-10-29 00:39:06]   PID 46389: 1988-04-01 | Runtime: 0.0s | Memory: 0.5MB | Status: running
+[2025-10-29 00:39:06] Launching download 3/10: 1988-04-02
+[2025-10-29 00:39:06] Launched subprocess PID 46390 for 1988-04-02 (log: logs/subprocesses/download_19880402.log)
+[2025-10-29 00:39:06] Active subprocesses: 3
+[2025-10-29 00:39:06]   PID 46388: 1988-03-31 | Runtime: 0.0s | Memory: 5.6MB | Status: running
+[2025-10-29 00:39:06]   PID 46389: 1988-04-01 | Runtime: 0.0s | Memory: 3.6MB | Status: running
+[2025-10-29 00:39:06]   PID 46390: 1988-04-02 | Runtime: 0.0s | Memory: 0.4MB | Status: running
+[2025-10-29 00:39:06] Launching download 4/10: 1988-04-03
+[2025-10-29 00:39:06] Launched subprocess PID 46391 for 1988-04-03 (log: logs/subprocesses/download_19880403.log)
+[2025-10-29 00:39:06] Active subprocesses: 4
+[2025-10-29 00:39:06]   PID 46388: 1988-03-31 | Runtime: 0.0s | Memory: 6.8MB | Status: running
+[2025-10-29 00:39:06]   PID 46389: 1988-04-01 | Runtime: 0.0s | Memory: 6.2MB | Status: running
+[2025-10-29 00:39:06]   PID 46390: 1988-04-02 | Runtime: 0.0s | Memory: 3.4MB | Status: running
+[2025-10-29 00:39:06]   PID 46391: 1988-04-03 | Runtime: 0.0s | Memory: 0.5MB | Status: running
+[2025-10-29 00:39:06] Launching download 5/10: 1988-04-04
+[2025-10-29 00:39:06] Launched subprocess PID 46392 for 1988-04-04 (log: logs/subprocesses/download_19880404.log)
+[2025-10-29 00:39:06] Active subprocesses: 5
+[2025-10-29 00:39:06]   PID 46388: 1988-03-31 | Runtime: 0.0s | Memory: 7.2MB | Status: running
+[2025-10-29 00:39:06]   PID 46389: 1988-04-01 | Runtime: 0.0s | Memory: 6.9MB | Status: running
+[2025-10-29 00:39:06]   PID 46390: 1988-04-02 | Runtime: 0.0s | Memory: 5.7MB | Status: running
+[2025-10-29 00:39:06]   PID 46391: 1988-04-03 | Runtime: 0.0s | Memory: 4.6MB | Status: running
+[2025-10-29 00:39:06]   PID 46392: 1988-04-04 | Runtime: 0.0s | Memory: 1.4MB | Status: running
+[2025-10-29 00:39:36] Memory Stats - Periodic check: Available=288489.1MB/385074.9MB (25.1% used)
+[2025-10-29 00:39:36] Active subprocesses: 5
+[2025-10-29 00:39:36]   PID 46388: 1988-03-31 | Runtime: 30.0s | Memory: 1196.0MB | Status: running
+[2025-10-29 00:39:36]   PID 46389: 1988-04-01 | Runtime: 30.0s | Memory: 1196.6MB | Status: running
+[2025-10-29 00:39:36]   PID 46390: 1988-04-02 | Runtime: 30.0s | Memory: 1197.9MB | Status: running
+[2025-10-29 00:39:36]   PID 46391: 1988-04-03 | Runtime: 30.0s | Memory: 1196.4MB | Status: running
+[2025-10-29 00:39:36]   PID 46392: 1988-04-04 | Runtime: 30.0s | Memory: 1196.1MB | Status: running
+[2025-10-29 00:39:36] Progress: 0 completed, 0 failed, 5 active, 5 pending | Elapsed: 30.0s
+[2025-10-29 00:40:06] Memory Stats - Periodic check: Available=279169.8MB/385074.9MB (27.5% used)
+[2025-10-29 00:40:06] Active subprocesses: 5
+[2025-10-29 00:40:06]   PID 46388: 1988-03-31 | Runtime: 60.0s | Memory: 3065.6MB | Status: running
+[2025-10-29 00:40:06]   PID 46389: 1988-04-01 | Runtime: 60.0s | Memory: 3060.3MB | Status: running
+[2025-10-29 00:40:06]   PID 46390: 1988-04-02 | Runtime: 60.0s | Memory: 3054.0MB | Status: running
+[2025-10-29 00:40:06]   PID 46391: 1988-04-03 | Runtime: 60.0s | Memory: 3064.5MB | Status: running
+[2025-10-29 00:40:06]   PID 46392: 1988-04-04 | Runtime: 60.0s | Memory: 3065.1MB | Status: running
+[2025-10-29 00:40:06] Progress: 0 completed, 0 failed, 5 active, 5 pending | Elapsed: 60.0s
+[2025-10-29 00:40:36] Memory Stats - Periodic check: Available=273451.5MB/385074.9MB (29.0% used)
+[2025-10-29 00:40:36] Active subprocesses: 5
+[2025-10-29 00:40:36]   PID 46388: 1988-03-31 | Runtime: 90.0s | Memory: 4128.3MB | Status: running
+[2025-10-29 00:40:36]   PID 46389: 1988-04-01 | Runtime: 90.0s | Memory: 4121.7MB | Status: running
+[2025-10-29 00:40:36]   PID 46390: 1988-04-02 | Runtime: 90.0s | Memory: 4140.6MB | Status: running
+[2025-10-29 00:40:36]   PID 46391: 1988-04-03 | Runtime: 90.0s | Memory: 4132.3MB | Status: running
+[2025-10-29 00:40:36]   PID 46392: 1988-04-04 | Runtime: 90.0s | Memory: 4132.8MB | Status: running
+[2025-10-29 00:40:36] Progress: 0 completed, 0 failed, 5 active, 5 pending | Elapsed: 90.0s
+[2025-10-29 00:41:06] Memory Stats - Periodic check: Available=263327.7MB/385074.9MB (31.6% used)
+[2025-10-29 00:41:06] Active subprocesses: 5
+[2025-10-29 00:41:06]   PID 46388: 1988-03-31 | Runtime: 120.0s | Memory: 6013.9MB | Status: running
+[2025-10-29 00:41:06]   PID 46389: 1988-04-01 | Runtime: 120.0s | Memory: 6802.9MB | Status: running
+[2025-10-29 00:41:06]   PID 46390: 1988-04-02 | Runtime: 120.0s | Memory: 5972.9MB | Status: running
+[2025-10-29 00:41:06]   PID 46391: 1988-04-03 | Runtime: 120.0s | Memory: 5888.3MB | Status: running
+[2025-10-29 00:41:06]   PID 46392: 1988-04-04 | Runtime: 120.0s | Memory: 5957.7MB | Status: running
+[2025-10-29 00:41:06] Progress: 0 completed, 0 failed, 5 active, 5 pending | Elapsed: 120.0s
+[2025-10-29 00:41:36] Memory Stats - Periodic check: Available=264380.4MB/385074.9MB (31.3% used)
+[2025-10-29 00:41:36] Active subprocesses: 5
+[2025-10-29 00:41:36]   PID 46388: 1988-03-31 | Runtime: 150.1s | Memory: 6483.4MB | Status: sleeping
+[2025-10-29 00:41:36]   PID 46389: 1988-04-01 | Runtime: 150.1s | Memory: 6349.0MB | Status: sleeping
+[2025-10-29 00:41:36]   PID 46390: 1988-04-02 | Runtime: 150.1s | Memory: 4351.0MB | Status: sleeping
+[2025-10-29 00:41:36]   PID 46391: 1988-04-03 | Runtime: 150.1s | Memory: 6308.0MB | Status: sleeping
+[2025-10-29 00:41:36]   PID 46392: 1988-04-04 | Runtime: 150.1s | Memory: 6258.5MB | Status: sleeping
+[2025-10-29 00:41:36] Progress: 0 completed, 0 failed, 5 active, 5 pending | Elapsed: 150.1s
+[2025-10-29 00:42:06] Memory Stats - Periodic check: Available=260010.8MB/385074.9MB (32.5% used)
+[2025-10-29 00:42:06] Active subprocesses: 5
+[2025-10-29 00:42:06]   PID 46388: 1988-03-31 | Runtime: 180.1s | Memory: 6871.3MB | Status: sleeping
+[2025-10-29 00:42:06]   PID 46389: 1988-04-01 | Runtime: 180.1s | Memory: 6672.5MB | Status: sleeping
+[2025-10-29 00:42:06]   PID 46390: 1988-04-02 | Runtime: 180.1s | Memory: 6057.4MB | Status: sleeping
+[2025-10-29 00:42:06]   PID 46391: 1988-04-03 | Runtime: 180.1s | Memory: 6683.2MB | Status: sleeping
+[2025-10-29 00:42:06]   PID 46392: 1988-04-04 | Runtime: 180.1s | Memory: 6865.4MB | Status: sleeping
+[2025-10-29 00:42:06] Progress: 0 completed, 0 failed, 5 active, 5 pending | Elapsed: 180.1s
+[2025-10-29 00:42:36] Memory Stats - Periodic check: Available=258121.2MB/385074.9MB (33.0% used)
+[2025-10-29 00:42:36] Active subprocesses: 5
+[2025-10-29 00:42:36]   PID 46388: 1988-03-31 | Runtime: 210.1s | Memory: 7335.9MB | Status: sleeping
+[2025-10-29 00:42:36]   PID 46389: 1988-04-01 | Runtime: 210.1s | Memory: 7069.0MB | Status: sleeping
+[2025-10-29 00:42:36]   PID 46390: 1988-04-02 | Runtime: 210.1s | Memory: 6401.1MB | Status: sleeping
+[2025-10-29 00:42:36]   PID 46391: 1988-04-03 | Runtime: 210.1s | Memory: 7122.1MB | Status: sleeping
+[2025-10-29 00:42:36]   PID 46392: 1988-04-04 | Runtime: 210.1s | Memory: 7219.2MB | Status: sleeping
+[2025-10-29 00:42:36] Progress: 0 completed, 0 failed, 5 active, 5 pending | Elapsed: 210.1s
+[2025-10-29 00:43:06] Memory Stats - Periodic check: Available=256222.1MB/385074.9MB (33.5% used)
+[2025-10-29 00:43:06] Active subprocesses: 5
+[2025-10-29 00:43:06]   PID 46388: 1988-03-31 | Runtime: 240.1s | Memory: 7529.9MB | Status: sleeping
+[2025-10-29 00:43:06]   PID 46389: 1988-04-01 | Runtime: 240.1s | Memory: 7384.6MB | Status: sleeping
+[2025-10-29 00:43:06]   PID 46390: 1988-04-02 | Runtime: 240.1s | Memory: 6914.8MB | Status: sleeping
+[2025-10-29 00:43:06]   PID 46391: 1988-04-03 | Runtime: 240.1s | Memory: 7512.2MB | Status: sleeping
+[2025-10-29 00:43:06]   PID 46392: 1988-04-04 | Runtime: 240.1s | Memory: 7433.3MB | Status: sleeping
+[2025-10-29 00:43:06] Progress: 0 completed, 0 failed, 5 active, 5 pending | Elapsed: 240.1s
+[2025-10-29 00:43:36] Memory Stats - Periodic check: Available=259175.2MB/385074.9MB (32.7% used)
+[2025-10-29 00:43:36] Active subprocesses: 5
+[2025-10-29 00:43:36]   PID 46388: 1988-03-31 | Runtime: 270.2s | Memory: 6833.9MB | Status: running
+[2025-10-29 00:43:36]   PID 46389: 1988-04-01 | Runtime: 270.2s | Memory: 6566.3MB | Status: running
+[2025-10-29 00:43:36]   PID 46390: 1988-04-02 | Runtime: 270.2s | Memory: 6794.4MB | Status: sleeping
+[2025-10-29 00:43:36]   PID 46391: 1988-04-03 | Runtime: 270.2s | Memory: 7354.0MB | Status: sleeping
+[2025-10-29 00:43:36]   PID 46392: 1988-04-04 | Runtime: 270.2s | Memory: 7050.5MB | Status: running
+[2025-10-29 00:43:36] Progress: 0 completed, 0 failed, 5 active, 5 pending | Elapsed: 270.2s
+[2025-10-29 00:43:42] SUCCESS: PID 46388 completed 1988-03-31 in 276.2s
+[2025-10-29 00:43:42] SUCCESS: PID 46389 completed 1988-04-01 in 276.2s
+[2025-10-29 00:43:42] Launching download 6/10: 1988-04-05
+[2025-10-29 00:43:42] Launched subprocess PID 19779 for 1988-04-05 (log: logs/subprocesses/download_19880405.log)
+[2025-10-29 00:43:42] Active subprocesses: 4
+[2025-10-29 00:43:42]   PID 46390: 1988-04-02 | Runtime: 276.2s | Memory: 5049.7MB | Status: running
+[2025-10-29 00:43:42]   PID 46391: 1988-04-03 | Runtime: 276.2s | Memory: 4685.0MB | Status: running
+[2025-10-29 00:43:42]   PID 46392: 1988-04-04 | Runtime: 276.2s | Memory: 4682.6MB | Status: running
+[2025-10-29 00:43:42]   PID 19779: 1988-04-05 | Runtime: 0.0s | Memory: 0.5MB | Status: running
+[2025-10-29 00:43:42] Launching download 7/10: 1988-04-06
+[2025-10-29 00:43:42] Launched subprocess PID 19781 for 1988-04-06 (log: logs/subprocesses/download_19880406.log)
+[2025-10-29 00:43:42] Active subprocesses: 5
+[2025-10-29 00:43:42]   PID 46390: 1988-04-02 | Runtime: 276.2s | Memory: 5047.7MB | Status: running
+[2025-10-29 00:43:42]   PID 46391: 1988-04-03 | Runtime: 276.2s | Memory: 4683.0MB | Status: running
+[2025-10-29 00:43:42]   PID 46392: 1988-04-04 | Runtime: 276.2s | Memory: 4680.7MB | Status: running
+[2025-10-29 00:43:42]   PID 19779: 1988-04-05 | Runtime: 0.0s | Memory: 2.5MB | Status: running
+[2025-10-29 00:43:42]   PID 19781: 1988-04-06 | Runtime: 0.0s | Memory: 0.5MB | Status: running
+[2025-10-29 00:43:43] SUCCESS: PID 46392 completed 1988-04-04 in 277.2s
+[2025-10-29 00:43:43] Launching download 8/10: 1988-04-07
+[2025-10-29 00:43:43] Launched subprocess PID 19845 for 1988-04-07 (log: logs/subprocesses/download_19880407.log)
+[2025-10-29 00:43:43] Active subprocesses: 5
+[2025-10-29 00:43:43]   PID 46390: 1988-04-02 | Runtime: 277.2s | Memory: 4486.7MB | Status: running
+[2025-10-29 00:43:43]   PID 46391: 1988-04-03 | Runtime: 277.2s | Memory: 3856.9MB | Status: running
+[2025-10-29 00:43:43]   PID 19779: 1988-04-05 | Runtime: 1.0s | Memory: 52.9MB | Status: running
+[2025-10-29 00:43:43]   PID 19781: 1988-04-06 | Runtime: 1.0s | Memory: 52.8MB | Status: running
+[2025-10-29 00:43:43]   PID 19845: 1988-04-07 | Runtime: 0.0s | Memory: 1.3MB | Status: running
+[2025-10-29 00:43:44] SUCCESS: PID 46391 completed 1988-04-03 in 278.2s
+[2025-10-29 00:43:44] Launching download 9/10: 1988-04-08
+[2025-10-29 00:43:44] Launched subprocess PID 19927 for 1988-04-08 (log: logs/subprocesses/download_19880408.log)
+[2025-10-29 00:43:44] Active subprocesses: 5
+[2025-10-29 00:43:44]   PID 46390: 1988-04-02 | Runtime: 278.2s | Memory: 0.0MB | Status: running
+[2025-10-29 00:43:44]   PID 19779: 1988-04-05 | Runtime: 2.0s | Memory: 86.6MB | Status: running
+[2025-10-29 00:43:44]   PID 19781: 1988-04-06 | Runtime: 2.0s | Memory: 85.9MB | Status: running
+[2025-10-29 00:43:44]   PID 19845: 1988-04-07 | Runtime: 1.0s | Memory: 80.1MB | Status: running
+[2025-10-29 00:43:44]   PID 19927: 1988-04-08 | Runtime: 0.0s | Memory: 1.4MB | Status: running
+[2025-10-29 00:43:45] SUCCESS: PID 46390 completed 1988-04-02 in 279.2s
+[2025-10-29 00:43:45] Launching download 10/10: 1988-04-09
+[2025-10-29 00:43:45] Launched subprocess PID 20000 for 1988-04-09 (log: logs/subprocesses/download_19880409.log)
+[2025-10-29 00:43:45] Active subprocesses: 5
+[2025-10-29 00:43:45]   PID 19779: 1988-04-05 | Runtime: 3.0s | Memory: 116.2MB | Status: running
+[2025-10-29 00:43:45]   PID 19781: 1988-04-06 | Runtime: 3.0s | Memory: 115.5MB | Status: running
+[2025-10-29 00:43:45]   PID 19845: 1988-04-07 | Runtime: 2.0s | Memory: 116.1MB | Status: running
+[2025-10-29 00:43:45]   PID 19927: 1988-04-08 | Runtime: 1.0s | Memory: 92.8MB | Status: running
+[2025-10-29 00:43:45]   PID 20000: 1988-04-09 | Runtime: 0.0s | Memory: 0.5MB | Status: running
+[2025-10-29 00:44:06] Memory Stats - Periodic check: Available=287593.7MB/385074.9MB (25.3% used)
+[2025-10-29 00:44:06] Active subprocesses: 5
+[2025-10-29 00:44:06]   PID 19779: 1988-04-05 | Runtime: 24.0s | Memory: 1368.4MB | Status: running
+[2025-10-29 00:44:06]   PID 19781: 1988-04-06 | Runtime: 24.0s | Memory: 1390.6MB | Status: running
+[2025-10-29 00:44:06]   PID 19845: 1988-04-07 | Runtime: 23.0s | Memory: 1386.2MB | Status: running
+[2025-10-29 00:44:06]   PID 19927: 1988-04-08 | Runtime: 22.0s | Memory: 1349.0MB | Status: running
+[2025-10-29 00:44:06]   PID 20000: 1988-04-09 | Runtime: 21.0s | Memory: 1232.1MB | Status: running
+[2025-10-29 00:44:06] Progress: 5 completed, 0 failed, 5 active, 0 pending | Elapsed: 300.2s
+[2025-10-29 00:44:36] Memory Stats - Periodic check: Available=278653.2MB/385074.9MB (27.6% used)
+[2025-10-29 00:44:36] Active subprocesses: 5
+[2025-10-29 00:44:36]   PID 19779: 1988-04-05 | Runtime: 54.0s | Memory: 3206.3MB | Status: running
+[2025-10-29 00:44:36]   PID 19781: 1988-04-06 | Runtime: 54.0s | Memory: 3253.9MB | Status: running
+[2025-10-29 00:44:36]   PID 19845: 1988-04-07 | Runtime: 53.0s | Memory: 3236.9MB | Status: running
+[2025-10-29 00:44:36]   PID 19927: 1988-04-08 | Runtime: 52.0s | Memory: 3200.8MB | Status: running
+[2025-10-29 00:44:36]   PID 20000: 1988-04-09 | Runtime: 51.0s | Memory: 3099.0MB | Status: running
+[2025-10-29 00:44:36] Progress: 5 completed, 0 failed, 5 active, 0 pending | Elapsed: 330.2s
+[2025-10-29 00:45:06] Memory Stats - Periodic check: Available=273606.2MB/385074.9MB (28.9% used)
+[2025-10-29 00:45:06] Active subprocesses: 5
+[2025-10-29 00:45:06]   PID 19779: 1988-04-05 | Runtime: 84.0s | Memory: 4087.0MB | Status: running
+[2025-10-29 00:45:06]   PID 19781: 1988-04-06 | Runtime: 84.0s | Memory: 4112.2MB | Status: running
+[2025-10-29 00:45:06]   PID 19845: 1988-04-07 | Runtime: 83.0s | Memory: 4116.3MB | Status: running
+[2025-10-29 00:45:06]   PID 19927: 1988-04-08 | Runtime: 82.0s | Memory: 4097.5MB | Status: running
+[2025-10-29 00:45:06]   PID 20000: 1988-04-09 | Runtime: 81.0s | Memory: 4098.2MB | Status: running
+[2025-10-29 00:45:06] Progress: 5 completed, 0 failed, 5 active, 0 pending | Elapsed: 360.2s
+[2025-10-29 00:45:36] Memory Stats - Periodic check: Available=260653.6MB/385074.9MB (32.3% used)
+[2025-10-29 00:45:36] Active subprocesses: 5
+[2025-10-29 00:45:36]   PID 19779: 1988-04-05 | Runtime: 114.0s | Memory: 6157.9MB | Status: running
+[2025-10-29 00:45:36]   PID 19781: 1988-04-06 | Runtime: 114.0s | Memory: 7108.8MB | Status: running
+[2025-10-29 00:45:36]   PID 19845: 1988-04-07 | Runtime: 113.0s | Memory: 6988.6MB | Status: running
+[2025-10-29 00:45:36]   PID 19927: 1988-04-08 | Runtime: 112.0s | Memory: 6105.1MB | Status: running
+[2025-10-29 00:45:36]   PID 20000: 1988-04-09 | Runtime: 111.0s | Memory: 6947.2MB | Status: running
+[2025-10-29 00:45:36] Progress: 5 completed, 0 failed, 5 active, 0 pending | Elapsed: 390.2s
+[2025-10-29 00:46:07] Memory Stats - Periodic check: Available=262935.4MB/385074.9MB (31.7% used)
+[2025-10-29 00:46:07] Active subprocesses: 5
+[2025-10-29 00:46:07]   PID 19779: 1988-04-05 | Runtime: 144.1s | Memory: 6079.8MB | Status: sleeping
+[2025-10-29 00:46:07]   PID 19781: 1988-04-06 | Runtime: 144.1s | Memory: 6412.9MB | Status: sleeping
+[2025-10-29 00:46:07]   PID 19845: 1988-04-07 | Runtime: 143.1s | Memory: 6506.7MB | Status: sleeping
+[2025-10-29 00:46:07]   PID 19927: 1988-04-08 | Runtime: 142.1s | Memory: 5611.5MB | Status: sleeping
+[2025-10-29 00:46:07]   PID 20000: 1988-04-09 | Runtime: 141.1s | Memory: 5963.0MB | Status: sleeping
+[2025-10-29 00:46:07] Progress: 5 completed, 0 failed, 5 active, 0 pending | Elapsed: 420.3s
+[2025-10-29 00:46:37] Memory Stats - Periodic check: Available=258108.1MB/385074.9MB (33.0% used)
+[2025-10-29 00:46:37] Active subprocesses: 5
+[2025-10-29 00:46:37]   PID 19779: 1988-04-05 | Runtime: 174.1s | Memory: 6844.1MB | Status: sleeping
+[2025-10-29 00:46:37]   PID 19781: 1988-04-06 | Runtime: 174.1s | Memory: 7106.4MB | Status: sleeping
+[2025-10-29 00:46:37]   PID 19845: 1988-04-07 | Runtime: 173.1s | Memory: 6951.4MB | Status: sleeping
+[2025-10-29 00:46:37]   PID 19927: 1988-04-08 | Runtime: 172.1s | Memory: 6689.9MB | Status: sleeping
+[2025-10-29 00:46:37]   PID 20000: 1988-04-09 | Runtime: 171.1s | Memory: 6629.1MB | Status: sleeping
+[2025-10-29 00:46:37] Progress: 5 completed, 0 failed, 5 active, 0 pending | Elapsed: 450.3s
+[2025-10-29 00:47:07] Memory Stats - Periodic check: Available=255835.5MB/385074.9MB (33.6% used)
+[2025-10-29 00:47:07] Active subprocesses: 5
+[2025-10-29 00:47:07]   PID 19779: 1988-04-05 | Runtime: 204.1s | Memory: 7159.8MB | Status: sleeping
+[2025-10-29 00:47:07]   PID 19781: 1988-04-06 | Runtime: 204.1s | Memory: 7205.8MB | Status: sleeping
+[2025-10-29 00:47:07]   PID 19845: 1988-04-07 | Runtime: 203.1s | Memory: 7249.5MB | Status: sleeping
+[2025-10-29 00:47:07]   PID 19927: 1988-04-08 | Runtime: 202.1s | Memory: 7280.4MB | Status: sleeping
+[2025-10-29 00:47:07]   PID 20000: 1988-04-09 | Runtime: 201.1s | Memory: 7002.7MB | Status: sleeping
+[2025-10-29 00:47:07] Progress: 5 completed, 0 failed, 5 active, 0 pending | Elapsed: 480.3s
+[2025-10-29 00:47:37] Memory Stats - Periodic check: Available=254416.5MB/385074.9MB (33.9% used)
+[2025-10-29 00:47:37] Active subprocesses: 5
+[2025-10-29 00:47:37]   PID 19779: 1988-04-05 | Runtime: 234.2s | Memory: 7353.2MB | Status: sleeping
+[2025-10-29 00:47:37]   PID 19781: 1988-04-06 | Runtime: 234.2s | Memory: 7627.0MB | Status: sleeping
+[2025-10-29 00:47:37]   PID 19845: 1988-04-07 | Runtime: 233.2s | Memory: 7641.7MB | Status: sleeping
+[2025-10-29 00:47:37]   PID 19927: 1988-04-08 | Runtime: 232.2s | Memory: 7560.9MB | Status: sleeping
+[2025-10-29 00:47:37]   PID 20000: 1988-04-09 | Runtime: 231.2s | Memory: 7395.2MB | Status: sleeping
+[2025-10-29 00:47:37] Progress: 5 completed, 0 failed, 5 active, 0 pending | Elapsed: 510.4s
+[2025-10-29 00:48:07] Memory Stats - Periodic check: Available=262007.1MB/385074.9MB (32.0% used)
+[2025-10-29 00:48:07] Active subprocesses: 5
+[2025-10-29 00:48:07]   PID 19779: 1988-04-05 | Runtime: 264.2s | Memory: 7348.4MB | Status: sleeping
+[2025-10-29 00:48:07]   PID 19781: 1988-04-06 | Runtime: 264.2s | Memory: 4417.0MB | Status: running
+[2025-10-29 00:48:07]   PID 19845: 1988-04-07 | Runtime: 263.2s | Memory: 4300.0MB | Status: running
+[2025-10-29 00:48:07]   PID 19927: 1988-04-08 | Runtime: 262.2s | Memory: 7294.5MB | Status: sleeping
+[2025-10-29 00:48:07]   PID 20000: 1988-04-09 | Runtime: 261.2s | Memory: 7247.2MB | Status: sleeping
+[2025-10-29 00:48:07] Progress: 5 completed, 0 failed, 5 active, 0 pending | Elapsed: 540.4s
+[2025-10-29 00:48:09] SUCCESS: PID 19781 completed 1988-04-06 in 266.2s
+[2025-10-29 00:48:09] SUCCESS: PID 19845 completed 1988-04-07 in 265.2s
+[2025-10-29 00:48:17] SUCCESS: PID 19927 completed 1988-04-08 in 272.2s
+[2025-10-29 00:48:18] SUCCESS: PID 19779 completed 1988-04-05 in 275.2s
+[2025-10-29 00:48:19] SUCCESS: PID 20000 completed 1988-04-09 in 273.2s
+[2025-10-29 00:48:20] ================================================================================
+[2025-10-29 00:48:20] Download Processing Complete
+[2025-10-29 00:48:20] ================================================================================
+[2025-10-29 00:48:20] Total runtime: 553.4s (9.2 minutes)
+[2025-10-29 00:48:20] Completed successfully: 10/10
+[2025-10-29 00:48:20] Failed: 0/10
+[2025-10-29 00:48:20] No failures to retry.
+[2025-10-29 00:48:20] Memory Stats - Final: Available=293011.2MB/385074.9MB (23.9% used)
+[2025-10-29 00:48:20] Cleaned up temporary configuration files

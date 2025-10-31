@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/gpfsm/dnb33/hpmille1/pipeline/retry_failed.py", line 23, in <module>
+    from config import (
+ModuleNotFoundError: No module named 'config'

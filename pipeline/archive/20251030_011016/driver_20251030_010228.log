@@ -1,0 +1,98 @@
+[2025-10-30 01:0228] ================================================================================
+[2025-10-30 01:0228] CONUS404 Download Driver Starting
+[2025-10-30 01:0228] ================================================================================
+[2025-10-30 01:0228] Date range: 1988-03-31 to 1988-04-17
+[2025-10-30 01:0228] Max concurrent processes: 8
+[2025-10-30 01:0228] Log file: logs/driver_20251030_010228.log
+[2025-10-30 01:0228] Checking for and clearing old failure log: data/failed_jobs.json
+[2025-10-30 01:0228] Removed old failure log.
+[2025-10-30 01:0228] Memory Stats - Initial: Available=250107.5MB/385075.0MB (35.0% used)
+[2025-10-30 01:0228] Fetching CONUS404 asset from Planetary Computer...
+[2025-10-30 01:0229] Asset URL: az://noaa/conus404.zarr
+[2025-10-30 01:0229] Asset configuration saved
+[2025-10-30 01:0229] Total dates to process: 18
+[2025-10-30 01:0229] ================================================================================
+[2025-10-30 01:0229] Starting download processes
+[2025-10-30 01:0229] ================================================================================
+[2025-10-30 01:0229] Launching download 1/18: 1988-03-31
+[2025-10-30 01:0229] Launched subprocess PID 13283 for 1988-03-31 (log: logs/subprocesses/download_19880331.log)
+[2025-10-30 01:0229] Active subprocesses: 1
+[2025-10-30 01:0229]   PID 13283: 1988-03-31 | Runtime: 0.0s | Memory: 0.0MB | Status: running
+[2025-10-30 01:0229] Launching download 2/18: 1988-04-01
+[2025-10-30 01:0229] Launched subprocess PID 13284 for 1988-04-01 (log: logs/subprocesses/download_19880401.log)
+[2025-10-30 01:0229] Active subprocesses: 2
+[2025-10-30 01:0229]   PID 13283: 1988-03-31 | Runtime: 0.0s | Memory: 5.3MB | Status: running
+[2025-10-30 01:0229]   PID 13284: 1988-04-01 | Runtime: 0.0s | Memory: 0.4MB | Status: running
+[2025-10-30 01:0229] Launching download 3/18: 1988-04-02
+[2025-10-30 01:0229] Launched subprocess PID 13286 for 1988-04-02 (log: logs/subprocesses/download_19880402.log)
+[2025-10-30 01:0229] Active subprocesses: 3
+[2025-10-30 01:0229]   PID 13283: 1988-03-31 | Runtime: 0.0s | Memory: 6.8MB | Status: running
+[2025-10-30 01:0229]   PID 13284: 1988-04-01 | Runtime: 0.0s | Memory: 4.9MB | Status: running
+[2025-10-30 01:0229]   PID 13286: 1988-04-02 | Runtime: 0.0s | Memory: 0.5MB | Status: running
+[2025-10-30 01:0229] Launching download 4/18: 1988-04-03
+[2025-10-30 01:0229] Launched subprocess PID 13288 for 1988-04-03 (log: logs/subprocesses/download_19880403.log)
+[2025-10-30 01:0229] Active subprocesses: 4
+[2025-10-30 01:0229]   PID 13283: 1988-03-31 | Runtime: 0.0s | Memory: 7.5MB | Status: disk-sleep
+[2025-10-30 01:0229]   PID 13284: 1988-04-01 | Runtime: 0.0s | Memory: 6.8MB | Status: running
+[2025-10-30 01:0229]   PID 13286: 1988-04-02 | Runtime: 0.0s | Memory: 5.3MB | Status: running
+[2025-10-30 01:0229]   PID 13288: 1988-04-03 | Runtime: 0.0s | Memory: 0.5MB | Status: running
+[2025-10-30 01:0229] Launching download 5/18: 1988-04-04
+[2025-10-30 01:0229] Launched subprocess PID 13290 for 1988-04-04 (log: logs/subprocesses/download_19880404.log)
+[2025-10-30 01:0229] Active subprocesses: 5
+[2025-10-30 01:0229]   PID 13283: 1988-03-31 | Runtime: 0.0s | Memory: 7.5MB | Status: disk-sleep
+[2025-10-30 01:0229]   PID 13284: 1988-04-01 | Runtime: 0.0s | Memory: 7.5MB | Status: disk-sleep
+[2025-10-30 01:0229]   PID 13286: 1988-04-02 | Runtime: 0.0s | Memory: 7.1MB | Status: running
+[2025-10-30 01:0229]   PID 13288: 1988-04-03 | Runtime: 0.0s | Memory: 6.0MB | Status: running
+[2025-10-30 01:0229]   PID 13290: 1988-04-04 | Runtime: 0.0s | Memory: 1.4MB | Status: running
+[2025-10-30 01:0229] Launching download 6/18: 1988-04-05
+[2025-10-30 01:0229] Launched subprocess PID 13293 for 1988-04-05 (log: logs/subprocesses/download_19880405.log)
+[2025-10-30 01:0229] Active subprocesses: 6
+[2025-10-30 01:0229]   PID 13283: 1988-03-31 | Runtime: 0.0s | Memory: 7.5MB | Status: disk-sleep
+[2025-10-30 01:0229]   PID 13284: 1988-04-01 | Runtime: 0.0s | Memory: 7.5MB | Status: disk-sleep
+[2025-10-30 01:0229]   PID 13286: 1988-04-02 | Runtime: 0.0s | Memory: 7.6MB | Status: disk-sleep
+[2025-10-30 01:0229]   PID 13288: 1988-04-03 | Runtime: 0.0s | Memory: 7.6MB | Status: running
+[2025-10-30 01:0229]   PID 13290: 1988-04-04 | Runtime: 0.0s | Memory: 6.6MB | Status: running
+[2025-10-30 01:0229]   PID 13293: 1988-04-05 | Runtime: 0.0s | Memory: 2.1MB | Status: running
+[2025-10-30 01:0229] Launching download 7/18: 1988-04-06
+[2025-10-30 01:0229] Launched subprocess PID 13294 for 1988-04-06 (log: logs/subprocesses/download_19880406.log)
+[2025-10-30 01:0229] Active subprocesses: 7
+[2025-10-30 01:0229]   PID 13283: 1988-03-31 | Runtime: 0.0s | Memory: 7.5MB | Status: disk-sleep
+[2025-10-30 01:0229]   PID 13284: 1988-04-01 | Runtime: 0.0s | Memory: 7.5MB | Status: disk-sleep
+[2025-10-30 01:0229]   PID 13286: 1988-04-02 | Runtime: 0.0s | Memory: 7.6MB | Status: disk-sleep
+[2025-10-30 01:0229]   PID 13288: 1988-04-03 | Runtime: 0.0s | Memory: 7.6MB | Status: disk-sleep
+[2025-10-30 01:0229]   PID 13290: 1988-04-04 | Runtime: 0.0s | Memory: 7.5MB | Status: running
+[2025-10-30 01:0229]   PID 13293: 1988-04-05 | Runtime: 0.0s | Memory: 6.3MB | Status: running
+[2025-10-30 01:0229]   PID 13294: 1988-04-06 | Runtime: 0.0s | Memory: 1.5MB | Status: running
+[2025-10-30 01:0229] Launching download 8/18: 1988-04-07
+[2025-10-30 01:0229] Launched subprocess PID 13295 for 1988-04-07 (log: logs/subprocesses/download_19880407.log)
+[2025-10-30 01:0229] Active subprocesses: 8
+[2025-10-30 01:0229]   PID 13283: 1988-03-31 | Runtime: 0.0s | Memory: 7.5MB | Status: disk-sleep
+[2025-10-30 01:0229]   PID 13284: 1988-04-01 | Runtime: 0.0s | Memory: 7.5MB | Status: disk-sleep
+[2025-10-30 01:0229]   PID 13286: 1988-04-02 | Runtime: 0.0s | Memory: 7.6MB | Status: disk-sleep
+[2025-10-30 01:0229]   PID 13288: 1988-04-03 | Runtime: 0.0s | Memory: 7.6MB | Status: disk-sleep
+[2025-10-30 01:0229]   PID 13290: 1988-04-04 | Runtime: 0.0s | Memory: 7.5MB | Status: disk-sleep
+[2025-10-30 01:0229]   PID 13293: 1988-04-05 | Runtime: 0.0s | Memory: 7.2MB | Status: running
+[2025-10-30 01:0229]   PID 13294: 1988-04-06 | Runtime: 0.0s | Memory: 6.1MB | Status: running
+[2025-10-30 01:0229]   PID 13295: 1988-04-07 | Runtime: 0.0s | Memory: 1.9MB | Status: running
+[2025-10-30 01:0259] Memory Stats - Periodic check: Available=244934.0MB/385075.0MB (36.4% used)
+[2025-10-30 01:0259] Active subprocesses: 8
+[2025-10-30 01:0259]   PID 13283: 1988-03-31 | Runtime: 30.0s | Memory: 522.1MB | Status: running
+[2025-10-30 01:0259]   PID 13284: 1988-04-01 | Runtime: 30.0s | Memory: 519.7MB | Status: running
+[2025-10-30 01:0259]   PID 13286: 1988-04-02 | Runtime: 30.0s | Memory: 532.7MB | Status: running
+[2025-10-30 01:0259]   PID 13288: 1988-04-03 | Runtime: 30.0s | Memory: 520.5MB | Status: running
+[2025-10-30 01:0259]   PID 13290: 1988-04-04 | Runtime: 30.0s | Memory: 519.4MB | Status: running
+[2025-10-30 01:0259]   PID 13293: 1988-04-05 | Runtime: 30.0s | Memory: 537.5MB | Status: running
+[2025-10-30 01:0259]   PID 13294: 1988-04-06 | Runtime: 30.0s | Memory: 541.5MB | Status: running
+[2025-10-30 01:0259]   PID 13295: 1988-04-07 | Runtime: 30.0s | Memory: 522.7MB | Status: running
+[2025-10-30 01:0259] Progress: 0 completed, 0 failed, 8 active, 10 pending | Elapsed: 30.0s
+[2025-10-30 01:0329] Memory Stats - Periodic check: Available=235406.5MB/385075.0MB (38.9% used)
+[2025-10-30 01:0329] Active subprocesses: 8
+[2025-10-30 01:0329]   PID 13283: 1988-03-31 | Runtime: 60.1s | Memory: 1526.6MB | Status: running
+[2025-10-30 01:0329]   PID 13284: 1988-04-01 | Runtime: 60.1s | Memory: 1470.4MB | Status: running
+[2025-10-30 01:0329]   PID 13286: 1988-04-02 | Runtime: 60.1s | Memory: 1523.4MB | Status: running
+[2025-10-30 01:0329]   PID 13288: 1988-04-03 | Runtime: 60.1s | Memory: 1473.2MB | Status: running
+[2025-10-30 01:0329]   PID 13290: 1988-04-04 | Runtime: 60.1s | Memory: 1487.4MB | Status: running
+[2025-10-30 01:0329]   PID 13293: 1988-04-05 | Runtime: 60.1s | Memory: 1557.1MB | Status: running
+[2025-10-30 01:0329]   PID 13294: 1988-04-06 | Runtime: 60.1s | Memory: 1527.8MB | Status: running
+[2025-10-30 01:0329]   PID 13295: 1988-04-07 | Runtime: 60.1s | Memory: 1499.3MB | Status: running
+[2025-10-30 01:0329] Progress: 0 completed, 0 failed, 8 active, 10 pending | Elapsed: 60.0s

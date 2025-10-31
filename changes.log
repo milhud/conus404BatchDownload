@@ -1,0 +1,6 @@
+// noteable shell commands used
+
+module avail python
+module load python/GEOSpyD/24.3.0-0/3.12
+python -m venv venv
+source venv/bin/activate

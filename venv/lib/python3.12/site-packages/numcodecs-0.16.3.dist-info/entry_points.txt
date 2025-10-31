@@ -1,0 +1,22 @@
+[zarr.codecs]
+numcodecs.adler32 = numcodecs.zarr3:Adler32
+numcodecs.astype = numcodecs.zarr3:AsType
+numcodecs.bitround = numcodecs.zarr3:BitRound
+numcodecs.blosc = numcodecs.zarr3:Blosc
+numcodecs.bz2 = numcodecs.zarr3:BZ2
+numcodecs.crc32 = numcodecs.zarr3:CRC32
+numcodecs.crc32c = numcodecs.zarr3:CRC32C
+numcodecs.delta = numcodecs.zarr3:Delta
+numcodecs.fixedscaleoffset = numcodecs.zarr3:FixedScaleOffset
+numcodecs.fletcher32 = numcodecs.zarr3:Fletcher32
+numcodecs.gzip = numcodecs.zarr3:GZip
+numcodecs.jenkins_lookup3 = numcodecs.zarr3:JenkinsLookup3
+numcodecs.lz4 = numcodecs.zarr3:LZ4
+numcodecs.lzma = numcodecs.zarr3:LZMA
+numcodecs.packbits = numcodecs.zarr3:PackBits
+numcodecs.pcodec = numcodecs.zarr3:PCodec
+numcodecs.quantize = numcodecs.zarr3:Quantize
+numcodecs.shuffle = numcodecs.zarr3:Shuffle
+numcodecs.zfpy = numcodecs.zarr3:ZFPY
+numcodecs.zlib = numcodecs.zarr3:Zlib
+numcodecs.zstd = numcodecs.zarr3:Zstd

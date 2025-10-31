@@ -1,0 +1,86 @@
+[2025-10-30 11:06:05] Starting download process for 1988-02-20
+[2025-10-30 11:06:05] PID: 26603
+[2025-10-30 11:06:05] DOWNLOAD START: 1988-02-20
+[2025-10-30 11:06:05] Memory before download: RSS=77.0MB, System=32.3%
+[2025-10-30 11:06:05]   VERBOSE: Time range set: 1988-02-20 00:00:00 to 1988-02-20 23:59:59
+[2025-10-30 11:06:05] Opening dataset for 1988-02-20
+[2025-10-30 11:06:05]   VERBOSE: Asset Href: az://noaa/conus404.zarr
+[2025-10-30 11:06:06]   VERBOSE: fsspec mapper created
+[2025-10-30 11:07:06]   VERBOSE: xr.open_zarr complete. Dataset keys: ['ACDEWC', 'ACDRIPR', 'ACDRIPS', 'ACECAN', 'ACEDIR', 'ACETLSM', 'ACETRAN', 'ACEVAC', 'ACEVB', 'ACEVC', 'ACEVG', 'ACFROC', 'ACFRZC', 'ACGHB', 'ACGHFLSM', 'ACGHV', 'ACINTR', 'ACINTS', 'ACIRB', 'ACIRC', 'ACIRG', 'ACLHFLSM', 'ACLWDNB', 'ACLWDNBC', 'ACLWDNLSM', 'ACLWDNT', 'ACLWDNTC', 'ACLWUPB', 'ACLWUPBC', 'ACLWUPLSM', 'ACLWUPT', 'ACLWUPTC', 'ACMELTC', 'ACPAHB', 'ACPAHG', 'ACPAHLSM', 'ACPAHV', 'ACPONDING', 'ACQLAT', 'ACQRF', 'ACRAINLSM', 'ACRAINSNOW', 'ACRUNSB', 'ACRUNSF', 'ACSAGB', 'ACSAGV', 'ACSAV', 'ACSHB', 'ACSHC', 'ACSHFLSM', 'ACSHG', 'ACSNBOT', 'ACSNFRO', 'ACSNOM', 'ACSNOWLSM', 'ACSNSUB', 'ACSUBC', 'ACSWDNB', 'ACSWDNBC', 'ACSWDNLSM', 'ACSWDNT', 'ACSWDNTC', 'ACSWUPB', 'ACSWUPBC', 'ACSWUPLSM', 'ACSWUPT', 'ACSWUPTC', 'ACTHROR', 'ACTHROS', 'ACTR', 'ALBEDO', 'CANICE', 'CANWAT', 'CLDFRA', 'COSZEN', 'EMISS', 'FORCPLSM', 'FORCQLSM', 'FORCTLSM', 'FORCWLSM', 'FORCZLSM', 'GLW', 'GRAUPEL_ACC_NC', 'HFX', 'I_ACLWDNB', 'I_ACLWDNBC', 'I_ACLWDNT', 'I_ACLWDNTC', 'I_ACLWUPB', 'I_ACLWUPBC', 'I_ACLWUPT', 'I_ACLWUPTC', 'I_ACSWDNB', 'I_ACSWDNBC', 'I_ACSWDNT', 'I_ACSWDNTC', 'I_ACSWUPB', 'I_ACSWUPBC', 'I_ACSWUPT', 'I_ACSWUPTC', 'LAI', 'LH', 'LWDNB', 'LWDNBC', 'LWDNT', 'LWDNTC', 'LWUPB', 'LWUPBC', 'LWUPT', 'LWUPTC', 'MLCAPE', 'MLCINH', 'MLLCL', 'MU', 'MUCAPE', 'MUCINH', 'O3RAD', 'OLR', 'P', 'PBLH', 'PREC_ACC_NC', 'PSFC', 'PWAT', 'P_HYD', 'Q2', 'QCLOUD', 'QFX', 'QGRAUP', 'QICE', 'QNICE', 'QNRAIN', 'QRAIN', 'QRFS', 'QSLAT', 'QSNOW', 'QSPRINGS', 'QVAPOR', 'RAINNCV', 'RECH', 'REFL_10CM', 'REFL_1KM_AGL', 'REFL_COM', 'SBCAPE', 'SBCINH', 'SBLCL', 'SEAICE', 'SH2O', 'SMCWTD', 'SMOIS', 'SNICE', 'SNLIQ', 'SNOW', 'SNOWC', 'SNOWENERGY', 'SNOWH', 'SNOW_ACC_NC', 'SOILENERGY', 'SR', 'SRH01', 'SRH03', 'SST', 'SSTSK', 'SWDNB', 'SWDNBC', 'SWDNT', 'SWDNTC', 'SWDOWN', 'SWNORM', 'SWUPB', 'SWUPBC', 'SWUPT', 'SWUPTC', 'T2', 'TD2', 'TG', 'TH2', 'TK', 'TRAD', 'TSK', 'TSLB', 'TSNO', 'TV', 'U', 'U10', 'USHR1', 'USHR6', 'UST', 'U_BUNK', 'V', 'V10', 'VSHR1', 'VSHR6', 'V_BUNK', 'W', 'Z', 'ZSNSO', 'ZWT', 'totalIce', 'totalLiq', 'totalVap']
+[2025-10-30 11:07:06] Selecting time range for 1988-02-20
+[2025-10-30 11:07:30]   VERBOSE: Time slice selected. Found 24 time steps.
+[2025-10-30 11:07:30] Found 24 hourly records for 1988-02-20
+[2025-10-30 11:07:30] Selected 9 variables: T2, Q2, TD2, PSFC, ACRAINLSM, LAI, U10, V10, Z
+[2025-10-30 11:07:30] Aggregating to daily data for 1988-02-20
+[2025-10-30 11:07:30]   VERBOSE: Aggregating variable: T2
+[2025-10-30 11:07:30]   VERBOSE:   Averaging T2 (intensive)...
+[2025-10-30 11:07:30]   VERBOSE:   Expanding dims for T2...
+[2025-10-30 11:07:30]   VERBOSE:   Finished T2
+[2025-10-30 11:07:30]   VERBOSE: Aggregating variable: Q2
+[2025-10-30 11:07:30]   VERBOSE:   Averaging Q2 (intensive)...
+[2025-10-30 11:07:30]   VERBOSE:   Expanding dims for Q2...
+[2025-10-30 11:07:30]   VERBOSE:   Finished Q2
+[2025-10-30 11:07:30]   VERBOSE: Aggregating variable: TD2
+[2025-10-30 11:07:30]   VERBOSE:   Averaging TD2 (intensive)...
+[2025-10-30 11:07:30]   VERBOSE:   Expanding dims for TD2...
+[2025-10-30 11:07:30]   VERBOSE:   Finished TD2
+[2025-10-30 11:07:30]   VERBOSE: Aggregating variable: PSFC
+[2025-10-30 11:07:30]   VERBOSE:   Averaging PSFC (intensive)...
+[2025-10-30 11:07:30]   VERBOSE:   Expanding dims for PSFC...
+[2025-10-30 11:07:30]   VERBOSE:   Finished PSFC
+[2025-10-30 11:07:30]   VERBOSE: Aggregating variable: ACRAINLSM
+[2025-10-30 11:07:30]   VERBOSE:   Summing ACRAINLSM (extensive)...
+[2025-10-30 11:07:30]   VERBOSE:   Expanding dims for ACRAINLSM...
+[2025-10-30 11:07:30]   VERBOSE:   Finished ACRAINLSM
+[2025-10-30 11:07:30]   VERBOSE: Aggregating variable: LAI
+[2025-10-30 11:07:30]   VERBOSE:   Averaging LAI (intensive)...
+[2025-10-30 11:07:30]   VERBOSE:   Expanding dims for LAI...
+[2025-10-30 11:07:30]   VERBOSE:   Finished LAI
+[2025-10-30 11:07:30]   VERBOSE: Aggregating variable: U10
+[2025-10-30 11:07:30]   VERBOSE:   Averaging U10 (intensive)...
+[2025-10-30 11:07:30]   VERBOSE:   Expanding dims for U10...
+[2025-10-30 11:07:30]   VERBOSE:   Finished U10
+[2025-10-30 11:07:30]   VERBOSE: Aggregating variable: V10
+[2025-10-30 11:07:30]   VERBOSE:   Averaging V10 (intensive)...
+[2025-10-30 11:07:30]   VERBOSE:   Expanding dims for V10...
+[2025-10-30 11:07:30]   VERBOSE:   Finished V10
+[2025-10-30 11:07:30]   VERBOSE: Aggregating variable: Z
+[2025-10-30 11:07:30]   VERBOSE:   Averaging Z (intensive)...
+[2025-10-30 11:07:30]   VERBOSE:   Expanding dims for Z...
+[2025-10-30 11:07:30]   VERBOSE:   Finished Z
+[2025-10-30 11:07:30]   VERBOSE: Creating final aggregated xr.Dataset
+[2025-10-30 11:07:30] Computing derived variables
+[2025-10-30 11:07:30]   VERBOSE: Checking derived variable: W
+[2025-10-30 11:07:30]   VERBOSE:   Computing W from ('U10', 'V10')
+[2025-10-30 11:07:30]   VERBOSE: Closing source Zarr dataset.
+[2025-10-30 11:07:30] Memory after aggregation (before save): RSS=3991.2MB, System=24.1%
+[2025-10-30 11:07:30] Saving daily aggregate to data/unprocessed/daily/conus404_daily_19880220.nc
+[2025-10-30 11:07:30]   VERBOSE: Calling agg_ds.compute().to_netcdf('data/unprocessed/daily/conus404_daily_19880220.nc')...
+[2025-10-30 11:08:02] ERROR: Failed to save final NetCDF file. Exception: Server failed to authenticate the request. Make sure the value of Authorization header is formed correctly including the signature.
+RequestId:2402cdd5-401e-0069-19ae-49b0f7000000
+Time:2025-10-30T15:08:02.0716201Z
+ErrorCode:AuthenticationFailed
+authenticationerrordetail:Signature not valid in the specified time frame: Start [Wed, 29 Oct 2025 14:21:27 GMT] - Expiry [Thu, 30 Oct 2025 15:06:27 GMT] - Current [Thu, 30 Oct 2025 15:08:02 GMT]
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthenticationFailed</Code><Message>Server failed to authenticate the request. Make sure the value of Authorization header is formed correctly including the signature.
+RequestId:2402cdd5-401e-0069-19ae-49b0f7000000
+Time:2025-10-30T15:08:02.0716201Z</Message><AuthenticationErrorDetail>Signature not valid in the specified time frame: Start [Wed, 29 Oct 2025 14:21:27 GMT] - Expiry [Thu, 30 Oct 2025 15:06:27 GMT] - Current [Thu, 30 Oct 2025 15:08:02 GMT]</AuthenticationErrorDetail></Error>
+[2025-10-30 11:08:02] CRITICAL: Logged failure to failed_jobs/1988-02-20.json
+[2025-10-30 11:08:02] FAILED: Download unsuccessful (see errors above and failure log)
+Traceback (most recent call last):
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 666, in _exitfunc
+    f()
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/fsspec/asyn.py", line 76, in sync
+    raise RuntimeError("Loop is not running")
+RuntimeError: Loop is not running
+Traceback (most recent call last):
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 666, in _exitfunc
+    f()
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/fsspec/asyn.py", line 76, in sync
+    raise RuntimeError("Loop is not running")
+RuntimeError: Loop is not running

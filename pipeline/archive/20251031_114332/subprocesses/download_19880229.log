@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/gpfsm/dnb33/hpmille1/pipeline/src/single_download.py", line 7, in <module>
+    import xarray as xr
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/__init__.py", line 1, in <module>
+    from importlib.metadata import version as _version
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/importlib/metadata/__init__.py", line 19, in <module>
+    from . import _adapters, _meta
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/importlib/metadata/_adapters.py", line 5, in <module>
+    import email.message
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/email/message.py", line 15, in <module>
+    from email import utils
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/email/utils.py", line 28, in <module>
+    import random
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1124, in get_code
+  File "<frozen importlib._bootstrap_external>", line 753, in _compile_bytecode
+KeyboardInterrupt

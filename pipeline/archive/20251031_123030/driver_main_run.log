@@ -1,0 +1,291 @@
+Starting CONUS404 download driver at 2025-10-31 12:19:31.388109
+[2025-10-31 12:19:31] ================================================================================
+[2025-10-31 12:19:31] CONUS404 Download Driver Starting
+[2025-10-31 12:19:31] ================================================================================
+[2025-10-31 12:19:31] Cleared old failure log: data/failed_jobs.json
+[2025-10-31 12:19:31] Date range: 1988-02-03 to 1988-02-15
+[2025-10-31 12:19:31] Max concurrent processes: 5
+[2025-10-31 12:19:31] Log file: logs/driver_20251031_121931.log
+[2025-10-31 12:19:31] Memory Stats - Initial: Available=289913.4MB/385074.9MB (24.7% used)
+[2025-10-31 12:19:31] Total dates to process: 13
+[2025-10-31 12:19:31] ================================================================================
+[2025-10-31 12:19:31] Starting download processes
+[2025-10-31 12:19:31] ================================================================================
+[2025-10-31 12:19:31] Launching download 1/13: 1988-02-03
+[2025-10-31 12:19:31] Launched subprocess PID 6249 for 1988-02-03 (log: logs/subprocesses/download_19880203.log)
+[2025-10-31 12:19:31] Active subprocesses: 1
+[2025-10-31 12:19:31]   PID 6249: 1988-02-03 | Runtime: 0.0s | Memory: 0.0MB | Status: running
+[2025-10-31 12:19:31] Launching download 2/13: 1988-02-04
+[2025-10-31 12:19:31] Launched subprocess PID 6250 for 1988-02-04 (log: logs/subprocesses/download_19880204.log)
+[2025-10-31 12:19:31] Active subprocesses: 2
+[2025-10-31 12:19:31]   PID 6249: 1988-02-03 | Runtime: 0.0s | Memory: 1.6MB | Status: running
+[2025-10-31 12:19:31]   PID 6250: 1988-02-04 | Runtime: 0.0s | Memory: 0.3MB | Status: running
+[2025-10-31 12:19:31] Launching download 3/13: 1988-02-05
+[2025-10-31 12:19:31] Launched subprocess PID 6251 for 1988-02-05 (log: logs/subprocesses/download_19880205.log)
+[2025-10-31 12:19:31] Active subprocesses: 3
+[2025-10-31 12:19:31]   PID 6249: 1988-02-03 | Runtime: 0.0s | Memory: 2.6MB | Status: running
+[2025-10-31 12:19:31]   PID 6250: 1988-02-04 | Runtime: 0.0s | Memory: 2.0MB | Status: running
+[2025-10-31 12:19:31]   PID 6251: 1988-02-05 | Runtime: 0.0s | Memory: 0.4MB | Status: running
+[2025-10-31 12:19:31] Launching download 4/13: 1988-02-06
+[2025-10-31 12:19:31] Launched subprocess PID 6252 for 1988-02-06 (log: logs/subprocesses/download_19880206.log)
+[2025-10-31 12:19:31] Active subprocesses: 4
+[2025-10-31 12:19:31]   PID 6249: 1988-02-03 | Runtime: 0.0s | Memory: 3.6MB | Status: running
+[2025-10-31 12:19:31]   PID 6250: 1988-02-04 | Runtime: 0.0s | Memory: 3.2MB | Status: running
+[2025-10-31 12:19:31]   PID 6251: 1988-02-05 | Runtime: 0.0s | Memory: 1.9MB | Status: running
+[2025-10-31 12:19:31]   PID 6252: 1988-02-06 | Runtime: 0.0s | Memory: 0.5MB | Status: running
+[2025-10-31 12:19:31] Launching download 5/13: 1988-02-07
+[2025-10-31 12:19:31] Launched subprocess PID 6253 for 1988-02-07 (log: logs/subprocesses/download_19880207.log)
+[2025-10-31 12:19:31] Active subprocesses: 5
+[2025-10-31 12:19:31]   PID 6249: 1988-02-03 | Runtime: 0.0s | Memory: 5.1MB | Status: running
+[2025-10-31 12:19:31]   PID 6250: 1988-02-04 | Runtime: 0.0s | Memory: 4.8MB | Status: running
+[2025-10-31 12:19:31]   PID 6251: 1988-02-05 | Runtime: 0.0s | Memory: 3.2MB | Status: running
+[2025-10-31 12:19:31]   PID 6252: 1988-02-06 | Runtime: 0.0s | Memory: 2.5MB | Status: running
+[2025-10-31 12:19:31]   PID 6253: 1988-02-07 | Runtime: 0.0s | Memory: 0.5MB | Status: running
+[2025-10-31 12:20:01] Memory Stats - Periodic check: Available=280876.9MB/385074.9MB (27.1% used)
+[2025-10-31 12:20:01] Active subprocesses: 5
+[2025-10-31 12:20:01]   PID 6249: 1988-02-03 | Runtime: 30.1s | Memory: 1854.0MB | Status: running
+[2025-10-31 12:20:01]   PID 6250: 1988-02-04 | Runtime: 30.1s | Memory: 1813.9MB | Status: running
+[2025-10-31 12:20:01]   PID 6251: 1988-02-05 | Runtime: 30.1s | Memory: 1921.9MB | Status: running
+[2025-10-31 12:20:01]   PID 6252: 1988-02-06 | Runtime: 30.1s | Memory: 1891.4MB | Status: running
+[2025-10-31 12:20:01]   PID 6253: 1988-02-07 | Runtime: 30.0s | Memory: 1848.6MB | Status: running
+[2025-10-31 12:20:01] Progress: 0 completed, 0 failed, 5 active, 8 pending | Elapsed: 30.1s
+[2025-10-31 12:20:31] Memory Stats - Periodic check: Available=269477.6MB/385074.9MB (30.0% used)
+[2025-10-31 12:20:31] Active subprocesses: 5
+[2025-10-31 12:20:31]   PID 6249: 1988-02-03 | Runtime: 60.1s | Memory: 4148.4MB | Status: running
+[2025-10-31 12:20:31]   PID 6250: 1988-02-04 | Runtime: 60.1s | Memory: 4102.9MB | Status: running
+[2025-10-31 12:20:31]   PID 6251: 1988-02-05 | Runtime: 60.1s | Memory: 4150.1MB | Status: running
+[2025-10-31 12:20:31]   PID 6252: 1988-02-06 | Runtime: 60.1s | Memory: 4143.9MB | Status: running
+[2025-10-31 12:20:31]   PID 6253: 1988-02-07 | Runtime: 60.1s | Memory: 4145.6MB | Status: running
+[2025-10-31 12:20:31] Progress: 0 completed, 0 failed, 5 active, 8 pending | Elapsed: 60.1s
+[2025-10-31 12:21:01] Memory Stats - Periodic check: Available=269510.9MB/385074.9MB (30.0% used)
+[2025-10-31 12:21:01] Active subprocesses: 5
+[2025-10-31 12:21:01]   PID 6249: 1988-02-03 | Runtime: 90.1s | Memory: 3977.6MB | Status: running
+[2025-10-31 12:21:01]   PID 6250: 1988-02-04 | Runtime: 90.1s | Memory: 4111.4MB | Status: running
+[2025-10-31 12:21:01]   PID 6251: 1988-02-05 | Runtime: 90.1s | Memory: 4095.8MB | Status: running
+[2025-10-31 12:21:01]   PID 6252: 1988-02-06 | Runtime: 90.1s | Memory: 4201.6MB | Status: running
+[2025-10-31 12:21:01]   PID 6253: 1988-02-07 | Runtime: 90.1s | Memory: 4161.9MB | Status: running
+[2025-10-31 12:21:01] Progress: 0 completed, 0 failed, 5 active, 8 pending | Elapsed: 90.1s
+[2025-10-31 12:21:31] Memory Stats - Periodic check: Available=256434.8MB/385074.9MB (33.4% used)
+[2025-10-31 12:21:31] Active subprocesses: 5
+[2025-10-31 12:21:31]   PID 6249: 1988-02-03 | Runtime: 120.1s | Memory: 6671.0MB | Status: running
+[2025-10-31 12:21:31]   PID 6250: 1988-02-04 | Runtime: 120.1s | Memory: 6729.0MB | Status: running
+[2025-10-31 12:21:31]   PID 6251: 1988-02-05 | Runtime: 120.1s | Memory: 6702.7MB | Status: running
+[2025-10-31 12:21:31]   PID 6252: 1988-02-06 | Runtime: 120.1s | Memory: 6731.1MB | Status: running
+[2025-10-31 12:21:31]   PID 6253: 1988-02-07 | Runtime: 120.1s | Memory: 6732.9MB | Status: running
+[2025-10-31 12:21:31] Progress: 0 completed, 0 failed, 5 active, 8 pending | Elapsed: 120.1s
+[2025-10-31 12:22:01] Memory Stats - Periodic check: Available=257473.3MB/385074.9MB (33.1% used)
+[2025-10-31 12:22:01] Active subprocesses: 5
+[2025-10-31 12:22:01]   PID 6249: 1988-02-03 | Runtime: 150.2s | Memory: 6338.7MB | Status: sleeping
+[2025-10-31 12:22:01]   PID 6250: 1988-02-04 | Runtime: 150.1s | Memory: 6614.2MB | Status: sleeping
+[2025-10-31 12:22:01]   PID 6251: 1988-02-05 | Runtime: 150.1s | Memory: 6727.7MB | Status: sleeping
+[2025-10-31 12:22:01]   PID 6252: 1988-02-06 | Runtime: 150.1s | Memory: 6656.1MB | Status: sleeping
+[2025-10-31 12:22:01]   PID 6253: 1988-02-07 | Runtime: 150.1s | Memory: 6478.9MB | Status: sleeping
+[2025-10-31 12:22:01] Progress: 0 completed, 0 failed, 5 active, 8 pending | Elapsed: 150.2s
+[2025-10-31 12:22:31] Memory Stats - Periodic check: Available=255653.6MB/385074.9MB (33.6% used)
+[2025-10-31 12:22:31] Active subprocesses: 5
+[2025-10-31 12:22:31]   PID 6249: 1988-02-03 | Runtime: 180.2s | Memory: 6885.6MB | Status: sleeping
+[2025-10-31 12:22:31]   PID 6250: 1988-02-04 | Runtime: 180.2s | Memory: 7008.0MB | Status: sleeping
+[2025-10-31 12:22:31]   PID 6251: 1988-02-05 | Runtime: 180.2s | Memory: 7024.4MB | Status: sleeping
+[2025-10-31 12:22:31]   PID 6252: 1988-02-06 | Runtime: 180.2s | Memory: 7154.0MB | Status: sleeping
+[2025-10-31 12:22:31]   PID 6253: 1988-02-07 | Runtime: 180.2s | Memory: 6717.4MB | Status: sleeping
+[2025-10-31 12:22:31] Progress: 0 completed, 0 failed, 5 active, 8 pending | Elapsed: 180.2s
+[2025-10-31 12:23:01] Memory Stats - Periodic check: Available=253961.2MB/385074.9MB (34.0% used)
+[2025-10-31 12:23:01] Active subprocesses: 5
+[2025-10-31 12:23:01]   PID 6249: 1988-02-03 | Runtime: 210.3s | Memory: 7204.9MB | Status: sleeping
+[2025-10-31 12:23:01]   PID 6250: 1988-02-04 | Runtime: 210.3s | Memory: 7159.1MB | Status: sleeping
+[2025-10-31 12:23:01]   PID 6251: 1988-02-05 | Runtime: 210.3s | Memory: 7335.4MB | Status: sleeping
+[2025-10-31 12:23:01]   PID 6252: 1988-02-06 | Runtime: 210.2s | Memory: 7184.6MB | Status: sleeping
+[2025-10-31 12:23:01]   PID 6253: 1988-02-07 | Runtime: 210.2s | Memory: 7025.0MB | Status: sleeping
+[2025-10-31 12:23:01] Progress: 0 completed, 0 failed, 5 active, 8 pending | Elapsed: 210.3s
+[2025-10-31 12:23:31] Memory Stats - Periodic check: Available=252926.1MB/385074.9MB (34.3% used)
+[2025-10-31 12:23:31] Active subprocesses: 5
+[2025-10-31 12:23:31]   PID 6249: 1988-02-03 | Runtime: 240.3s | Memory: 7330.7MB | Status: sleeping
+[2025-10-31 12:23:31]   PID 6250: 1988-02-04 | Runtime: 240.3s | Memory: 7572.0MB | Status: sleeping
+[2025-10-31 12:23:31]   PID 6251: 1988-02-05 | Runtime: 240.3s | Memory: 7571.0MB | Status: sleeping
+[2025-10-31 12:23:31]   PID 6252: 1988-02-06 | Runtime: 240.3s | Memory: 6998.6MB | Status: sleeping
+[2025-10-31 12:23:31]   PID 6253: 1988-02-07 | Runtime: 240.3s | Memory: 7341.7MB | Status: running
+[2025-10-31 12:23:31] Progress: 0 completed, 0 failed, 5 active, 8 pending | Elapsed: 240.3s
+[2025-10-31 12:23:56] FAILED: PID 6252 failed for 1988-02-06 (exit code 1) after 265.4s
+[2025-10-31 12:23:56]   -> Successfully logged failure to data/failed_jobs.json
+[2025-10-31 12:23:56] Launching download 6/13: 1988-02-08
+[2025-10-31 12:23:56] Launched subprocess PID 10434 for 1988-02-08 (log: logs/subprocesses/download_19880208.log)
+[2025-10-31 12:23:56] Active subprocesses: 5
+[2025-10-31 12:23:56]   PID 6249: 1988-02-03 | Runtime: 265.4s | Memory: 7779.2MB | Status: sleeping
+[2025-10-31 12:23:56]   PID 6250: 1988-02-04 | Runtime: 265.4s | Memory: 5632.3MB | Status: running
+[2025-10-31 12:23:56]   PID 6251: 1988-02-05 | Runtime: 265.4s | Memory: 7371.0MB | Status: sleeping
+[2025-10-31 12:23:56]   PID 6253: 1988-02-07 | Runtime: 265.4s | Memory: 7054.9MB | Status: running
+[2025-10-31 12:23:56]   PID 10434: 1988-02-08 | Runtime: 0.0s | Memory: 1.3MB | Status: running
+[2025-10-31 12:24:00] FAILED: PID 6250 failed for 1988-02-04 (exit code 1) after 269.4s
+[2025-10-31 12:24:00]   -> Successfully logged failure to data/failed_jobs.json
+[2025-10-31 12:24:00] Launching download 7/13: 1988-02-09
+[2025-10-31 12:24:00] Launched subprocess PID 10449 for 1988-02-09 (log: logs/subprocesses/download_19880209.log)
+[2025-10-31 12:24:00] Active subprocesses: 5
+[2025-10-31 12:24:00]   PID 6249: 1988-02-03 | Runtime: 269.4s | Memory: 7368.0MB | Status: running
+[2025-10-31 12:24:00]   PID 6251: 1988-02-05 | Runtime: 269.4s | Memory: 5778.4MB | Status: running
+[2025-10-31 12:24:00]   PID 6253: 1988-02-07 | Runtime: 269.4s | Memory: 5234.4MB | Status: running
+[2025-10-31 12:24:00]   PID 10434: 1988-02-08 | Runtime: 4.0s | Memory: 113.6MB | Status: sleeping
+[2025-10-31 12:24:00]   PID 10449: 1988-02-09 | Runtime: 0.0s | Memory: 1.3MB | Status: running
+[2025-10-31 12:24:01] Memory Stats - Periodic check: Available=272588.0MB/385074.9MB (29.2% used)
+[2025-10-31 12:24:01] Active subprocesses: 5
+[2025-10-31 12:24:01]   PID 6249: 1988-02-03 | Runtime: 270.4s | Memory: 7201.4MB | Status: sleeping
+[2025-10-31 12:24:01]   PID 6251: 1988-02-05 | Runtime: 270.4s | Memory: 5330.4MB | Status: running
+[2025-10-31 12:24:01]   PID 6253: 1988-02-07 | Runtime: 270.4s | Memory: 4787.4MB | Status: running
+[2025-10-31 12:24:01]   PID 10434: 1988-02-08 | Runtime: 5.0s | Memory: 136.5MB | Status: sleeping
+[2025-10-31 12:24:01]   PID 10449: 1988-02-09 | Runtime: 1.0s | Memory: 62.7MB | Status: running
+[2025-10-31 12:24:01] Progress: 0 completed, 2 failed, 5 active, 6 pending | Elapsed: 270.4s
+[2025-10-31 12:24:03] FAILED: PID 6253 failed for 1988-02-07 (exit code 1) after 272.4s
+[2025-10-31 12:24:03]   -> Successfully logged failure to data/failed_jobs.json
+[2025-10-31 12:24:03] Launching download 8/13: 1988-02-10
+[2025-10-31 12:24:03] Launched subprocess PID 10463 for 1988-02-10 (log: logs/subprocesses/download_19880210.log)
+[2025-10-31 12:24:03] Active subprocesses: 5
+[2025-10-31 12:24:03]   PID 6249: 1988-02-03 | Runtime: 272.4s | Memory: 7345.6MB | Status: sleeping
+[2025-10-31 12:24:03]   PID 6251: 1988-02-05 | Runtime: 272.4s | Memory: 4235.5MB | Status: running
+[2025-10-31 12:24:03]   PID 10434: 1988-02-08 | Runtime: 7.0s | Memory: 240.2MB | Status: running
+[2025-10-31 12:24:03]   PID 10449: 1988-02-09 | Runtime: 3.0s | Memory: 99.5MB | Status: running
+[2025-10-31 12:24:03]   PID 10463: 1988-02-10 | Runtime: 0.0s | Memory: 0.5MB | Status: running
+[2025-10-31 12:24:04] FAILED: PID 6251 failed for 1988-02-05 (exit code 1) after 273.4s
+[2025-10-31 12:24:04]   -> Successfully logged failure to data/failed_jobs.json
+[2025-10-31 12:24:04] Launching download 9/13: 1988-02-11
+[2025-10-31 12:24:04] Launched subprocess PID 10466 for 1988-02-11 (log: logs/subprocesses/download_19880211.log)
+[2025-10-31 12:24:04] Active subprocesses: 5
+[2025-10-31 12:24:04]   PID 6249: 1988-02-03 | Runtime: 273.4s | Memory: 6996.5MB | Status: running
+[2025-10-31 12:24:04]   PID 10434: 1988-02-08 | Runtime: 8.0s | Memory: 308.7MB | Status: running
+[2025-10-31 12:24:04]   PID 10449: 1988-02-09 | Runtime: 4.0s | Memory: 131.0MB | Status: running
+[2025-10-31 12:24:04]   PID 10463: 1988-02-10 | Runtime: 1.0s | Memory: 68.6MB | Status: running
+[2025-10-31 12:24:04]   PID 10466: 1988-02-11 | Runtime: 0.0s | Memory: 1.3MB | Status: running
+[2025-10-31 12:24:10] FAILED: PID 6249 failed for 1988-02-03 (exit code 1) after 279.4s
+[2025-10-31 12:24:10]   -> Successfully logged failure to data/failed_jobs.json
+[2025-10-31 12:24:10] Launching download 10/13: 1988-02-12
+[2025-10-31 12:24:10] Launched subprocess PID 10499 for 1988-02-12 (log: logs/subprocesses/download_19880212.log)
+[2025-10-31 12:24:10] Active subprocesses: 5
+[2025-10-31 12:24:10]   PID 10434: 1988-02-08 | Runtime: 14.0s | Memory: 735.4MB | Status: running
+[2025-10-31 12:24:10]   PID 10449: 1988-02-09 | Runtime: 10.0s | Memory: 550.5MB | Status: running
+[2025-10-31 12:24:10]   PID 10463: 1988-02-10 | Runtime: 7.0s | Memory: 343.1MB | Status: running
+[2025-10-31 12:24:10]   PID 10466: 1988-02-11 | Runtime: 6.0s | Memory: 290.6MB | Status: running
+[2025-10-31 12:24:10]   PID 10499: 1988-02-12 | Runtime: 0.0s | Memory: 0.5MB | Status: running
+[2025-10-31 12:24:31] Memory Stats - Periodic check: Available=281103.3MB/385074.9MB (27.0% used)
+[2025-10-31 12:24:31] Active subprocesses: 5
+[2025-10-31 12:24:31]   PID 10434: 1988-02-08 | Runtime: 35.0s | Memory: 2109.1MB | Status: running
+[2025-10-31 12:24:31]   PID 10449: 1988-02-09 | Runtime: 31.0s | Memory: 1953.8MB | Status: running
+[2025-10-31 12:24:31]   PID 10463: 1988-02-10 | Runtime: 28.0s | Memory: 1778.1MB | Status: running
+[2025-10-31 12:24:31]   PID 10466: 1988-02-11 | Runtime: 27.0s | Memory: 1717.3MB | Status: running
+[2025-10-31 12:24:31]   PID 10499: 1988-02-12 | Runtime: 21.0s | Memory: 1259.0MB | Status: running
+[2025-10-31 12:24:31] Progress: 0 completed, 5 failed, 5 active, 3 pending | Elapsed: 300.4s
+[2025-10-31 12:25:01] Memory Stats - Periodic check: Available=270518.6MB/385074.9MB (29.7% used)
+[2025-10-31 12:25:01] Active subprocesses: 5
+[2025-10-31 12:25:01]   PID 10434: 1988-02-08 | Runtime: 65.0s | Memory: 4148.4MB | Status: running
+[2025-10-31 12:25:01]   PID 10449: 1988-02-09 | Runtime: 61.0s | Memory: 4142.1MB | Status: running
+[2025-10-31 12:25:01]   PID 10463: 1988-02-10 | Runtime: 58.0s | Memory: 3929.2MB | Status: running
+[2025-10-31 12:25:01]   PID 10466: 1988-02-11 | Runtime: 57.0s | Memory: 3908.2MB | Status: running
+[2025-10-31 12:25:01]   PID 10499: 1988-02-12 | Runtime: 51.0s | Memory: 3264.8MB | Status: running
+[2025-10-31 12:25:01] Progress: 0 completed, 5 failed, 5 active, 3 pending | Elapsed: 330.4s
+[2025-10-31 12:25:31] Memory Stats - Periodic check: Available=268675.5MB/385074.9MB (30.2% used)
+[2025-10-31 12:25:31] Active subprocesses: 5
+[2025-10-31 12:25:31]   PID 10434: 1988-02-08 | Runtime: 95.1s | Memory: 4750.6MB | Status: running
+[2025-10-31 12:25:31]   PID 10449: 1988-02-09 | Runtime: 91.1s | Memory: 4199.5MB | Status: running
+[2025-10-31 12:25:31]   PID 10463: 1988-02-10 | Runtime: 88.1s | Memory: 4001.2MB | Status: running
+[2025-10-31 12:25:31]   PID 10466: 1988-02-11 | Runtime: 87.1s | Memory: 4005.6MB | Status: running
+[2025-10-31 12:25:31]   PID 10499: 1988-02-12 | Runtime: 81.1s | Memory: 4141.7MB | Status: running
+[2025-10-31 12:25:31] Progress: 0 completed, 5 failed, 5 active, 3 pending | Elapsed: 360.5s
+[2025-10-31 12:26:01] Memory Stats - Periodic check: Available=256264.2MB/385074.9MB (33.5% used)
+[2025-10-31 12:26:01] Active subprocesses: 5
+[2025-10-31 12:26:01]   PID 10434: 1988-02-08 | Runtime: 125.1s | Memory: 6732.6MB | Status: running
+[2025-10-31 12:26:01]   PID 10449: 1988-02-09 | Runtime: 121.1s | Memory: 6731.0MB | Status: running
+[2025-10-31 12:26:01]   PID 10463: 1988-02-10 | Runtime: 118.1s | Memory: 6731.6MB | Status: running
+[2025-10-31 12:26:01]   PID 10466: 1988-02-11 | Runtime: 117.1s | Memory: 6731.1MB | Status: running
+[2025-10-31 12:26:01]   PID 10499: 1988-02-12 | Runtime: 111.1s | Memory: 6730.6MB | Status: running
+[2025-10-31 12:26:01] Progress: 0 completed, 5 failed, 5 active, 3 pending | Elapsed: 390.5s
+[2025-10-31 12:26:31] Memory Stats - Periodic check: Available=258564.7MB/385074.9MB (32.9% used)
+[2025-10-31 12:26:31] Active subprocesses: 5
+[2025-10-31 12:26:31]   PID 10434: 1988-02-08 | Runtime: 155.2s | Memory: 6774.4MB | Status: sleeping
+[2025-10-31 12:26:31]   PID 10449: 1988-02-09 | Runtime: 151.2s | Memory: 6685.0MB | Status: sleeping
+[2025-10-31 12:26:31]   PID 10463: 1988-02-10 | Runtime: 148.2s | Memory: 5911.6MB | Status: sleeping
+[2025-10-31 12:26:31]   PID 10466: 1988-02-11 | Runtime: 147.2s | Memory: 6733.4MB | Status: sleeping
+[2025-10-31 12:26:31]   PID 10499: 1988-02-12 | Runtime: 141.2s | Memory: 6271.2MB | Status: sleeping
+[2025-10-31 12:26:31] Progress: 0 completed, 5 failed, 5 active, 3 pending | Elapsed: 420.6s
+[2025-10-31 12:27:01] Memory Stats - Periodic check: Available=255788.3MB/385074.9MB (33.6% used)
+[2025-10-31 12:27:01] Active subprocesses: 5
+[2025-10-31 12:27:01]   PID 10434: 1988-02-08 | Runtime: 185.2s | Memory: 7262.1MB | Status: sleeping
+[2025-10-31 12:27:01]   PID 10449: 1988-02-09 | Runtime: 181.2s | Memory: 7002.0MB | Status: sleeping
+[2025-10-31 12:27:01]   PID 10463: 1988-02-10 | Runtime: 178.2s | Memory: 6487.3MB | Status: sleeping
+[2025-10-31 12:27:01]   PID 10466: 1988-02-11 | Runtime: 177.2s | Memory: 7087.4MB | Status: sleeping
+[2025-10-31 12:27:01]   PID 10499: 1988-02-12 | Runtime: 171.2s | Memory: 6814.7MB | Status: sleeping
+[2025-10-31 12:27:01] Progress: 0 completed, 5 failed, 5 active, 3 pending | Elapsed: 450.6s
+[2025-10-31 12:27:31] Memory Stats - Periodic check: Available=254187.5MB/385074.9MB (34.0% used)
+[2025-10-31 12:27:31] Active subprocesses: 5
+[2025-10-31 12:27:31]   PID 10434: 1988-02-08 | Runtime: 215.2s | Memory: 7596.6MB | Status: sleeping
+[2025-10-31 12:27:31]   PID 10449: 1988-02-09 | Runtime: 211.2s | Memory: 7307.3MB | Status: sleeping
+[2025-10-31 12:27:31]   PID 10463: 1988-02-10 | Runtime: 208.2s | Memory: 6670.8MB | Status: sleeping
+[2025-10-31 12:27:31]   PID 10466: 1988-02-11 | Runtime: 207.2s | Memory: 7356.9MB | Status: sleeping
+[2025-10-31 12:27:31]   PID 10499: 1988-02-12 | Runtime: 201.2s | Memory: 7033.1MB | Status: sleeping
+[2025-10-31 12:27:31] Progress: 0 completed, 5 failed, 5 active, 3 pending | Elapsed: 480.6s
+[2025-10-31 12:28:02] Memory Stats - Periodic check: Available=252864.3MB/385074.9MB (34.3% used)
+[2025-10-31 12:28:02] Active subprocesses: 5
+[2025-10-31 12:28:02]   PID 10434: 1988-02-08 | Runtime: 245.3s | Memory: 7477.4MB | Status: sleeping
+[2025-10-31 12:28:02]   PID 10449: 1988-02-09 | Runtime: 241.3s | Memory: 7561.1MB | Status: sleeping
+[2025-10-31 12:28:02]   PID 10463: 1988-02-10 | Runtime: 238.3s | Memory: 6948.5MB | Status: sleeping
+[2025-10-31 12:28:02]   PID 10466: 1988-02-11 | Runtime: 237.3s | Memory: 7586.1MB | Status: sleeping
+[2025-10-31 12:28:02]   PID 10499: 1988-02-12 | Runtime: 231.3s | Memory: 7309.2MB | Status: sleeping
+[2025-10-31 12:28:02] Progress: 0 completed, 5 failed, 5 active, 3 pending | Elapsed: 510.7s
+[2025-10-31 12:28:17] FAILED: PID 10434 failed for 1988-02-08 (exit code 1) after 260.3s
+[2025-10-31 12:28:17]   -> Successfully logged failure to data/failed_jobs.json
+[2025-10-31 12:28:17] Launching download 11/13: 1988-02-13
+[2025-10-31 12:28:17] Launched subprocess PID 15356 for 1988-02-13 (log: logs/subprocesses/download_19880213.log)
+[2025-10-31 12:28:17] Active subprocesses: 5
+[2025-10-31 12:28:17]   PID 10449: 1988-02-09 | Runtime: 256.3s | Memory: 7375.7MB | Status: sleeping
+[2025-10-31 12:28:17]   PID 10463: 1988-02-10 | Runtime: 253.3s | Memory: 6757.6MB | Status: sleeping
+[2025-10-31 12:28:17]   PID 10466: 1988-02-11 | Runtime: 252.3s | Memory: 7290.9MB | Status: sleeping
+[2025-10-31 12:28:17]   PID 10499: 1988-02-12 | Runtime: 246.3s | Memory: 7380.0MB | Status: running
+[2025-10-31 12:28:17]   PID 15356: 1988-02-13 | Runtime: 0.0s | Memory: 1.4MB | Status: running
+[2025-10-31 12:28:29] FAILED: PID 10449 failed for 1988-02-09 (exit code 1) after 268.3s
+[2025-10-31 12:28:29]   -> Successfully logged failure to data/failed_jobs.json
+[2025-10-31 12:28:29] FAILED: PID 10463 failed for 1988-02-10 (exit code 1) after 265.3s
+[2025-10-31 12:28:29]   -> Successfully logged failure to data/failed_jobs.json
+[2025-10-31 12:28:29] FAILED: PID 10466 failed for 1988-02-11 (exit code 1) after 264.3s
+[2025-10-31 12:28:29]   -> Successfully logged failure to data/failed_jobs.json
+[2025-10-31 12:28:29] Launching download 12/13: 1988-02-14
+[2025-10-31 12:28:29] Launched subprocess PID 15408 for 1988-02-14 (log: logs/subprocesses/download_19880214.log)
+[2025-10-31 12:28:29] Active subprocesses: 3
+[2025-10-31 12:28:29]   PID 10499: 1988-02-12 | Runtime: 258.3s | Memory: 7406.9MB | Status: sleeping
+[2025-10-31 12:28:29]   PID 15356: 1988-02-13 | Runtime: 12.0s | Memory: 412.2MB | Status: running
+[2025-10-31 12:28:29]   PID 15408: 1988-02-14 | Runtime: 0.0s | Memory: 0.5MB | Status: running
+[2025-10-31 12:28:29] Launching download 13/13: 1988-02-15
+[2025-10-31 12:28:29] Launched subprocess PID 15409 for 1988-02-15 (log: logs/subprocesses/download_19880215.log)
+[2025-10-31 12:28:29] Active subprocesses: 4
+[2025-10-31 12:28:29]   PID 10499: 1988-02-12 | Runtime: 258.3s | Memory: 7406.9MB | Status: running
+[2025-10-31 12:28:29]   PID 15356: 1988-02-13 | Runtime: 12.0s | Memory: 412.2MB | Status: running
+[2025-10-31 12:28:29]   PID 15408: 1988-02-14 | Runtime: 0.0s | Memory: 2.5MB | Status: running
+[2025-10-31 12:28:29]   PID 15409: 1988-02-15 | Runtime: 0.0s | Memory: 0.5MB | Status: running
+[2025-10-31 12:28:32] Memory Stats - Periodic check: Available=284545.0MB/385074.9MB (26.1% used)
+[2025-10-31 12:28:32] Active subprocesses: 4
+[2025-10-31 12:28:32]   PID 10499: 1988-02-12 | Runtime: 261.3s | Memory: 5022.5MB | Status: running
+[2025-10-31 12:28:32]   PID 15356: 1988-02-13 | Runtime: 15.0s | Memory: 732.1MB | Status: running
+[2025-10-31 12:28:32]   PID 15408: 1988-02-14 | Runtime: 3.0s | Memory: 99.2MB | Status: running
+[2025-10-31 12:28:32]   PID 15409: 1988-02-15 | Runtime: 3.0s | Memory: 102.0MB | Status: running
+[2025-10-31 12:28:32] Progress: 0 completed, 9 failed, 4 active, 0 pending | Elapsed: 540.7s
+[2025-10-31 12:28:34] FAILED: PID 10499 failed for 1988-02-12 (exit code 1) after 263.3s
+[2025-10-31 12:28:34]   -> Successfully logged failure to data/failed_jobs.json
+[2025-10-31 12:29:02] Memory Stats - Periodic check: Available=279590.4MB/385074.9MB (27.4% used)
+[2025-10-31 12:29:02] Active subprocesses: 3
+[2025-10-31 12:29:02]   PID 15356: 1988-02-13 | Runtime: 45.0s | Memory: 4151.4MB | Status: running
+[2025-10-31 12:29:02]   PID 15408: 1988-02-14 | Runtime: 33.0s | Memory: 3287.4MB | Status: running
+[2025-10-31 12:29:02]   PID 15409: 1988-02-15 | Runtime: 33.0s | Memory: 3307.7MB | Status: running
+[2025-10-31 12:29:02] Progress: 0 completed, 10 failed, 3 active, 0 pending | Elapsed: 570.7s
+[2025-10-31 12:29:32] Memory Stats - Periodic check: Available=272090.7MB/385074.9MB (29.3% used)
+[2025-10-31 12:29:32] Active subprocesses: 3
+[2025-10-31 12:29:32]   PID 15356: 1988-02-13 | Runtime: 75.0s | Memory: 6731.5MB | Status: running
+[2025-10-31 12:29:32]   PID 15408: 1988-02-14 | Runtime: 63.0s | Memory: 5768.4MB | Status: running
+[2025-10-31 12:29:32]   PID 15409: 1988-02-15 | Runtime: 63.0s | Memory: 5793.4MB | Status: running
+[2025-10-31 12:29:32] Progress: 0 completed, 10 failed, 3 active, 0 pending | Elapsed: 600.7s
+[2025-10-31 12:30:02] Memory Stats - Periodic check: Available=270290.5MB/385074.9MB (29.8% used)
+[2025-10-31 12:30:02] Active subprocesses: 3
+[2025-10-31 12:30:02]   PID 15356: 1988-02-13 | Runtime: 105.1s | Memory: 6858.1MB | Status: sleeping
+[2025-10-31 12:30:02]   PID 15408: 1988-02-14 | Runtime: 93.1s | Memory: 6726.6MB | Status: sleeping
+[2025-10-31 12:30:02]   PID 15409: 1988-02-15 | Runtime: 93.1s | Memory: 6631.6MB | Status: sleeping
+[2025-10-31 12:30:02] Progress: 0 completed, 10 failed, 3 active, 0 pending | Elapsed: 630.7s
+[2025-10-31 12:30:32] Memory Stats - Periodic check: Available=268240.4MB/385074.9MB (30.3% used)
+[2025-10-31 12:30:32] Active subprocesses: 3
+[2025-10-31 12:30:32]   PID 15356: 1988-02-13 | Runtime: 135.1s | Memory: 7416.7MB | Status: running
+[2025-10-31 12:30:32]   PID 15408: 1988-02-14 | Runtime: 123.1s | Memory: 7190.6MB | Status: sleeping
+[2025-10-31 12:30:32]   PID 15409: 1988-02-15 | Runtime: 123.1s | Memory: 7311.6MB | Status: sleeping
+[2025-10-31 12:30:32] Progress: 0 completed, 10 failed, 3 active, 0 pending | Elapsed: 660.8s

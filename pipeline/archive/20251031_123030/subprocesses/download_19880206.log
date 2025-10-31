@@ -1,0 +1,29 @@
+[2025-10-31 12:19:32] Starting process for 1988-02-06 (PID: 6252)
+[2025-10-31 12:19:32] DOWNLOAD START: 1988-02-06
+[2025-10-31 12:19:32] Fetching fresh STAC token from Planetary Computer...
+[2025-10-31 12:19:34] Opening Zarr dataset...
+[2025-10-31 12:20:58] Found 24 hourly records.
+[2025-10-31 12:20:59] Saving daily aggregate to data/unprocessed/daily/conus404_daily_19880206.nc
+[2025-10-31 12:23:45] DOWNLOAD COMPLETE: 1988-02-06
+[2025-10-31 12:23:45] VALIDATION START: data/unprocessed/daily/conus404_daily_19880206.nc
+[2025-10-31 12:23:46]   QC FAIL: LAI min value -999841663821612745218903699395444736.000000 is below threshold -1
+[2025-10-31 12:23:46] FAILED: File data/unprocessed/daily/conus404_daily_19880206.nc was created but FAILED validation.
+[2025-10-31 12:23:46] Cleaned up corrupt file: data/unprocessed/daily/conus404_daily_19880206.nc
+Traceback (most recent call last):
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 666, in _exitfunc
+    f()
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/fsspec/asyn.py", line 76, in sync
+    raise RuntimeError("Loop is not running")
+RuntimeError: Loop is not running
+Traceback (most recent call last):
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 666, in _exitfunc
+    f()
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/fsspec/asyn.py", line 76, in sync
+    raise RuntimeError("Loop is not running")
+RuntimeError: Loop is not running

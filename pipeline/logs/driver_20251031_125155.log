@@ -1,0 +1,107 @@
+[2025-10-31 12:51:55] ================================================================================
+[2025-10-31 12:51:55] CONUS404 Download Driver Starting
+[2025-10-31 12:51:55] ================================================================================
+[2025-10-31 12:51:55] Cleared old failure log: data/failed_jobs.json
+[2025-10-31 12:51:55] Date range: 1988-02-03 to 1988-02-05
+[2025-10-31 12:51:55] Max concurrent processes: 5
+[2025-10-31 12:51:55] Log file: logs/driver_20251031_125155.log
+[2025-10-31 12:51:55] Memory Stats - Initial: Available=276442.1MB/385074.9MB (28.2% used)
+[2025-10-31 12:51:55] Total dates to process: 3
+[2025-10-31 12:51:55] ================================================================================
+[2025-10-31 12:51:55] Starting download processes
+[2025-10-31 12:51:55] ================================================================================
+[2025-10-31 12:51:55] Launching download 1/3: 1988-02-03
+[2025-10-31 12:51:55] Launched subprocess PID 28789 for 1988-02-03 (log: logs/subprocesses/download_19880203.log)
+[2025-10-31 12:51:55] Active subprocesses: 1
+[2025-10-31 12:51:55]   PID 28789: 1988-02-03 | Runtime: 0.0s | Memory: 0.0MB | Status: running
+[2025-10-31 12:51:55] Launching download 2/3: 1988-02-04
+[2025-10-31 12:51:55] Launched subprocess PID 28790 for 1988-02-04 (log: logs/subprocesses/download_19880204.log)
+[2025-10-31 12:51:55] Active subprocesses: 2
+[2025-10-31 12:51:55]   PID 28789: 1988-02-03 | Runtime: 0.0s | Memory: 1.8MB | Status: running
+[2025-10-31 12:51:55]   PID 28790: 1988-02-04 | Runtime: 0.0s | Memory: 0.3MB | Status: running
+[2025-10-31 12:51:55] Launching download 3/3: 1988-02-05
+[2025-10-31 12:51:55] Launched subprocess PID 28791 for 1988-02-05 (log: logs/subprocesses/download_19880205.log)
+[2025-10-31 12:51:55] Active subprocesses: 3
+[2025-10-31 12:51:55]   PID 28789: 1988-02-03 | Runtime: 0.0s | Memory: 3.0MB | Status: running
+[2025-10-31 12:51:55]   PID 28790: 1988-02-04 | Runtime: 0.0s | Memory: 2.0MB | Status: running
+[2025-10-31 12:51:55]   PID 28791: 1988-02-05 | Runtime: 0.0s | Memory: 0.3MB | Status: running
+[2025-10-31 12:52:25] Memory Stats - Periodic check: Available=273433.1MB/385074.9MB (29.0% used)
+[2025-10-31 12:52:25] Active subprocesses: 3
+[2025-10-31 12:52:25]   PID 28789: 1988-02-03 | Runtime: 30.1s | Memory: 1019.8MB | Status: running
+[2025-10-31 12:52:25]   PID 28790: 1988-02-04 | Runtime: 30.1s | Memory: 1014.0MB | Status: running
+[2025-10-31 12:52:25]   PID 28791: 1988-02-05 | Runtime: 30.1s | Memory: 1019.7MB | Status: running
+[2025-10-31 12:52:25] Progress: 0 completed, 0 failed, 3 active, 0 pending | Elapsed: 30.1s
+[2025-10-31 12:52:55] Memory Stats - Periodic check: Available=277954.9MB/385074.9MB (27.8% used)
+[2025-10-31 12:52:55] Active subprocesses: 3
+[2025-10-31 12:52:55]   PID 28789: 1988-02-03 | Runtime: 60.1s | Memory: 2363.7MB | Status: running
+[2025-10-31 12:52:55]   PID 28790: 1988-02-04 | Runtime: 60.1s | Memory: 2334.4MB | Status: running
+[2025-10-31 12:52:55]   PID 28791: 1988-02-05 | Runtime: 60.1s | Memory: 2340.3MB | Status: running
+[2025-10-31 12:52:55] Progress: 0 completed, 0 failed, 3 active, 0 pending | Elapsed: 60.1s
+[2025-10-31 12:53:25] Memory Stats - Periodic check: Available=267040.9MB/385074.9MB (30.7% used)
+[2025-10-31 12:53:25] Active subprocesses: 3
+[2025-10-31 12:53:25]   PID 28789: 1988-02-03 | Runtime: 90.1s | Memory: 4136.6MB | Status: running
+[2025-10-31 12:53:25]   PID 28790: 1988-02-04 | Runtime: 90.1s | Memory: 4148.7MB | Status: running
+[2025-10-31 12:53:25]   PID 28791: 1988-02-05 | Runtime: 90.1s | Memory: 4143.4MB | Status: running
+[2025-10-31 12:53:25] Progress: 0 completed, 0 failed, 3 active, 0 pending | Elapsed: 90.1s
+[2025-10-31 12:53:55] Memory Stats - Periodic check: Available=265500.2MB/385074.9MB (31.1% used)
+[2025-10-31 12:53:55] Active subprocesses: 3
+[2025-10-31 12:53:55]   PID 28789: 1988-02-03 | Runtime: 120.1s | Memory: 4127.2MB | Status: running
+[2025-10-31 12:53:55]   PID 28790: 1988-02-04 | Runtime: 120.1s | Memory: 4126.9MB | Status: running
+[2025-10-31 12:53:55]   PID 28791: 1988-02-05 | Runtime: 120.1s | Memory: 4142.7MB | Status: running
+[2025-10-31 12:53:55] Progress: 0 completed, 0 failed, 3 active, 0 pending | Elapsed: 120.1s
+[2025-10-31 12:54:25] Memory Stats - Periodic check: Available=257982.1MB/385074.9MB (33.0% used)
+[2025-10-31 12:54:25] Active subprocesses: 3
+[2025-10-31 12:54:25]   PID 28789: 1988-02-03 | Runtime: 150.1s | Memory: 7172.9MB | Status: running
+[2025-10-31 12:54:25]   PID 28790: 1988-02-04 | Runtime: 150.1s | Memory: 6701.1MB | Status: running
+[2025-10-31 12:54:25]   PID 28791: 1988-02-05 | Runtime: 150.1s | Memory: 6705.3MB | Status: running
+[2025-10-31 12:54:25] Progress: 0 completed, 0 failed, 3 active, 0 pending | Elapsed: 150.1s
+[2025-10-31 12:54:55] Memory Stats - Periodic check: Available=257572.7MB/385074.9MB (33.1% used)
+[2025-10-31 12:54:55] Active subprocesses: 3
+[2025-10-31 12:54:55]   PID 28789: 1988-02-03 | Runtime: 180.2s | Memory: 6449.5MB | Status: sleeping
+[2025-10-31 12:54:55]   PID 28790: 1988-02-04 | Runtime: 180.2s | Memory: 6287.5MB | Status: sleeping
+[2025-10-31 12:54:55]   PID 28791: 1988-02-05 | Runtime: 180.2s | Memory: 5850.8MB | Status: sleeping
+[2025-10-31 12:54:55] Progress: 0 completed, 0 failed, 3 active, 0 pending | Elapsed: 180.2s
+[2025-10-31 12:55:25] Memory Stats - Periodic check: Available=255708.2MB/385074.9MB (33.6% used)
+[2025-10-31 12:55:25] Active subprocesses: 3
+[2025-10-31 12:55:25]   PID 28789: 1988-02-03 | Runtime: 210.2s | Memory: 6822.3MB | Status: sleeping
+[2025-10-31 12:55:25]   PID 28790: 1988-02-04 | Runtime: 210.2s | Memory: 6860.2MB | Status: sleeping
+[2025-10-31 12:55:25]   PID 28791: 1988-02-05 | Runtime: 210.2s | Memory: 6271.1MB | Status: sleeping
+[2025-10-31 12:55:25] Progress: 0 completed, 0 failed, 3 active, 0 pending | Elapsed: 210.2s
+[2025-10-31 12:55:55] Memory Stats - Periodic check: Available=251665.4MB/385074.9MB (34.6% used)
+[2025-10-31 12:55:55] Active subprocesses: 3
+[2025-10-31 12:55:55]   PID 28789: 1988-02-03 | Runtime: 240.2s | Memory: 7143.9MB | Status: sleeping
+[2025-10-31 12:55:55]   PID 28790: 1988-02-04 | Runtime: 240.2s | Memory: 7026.3MB | Status: sleeping
+[2025-10-31 12:55:55]   PID 28791: 1988-02-05 | Runtime: 240.2s | Memory: 6595.3MB | Status: sleeping
+[2025-10-31 12:55:55] Progress: 0 completed, 0 failed, 3 active, 0 pending | Elapsed: 240.2s
+[2025-10-31 12:56:25] Memory Stats - Periodic check: Available=255949.5MB/385074.9MB (33.5% used)
+[2025-10-31 12:56:25] Active subprocesses: 3
+[2025-10-31 12:56:25]   PID 28789: 1988-02-03 | Runtime: 270.3s | Memory: 7383.4MB | Status: running
+[2025-10-31 12:56:25]   PID 28790: 1988-02-04 | Runtime: 270.3s | Memory: 7281.8MB | Status: sleeping
+[2025-10-31 12:56:25]   PID 28791: 1988-02-05 | Runtime: 270.3s | Memory: 6852.4MB | Status: sleeping
+[2025-10-31 12:56:25] Progress: 0 completed, 0 failed, 3 active, 0 pending | Elapsed: 270.3s
+[2025-10-31 12:56:55] Memory Stats - Periodic check: Available=258735.4MB/385074.9MB (32.8% used)
+[2025-10-31 12:56:55] Active subprocesses: 3
+[2025-10-31 12:56:55]   PID 28789: 1988-02-03 | Runtime: 300.3s | Memory: 6823.9MB | Status: sleeping
+[2025-10-31 12:56:55]   PID 28790: 1988-02-04 | Runtime: 300.3s | Memory: 7004.9MB | Status: sleeping
+[2025-10-31 12:56:55]   PID 28791: 1988-02-05 | Runtime: 300.3s | Memory: 3885.1MB | Status: running
+[2025-10-31 12:56:55] Progress: 0 completed, 0 failed, 3 active, 0 pending | Elapsed: 300.3s
+[2025-10-31 12:56:56] FAILED: PID 28791 failed for 1988-02-05 (exit code 1) after 301.3s
+[2025-10-31 12:56:56]   -> Successfully logged failure to data/failed_jobs.json
+[2025-10-31 12:57:06] FAILED: PID 28789 failed for 1988-02-03 (exit code 1) after 311.3s
+[2025-10-31 12:57:06]   -> Successfully logged failure to data/failed_jobs.json
+[2025-10-31 12:57:10] FAILED: PID 28790 failed for 1988-02-04 (exit code 1) after 315.3s
+[2025-10-31 12:57:10]   -> Successfully logged failure to data/failed_jobs.json
+[2025-10-31 12:57:11] ================================================================================
+[2025-10-31 12:57:11] Download Processing Complete
+[2025-10-31 12:57:11] ================================================================================
+[2025-10-31 12:57:11] Total runtime: 316.3s (5.3 minutes)
+[2025-10-31 12:57:11] Completed successfully: 0/3
+[2025-10-31 12:57:11] Failed: 3/3
+[2025-10-31 12:57:11] Failed dates: ['1988-02-05', '1988-02-03', '1988-02-04']
+[2025-10-31 12:57:11] ================================================================================
+[2025-10-31 12:57:11] STARTING AUTOMATIC RETRY PROCESS
+[2025-10-31 12:57:11] ================================================================================
+[2025-10-31 12:57:11] Launching retry script. Log will be in: logs/retry_driver_20251031_125711.log
+[2025-10-31 13:03:04] Retry script finished with exit code 1.
+[2025-10-31 13:03:04] Please check logs/retry_driver_20251031_125711.log for details.
+[2025-10-31 13:03:04] Memory Stats - Final: Available=281922.1MB/385074.9MB (26.8% used)

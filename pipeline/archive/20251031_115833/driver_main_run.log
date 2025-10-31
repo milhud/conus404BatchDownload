@@ -1,0 +1,131 @@
+Starting CONUS404 download driver at 2025-10-31 11:49:00.678869
+[2025-10-31 11:49:00] ================================================================================
+[2025-10-31 11:49:00] CONUS404 Download Driver Starting
+[2025-10-31 11:49:00] ================================================================================
+[2025-10-31 11:49:00] Cleared old failure log: data/failed_jobs.json
+[2025-10-31 11:49:00] Date range: 1988-02-03 to 1988-02-10
+[2025-10-31 11:49:00] Max concurrent processes: 5
+[2025-10-31 11:49:00] Log file: logs/driver_20251031_114900.log
+[2025-10-31 11:49:00] Memory Stats - Initial: Available=290122.4MB/385074.9MB (24.7% used)
+[2025-10-31 11:49:00] Total dates to process: 8
+[2025-10-31 11:49:00] ================================================================================
+[2025-10-31 11:49:00] Starting download processes
+[2025-10-31 11:49:00] ================================================================================
+[2025-10-31 11:49:00] Launching download 1/8: 1988-02-03
+[2025-10-31 11:49:00] Launched subprocess PID 41675 for 1988-02-03 (log: logs/subprocesses/download_19880203.log)
+[2025-10-31 11:49:00] Active subprocesses: 1
+[2025-10-31 11:49:00]   PID 41675: 1988-02-03 | Runtime: 0.0s | Memory: 0.0MB | Status: running
+[2025-10-31 11:49:00] Launching download 2/8: 1988-02-04
+[2025-10-31 11:49:00] Launched subprocess PID 41676 for 1988-02-04 (log: logs/subprocesses/download_19880204.log)
+[2025-10-31 11:49:00] Active subprocesses: 2
+[2025-10-31 11:49:00]   PID 41675: 1988-02-03 | Runtime: 0.0s | Memory: 2.2MB | Status: running
+[2025-10-31 11:49:00]   PID 41676: 1988-02-04 | Runtime: 0.0s | Memory: 0.0MB | Status: running
+[2025-10-31 11:49:00] Launching download 3/8: 1988-02-05
+[2025-10-31 11:49:00] Launched subprocess PID 41677 for 1988-02-05 (log: logs/subprocesses/download_19880205.log)
+[2025-10-31 11:49:00] Active subprocesses: 3
+[2025-10-31 11:49:00]   PID 41675: 1988-02-03 | Runtime: 0.0s | Memory: 3.5MB | Status: running
+[2025-10-31 11:49:00]   PID 41676: 1988-02-04 | Runtime: 0.0s | Memory: 2.1MB | Status: running
+[2025-10-31 11:49:00]   PID 41677: 1988-02-05 | Runtime: 0.0s | Memory: 0.5MB | Status: running
+[2025-10-31 11:49:00] Launching download 4/8: 1988-02-06
+[2025-10-31 11:49:00] Launched subprocess PID 41678 for 1988-02-06 (log: logs/subprocesses/download_19880206.log)
+[2025-10-31 11:49:00] Active subprocesses: 4
+[2025-10-31 11:49:00]   PID 41675: 1988-02-03 | Runtime: 0.0s | Memory: 4.9MB | Status: running
+[2025-10-31 11:49:00]   PID 41676: 1988-02-04 | Runtime: 0.0s | Memory: 3.4MB | Status: running
+[2025-10-31 11:49:00]   PID 41677: 1988-02-05 | Runtime: 0.0s | Memory: 2.3MB | Status: running
+[2025-10-31 11:49:00]   PID 41678: 1988-02-06 | Runtime: 0.0s | Memory: 0.5MB | Status: running
+[2025-10-31 11:49:00] Launching download 5/8: 1988-02-07
+[2025-10-31 11:49:00] Launched subprocess PID 41679 for 1988-02-07 (log: logs/subprocesses/download_19880207.log)
+[2025-10-31 11:49:00] Active subprocesses: 5
+[2025-10-31 11:49:00]   PID 41675: 1988-02-03 | Runtime: 0.0s | Memory: 6.1MB | Status: running
+[2025-10-31 11:49:00]   PID 41676: 1988-02-04 | Runtime: 0.0s | Memory: 4.9MB | Status: running
+[2025-10-31 11:49:00]   PID 41677: 1988-02-05 | Runtime: 0.0s | Memory: 4.5MB | Status: running
+[2025-10-31 11:49:00]   PID 41678: 1988-02-06 | Runtime: 0.0s | Memory: 2.5MB | Status: running
+[2025-10-31 11:49:00]   PID 41679: 1988-02-07 | Runtime: 0.0s | Memory: 0.5MB | Status: running
+[2025-10-31 11:49:19] FAILED: PID 41678 failed for 1988-02-06 (exit code -9) after 19.1s
+[2025-10-31 11:49:19]   -> Successfully logged failure to data/failed_jobs.json
+[2025-10-31 11:49:19] Launching download 6/8: 1988-02-08
+[2025-10-31 11:49:19] Launched subprocess PID 41762 for 1988-02-08 (log: logs/subprocesses/download_19880208.log)
+[2025-10-31 11:49:19] Active subprocesses: 5
+[2025-10-31 11:49:19]   PID 41675: 1988-02-03 | Runtime: 19.1s | Memory: 1131.8MB | Status: running
+[2025-10-31 11:49:19]   PID 41676: 1988-02-04 | Runtime: 19.1s | Memory: 1120.6MB | Status: running
+[2025-10-31 11:49:19]   PID 41677: 1988-02-05 | Runtime: 19.1s | Memory: 1126.4MB | Status: running
+[2025-10-31 11:49:19]   PID 41679: 1988-02-07 | Runtime: 19.1s | Memory: 1122.6MB | Status: running
+[2025-10-31 11:49:19]   PID 41762: 1988-02-08 | Runtime: 0.0s | Memory: 2.4MB | Status: running
+[2025-10-31 11:49:22] FAILED: PID 41679 failed for 1988-02-07 (exit code -9) after 22.1s
+[2025-10-31 11:49:22]   -> Successfully logged failure to data/failed_jobs.json
+[2025-10-31 11:49:22] Launching download 7/8: 1988-02-09
+[2025-10-31 11:49:22] Launched subprocess PID 41772 for 1988-02-09 (log: logs/subprocesses/download_19880209.log)
+[2025-10-31 11:49:22] Active subprocesses: 5
+[2025-10-31 11:49:22]   PID 41675: 1988-02-03 | Runtime: 22.1s | Memory: 1361.9MB | Status: running
+[2025-10-31 11:49:22]   PID 41676: 1988-02-04 | Runtime: 22.1s | Memory: 1345.7MB | Status: running
+[2025-10-31 11:49:22]   PID 41677: 1988-02-05 | Runtime: 22.1s | Memory: 1362.8MB | Status: running
+[2025-10-31 11:49:22]   PID 41762: 1988-02-08 | Runtime: 3.0s | Memory: 114.7MB | Status: running
+[2025-10-31 11:49:22]   PID 41772: 1988-02-09 | Runtime: 0.0s | Memory: 0.5MB | Status: running
+[2025-10-31 11:49:30] Memory Stats - Periodic check: Available=283396.6MB/385074.9MB (26.4% used)
+[2025-10-31 11:49:30] Active subprocesses: 5
+[2025-10-31 11:49:30]   PID 41675: 1988-02-03 | Runtime: 30.1s | Memory: 1915.5MB | Status: running
+[2025-10-31 11:49:30]   PID 41676: 1988-02-04 | Runtime: 30.1s | Memory: 1899.2MB | Status: running
+[2025-10-31 11:49:30]   PID 41677: 1988-02-05 | Runtime: 30.1s | Memory: 1904.7MB | Status: running
+[2025-10-31 11:49:30]   PID 41762: 1988-02-08 | Runtime: 11.0s | Memory: 635.9MB | Status: running
+[2025-10-31 11:49:30]   PID 41772: 1988-02-09 | Runtime: 8.0s | Memory: 375.9MB | Status: running
+[2025-10-31 11:49:30] Progress: 0 completed, 2 failed, 5 active, 1 pending | Elapsed: 30.1s
+[2025-10-31 11:49:47] FAILED: PID 41675 failed for 1988-02-03 (exit code -9) after 47.1s
+[2025-10-31 11:49:47]   -> Successfully logged failure to data/failed_jobs.json
+[2025-10-31 11:49:47] FAILED: PID 41676 failed for 1988-02-04 (exit code -9) after 47.1s
+[2025-10-31 11:49:47]   -> Successfully logged failure to data/failed_jobs.json
+[2025-10-31 11:49:47] Launching download 8/8: 1988-02-10
+[2025-10-31 11:49:47] Launched subprocess PID 41835 for 1988-02-10 (log: logs/subprocesses/download_19880210.log)
+[2025-10-31 11:49:47] Active subprocesses: 4
+[2025-10-31 11:49:47]   PID 41677: 1988-02-05 | Runtime: 47.1s | Memory: 2991.3MB | Status: running
+[2025-10-31 11:49:47]   PID 41762: 1988-02-08 | Runtime: 28.0s | Memory: 1766.8MB | Status: running
+[2025-10-31 11:49:47]   PID 41772: 1988-02-09 | Runtime: 25.0s | Memory: 1532.8MB | Status: running
+[2025-10-31 11:49:47]   PID 41835: 1988-02-10 | Runtime: 0.0s | Memory: 0.5MB | Status: running
+[2025-10-31 11:49:52] FAILED: PID 41677 failed for 1988-02-05 (exit code -9) after 52.1s
+[2025-10-31 11:49:52]   -> Successfully logged failure to data/failed_jobs.json
+[2025-10-31 11:50:00] Memory Stats - Periodic check: Available=283151.8MB/385074.9MB (26.5% used)
+[2025-10-31 11:50:00] Active subprocesses: 3
+[2025-10-31 11:50:00]   PID 41762: 1988-02-08 | Runtime: 41.0s | Memory: 3098.3MB | Status: running
+[2025-10-31 11:50:00]   PID 41772: 1988-02-09 | Runtime: 38.0s | Memory: 2867.0MB | Status: running
+[2025-10-31 11:50:00]   PID 41835: 1988-02-10 | Runtime: 13.0s | Memory: 1136.3MB | Status: running
+[2025-10-31 11:50:00] Progress: 0 completed, 5 failed, 3 active, 0 pending | Elapsed: 60.1s
+[2025-10-31 11:50:30] Memory Stats - Periodic check: Available=275490.5MB/385074.9MB (28.5% used)
+[2025-10-31 11:50:30] Active subprocesses: 3
+[2025-10-31 11:50:30]   PID 41762: 1988-02-08 | Runtime: 71.0s | Memory: 5427.4MB | Status: running
+[2025-10-31 11:50:30]   PID 41772: 1988-02-09 | Runtime: 68.0s | Memory: 4879.6MB | Status: running
+[2025-10-31 11:50:30]   PID 41835: 1988-02-10 | Runtime: 43.0s | Memory: 4142.6MB | Status: running
+[2025-10-31 11:50:30] Progress: 0 completed, 5 failed, 3 active, 0 pending | Elapsed: 90.1s
+[2025-10-31 11:51:00] Memory Stats - Periodic check: Available=270997.5MB/385074.9MB (29.6% used)
+[2025-10-31 11:51:00] Active subprocesses: 3
+[2025-10-31 11:51:00]   PID 41762: 1988-02-08 | Runtime: 101.1s | Memory: 6759.2MB | Status: sleeping
+[2025-10-31 11:51:00]   PID 41772: 1988-02-09 | Runtime: 98.1s | Memory: 6585.2MB | Status: sleeping
+[2025-10-31 11:51:00]   PID 41835: 1988-02-10 | Runtime: 73.1s | Memory: 6708.3MB | Status: running
+[2025-10-31 11:51:00] Progress: 0 completed, 5 failed, 3 active, 0 pending | Elapsed: 120.2s
+[2025-10-31 11:51:30] Memory Stats - Periodic check: Available=269147.1MB/385074.9MB (30.1% used)
+[2025-10-31 11:51:30] Active subprocesses: 3
+[2025-10-31 11:51:30]   PID 41762: 1988-02-08 | Runtime: 131.1s | Memory: 7355.2MB | Status: sleeping
+[2025-10-31 11:51:30]   PID 41772: 1988-02-09 | Runtime: 128.1s | Memory: 7244.1MB | Status: sleeping
+[2025-10-31 11:51:30]   PID 41835: 1988-02-10 | Runtime: 103.1s | Memory: 6665.3MB | Status: sleeping
+[2025-10-31 11:51:30] Progress: 0 completed, 5 failed, 3 active, 0 pending | Elapsed: 150.2s
+[2025-10-31 11:52:00] Memory Stats - Periodic check: Available=271739.1MB/385074.9MB (29.4% used)
+[2025-10-31 11:52:00] Active subprocesses: 3
+[2025-10-31 11:52:00]   PID 41762: 1988-02-08 | Runtime: 161.1s | Memory: 4522.9MB | Status: running
+[2025-10-31 11:52:00]   PID 41772: 1988-02-09 | Runtime: 158.1s | Memory: 7357.8MB | Status: sleeping
+[2025-10-31 11:52:00]   PID 41835: 1988-02-10 | Runtime: 133.1s | Memory: 7394.5MB | Status: sleeping
+[2025-10-31 11:52:00] Progress: 0 completed, 5 failed, 3 active, 0 pending | Elapsed: 180.2s
+[2025-10-31 11:52:01] FAILED: PID 41762 failed for 1988-02-08 (exit code 1) after 162.1s
+[2025-10-31 11:52:01]   -> Successfully logged failure to data/failed_jobs.json
+[2025-10-31 11:52:07] FAILED: PID 41772 failed for 1988-02-09 (exit code 1) after 165.1s
+[2025-10-31 11:52:07]   -> Successfully logged failure to data/failed_jobs.json
+[2025-10-31 11:52:13] FAILED: PID 41835 failed for 1988-02-10 (exit code 1) after 146.1s
+[2025-10-31 11:52:13]   -> Successfully logged failure to data/failed_jobs.json
+[2025-10-31 11:52:14] ================================================================================
+[2025-10-31 11:52:14] Download Processing Complete
+[2025-10-31 11:52:14] ================================================================================
+[2025-10-31 11:52:14] Total runtime: 194.2s (3.2 minutes)
+[2025-10-31 11:52:14] Completed successfully: 0/8
+[2025-10-31 11:52:14] Failed: 8/8
+[2025-10-31 11:52:14] Failed dates: ['1988-02-06', '1988-02-07', '1988-02-03', '1988-02-04', '1988-02-05', '1988-02-08', '1988-02-09', '1988-02-10']
+[2025-10-31 11:52:14] ================================================================================
+[2025-10-31 11:52:14] STARTING AUTOMATIC RETRY PROCESS
+[2025-10-31 11:52:14] ================================================================================
+[2025-10-31 11:52:14] Launching retry script. Log will be in: logs/retry_driver_20251031_115214.log

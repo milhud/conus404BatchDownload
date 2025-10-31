@@ -1,0 +1,29 @@
+Traceback (most recent call last):
+  File "/gpfsm/dnb33/hpmille1/pipeline/src/single_download.py", line 12, in <module>
+    import xarray as xr
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/__init__.py", line 3, in <module>
+    from xarray import coders, groupers, indexes, testing, tutorial, ufuncs
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/tutorial.py", line 18, in <module>
+    from xarray.backends.api import open_dataset as _open_dataset
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/backends/__init__.py", line 13, in <module>
+    from xarray.backends.h5netcdf_ import H5netcdfBackendEntrypoint, H5NetCDFStore
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/backends/h5netcdf_.py", line 30, in <module>
+    from xarray.backends.netCDF4_ import (
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/backends/netCDF4_.py", line 369, in <module>
+    @dataclass
+     ^^^^^^^^^
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/dataclasses.py", line 1275, in dataclass
+    return wrap(cls)
+           ^^^^^^^^^
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/dataclasses.py", line 1265, in wrap
+    return _process_class(cls, init, repr, eq, order, unsafe_hash,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/dataclasses.py", line 1092, in _process_class
+    _cmp_fn('__eq__', '==',
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/dataclasses.py", line 667, in _cmp_fn
+    return _create_fn(name,
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/dataclasses.py", line 473, in _create_fn
+    exec(txt, globals, ns)
+  File "<string>", line 0, in <module>
+KeyboardInterrupt

@@ -1,0 +1,6 @@
+[2025-10-31 12:28:30] Starting process for 1988-02-14 (PID: 15408)
+[2025-10-31 12:28:30] DOWNLOAD START: 1988-02-14
+[2025-10-31 12:28:30] Fetching fresh STAC token from Planetary Computer...
+[2025-10-31 12:28:31] Opening Zarr dataset...
+[2025-10-31 12:29:23] Found 24 hourly records.
+[2025-10-31 12:29:23] Saving daily aggregate to data/unprocessed/daily/conus404_daily_19880214.nc

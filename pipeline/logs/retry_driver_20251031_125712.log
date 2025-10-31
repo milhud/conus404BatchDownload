@@ -1,0 +1,62 @@
+[2025-10-31 12:57:12] ================================================================================
+[2025-10-31 12:57:12] Starting Concurrent Failed Job Retry Script
+[2025-10-31 12:57:12] Max concurrent processes: 2
+[2025-10-31 12:57:12] Reading failures from: data/failed_jobs.json
+[2025-10-31 12:57:12] Will write ultimate failures to: ultimate_failures.json
+[2025-10-31 12:57:12] ================================================================================
+[2025-10-31 12:57:12] Found 3 failed job(s) to retry.
+[2025-10-31 12:57:12] Loaded 3 unique dates to retry.
+[2025-10-31 12:57:12] Launching retry 1/3: 1988-02-05
+[2025-10-31 12:57:12] Launched RETRY subprocess PID 30591 for 1988-02-05 (log: logs/subprocesses_retry/download_19880205.log)
+[2025-10-31 12:57:12] Launching retry 2/3: 1988-02-03
+[2025-10-31 12:57:12] Launched RETRY subprocess PID 30592 for 1988-02-03 (log: logs/subprocesses_retry/download_19880203.log)
+[2025-10-31 12:57:42] Memory Stats - Periodic check: Available=275630.1MB/385074.9MB (28.4% used)
+[2025-10-31 12:57:42] Active retry subprocesses: 2
+[2025-10-31 12:57:42]   PID 30591: 1988-02-05 | Runtime: 30.0s | Memory: 2141.7MB | Status: running
+[2025-10-31 12:57:42]   PID 30592: 1988-02-03 | Runtime: 30.0s | Memory: 2107.5MB | Status: running
+[2025-10-31 12:58:12] Memory Stats - Periodic check: Available=267561.3MB/385074.9MB (30.5% used)
+[2025-10-31 12:58:12] Active retry subprocesses: 2
+[2025-10-31 12:58:12]   PID 30591: 1988-02-05 | Runtime: 60.0s | Memory: 4154.1MB | Status: running
+[2025-10-31 12:58:12]   PID 30592: 1988-02-03 | Runtime: 60.0s | Memory: 4152.7MB | Status: running
+[2025-10-31 12:58:42] Memory Stats - Periodic check: Available=271376.3MB/385074.9MB (29.5% used)
+[2025-10-31 12:58:42] Active retry subprocesses: 2
+[2025-10-31 12:58:42]   PID 30591: 1988-02-05 | Runtime: 90.1s | Memory: 4578.8MB | Status: running
+[2025-10-31 12:58:42]   PID 30592: 1988-02-03 | Runtime: 90.1s | Memory: 4676.7MB | Status: running
+[2025-10-31 12:59:12] Memory Stats - Periodic check: Available=269232.1MB/385074.9MB (30.1% used)
+[2025-10-31 12:59:12] Active retry subprocesses: 2
+[2025-10-31 12:59:12]   PID 30591: 1988-02-05 | Runtime: 120.1s | Memory: 4806.7MB | Status: sleeping
+[2025-10-31 12:59:12]   PID 30592: 1988-02-03 | Runtime: 120.1s | Memory: 6731.7MB | Status: running
+[2025-10-31 12:59:42] Memory Stats - Periodic check: Available=272592.5MB/385074.9MB (29.2% used)
+[2025-10-31 12:59:42] Active retry subprocesses: 2
+[2025-10-31 12:59:42]   PID 30591: 1988-02-05 | Runtime: 150.1s | Memory: 7120.3MB | Status: sleeping
+[2025-10-31 12:59:42]   PID 30592: 1988-02-03 | Runtime: 150.1s | Memory: 6862.5MB | Status: sleeping
+[2025-10-31 13:00:12] Memory Stats - Periodic check: Available=270315.1MB/385074.9MB (29.8% used)
+[2025-10-31 13:00:12] Active retry subprocesses: 2
+[2025-10-31 13:00:12]   PID 30591: 1988-02-05 | Runtime: 180.1s | Memory: 7640.9MB | Status: sleeping
+[2025-10-31 13:00:12]   PID 30592: 1988-02-03 | Runtime: 180.1s | Memory: 7570.0MB | Status: sleeping
+[2025-10-31 13:00:30] FAILED (RETRY): PID 30591 failed for 1988-02-05 (exit code 1)
+[2025-10-31 13:00:30] Launching retry 3/3: 1988-02-04
+[2025-10-31 13:00:30] Launched RETRY subprocess PID 42449 for 1988-02-04 (log: logs/subprocesses_retry/download_19880204.log)
+[2025-10-31 13:00:37] FAILED (RETRY): PID 30592 failed for 1988-02-03 (exit code 1)
+[2025-10-31 13:00:42] Memory Stats - Periodic check: Available=278217.5MB/385074.9MB (27.7% used)
+[2025-10-31 13:00:42] Active retry subprocesses: 1
+[2025-10-31 13:00:42]   PID 42449: 1988-02-04 | Runtime: 12.0s | Memory: 948.3MB | Status: running
+[2025-10-31 13:01:12] Memory Stats - Periodic check: Available=274793.9MB/385074.9MB (28.6% used)
+[2025-10-31 13:01:12] Active retry subprocesses: 1
+[2025-10-31 13:01:12]   PID 42449: 1988-02-04 | Runtime: 42.0s | Memory: 3698.0MB | Status: running
+[2025-10-31 13:01:42] Memory Stats - Periodic check: Available=278806.6MB/385074.9MB (27.6% used)
+[2025-10-31 13:01:42] Active retry subprocesses: 1
+[2025-10-31 13:01:42]   PID 42449: 1988-02-04 | Runtime: 72.1s | Memory: 4713.2MB | Status: running
+[2025-10-31 13:02:12] Memory Stats - Periodic check: Available=274154.8MB/385074.9MB (28.8% used)
+[2025-10-31 13:02:12] Active retry subprocesses: 1
+[2025-10-31 13:02:12]   PID 42449: 1988-02-04 | Runtime: 102.1s | Memory: 6413.1MB | Status: sleeping
+[2025-10-31 13:02:42] Memory Stats - Periodic check: Available=276355.8MB/385074.9MB (28.2% used)
+[2025-10-31 13:02:42] Active retry subprocesses: 1
+[2025-10-31 13:02:42]   PID 42449: 1988-02-04 | Runtime: 132.1s | Memory: 7402.5MB | Status: sleeping
+[2025-10-31 13:03:03] FAILED (RETRY): PID 42449 failed for 1988-02-04 (exit code 1)
+[2025-10-31 13:03:04] ================================================================================
+[2025-10-31 13:03:04] Retry Script Finished
+[2025-10-31 13:03:04] Successfully retried: 0/3
+[2025-10-31 13:03:04] Failed again: 3/3
+[2025-10-31 13:03:04] ================================================================================
+[2025-10-31 13:03:04] Wrote 3 ultimate failures to: ultimate_failures.json

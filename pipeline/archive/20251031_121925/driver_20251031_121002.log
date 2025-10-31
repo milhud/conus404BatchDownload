@@ -1,0 +1,41 @@
+[2025-10-31 12:18:51] FAILED: PID 3694 failed for 1988-02-08 (exit code 1) after 263.3s
+[2025-10-31 12:18:51]   -> Successfully logged failure to data/failed_jobs.json
+[2025-10-31 12:18:51] FAILED: PID 3696 failed for 1988-02-10 (exit code 1) after 259.3s
+[2025-10-31 12:18:51]   -> Successfully logged failure to data/failed_jobs.json
+[2025-10-31 12:18:51] Launching download 11/13: 1988-02-13
+[2025-10-31 12:18:51] Launched subprocess PID 5887 for 1988-02-13 (log: logs/subprocesses/download_19880213.log)
+[2025-10-31 12:18:51] Active subprocesses: 4
+[2025-10-31 12:18:51]   PID 3695: 1988-02-09 | Runtime: 260.3s | Memory: 6028.6MB | Status: running
+[2025-10-31 12:18:51]   PID 3707: 1988-02-11 | Runtime: 258.3s | Memory: 7427.8MB | Status: sleeping
+[2025-10-31 12:18:51]   PID 3738: 1988-02-12 | Runtime: 254.3s | Memory: 7666.0MB | Status: sleeping
+[2025-10-31 12:18:51]   PID 5887: 1988-02-13 | Runtime: 0.0s | Memory: 0.5MB | Status: running
+[2025-10-31 12:18:51] Launching download 12/13: 1988-02-14
+[2025-10-31 12:18:51] Launched subprocess PID 5888 for 1988-02-14 (log: logs/subprocesses/download_19880214.log)
+[2025-10-31 12:18:51] Active subprocesses: 5
+[2025-10-31 12:18:51]   PID 3695: 1988-02-09 | Runtime: 260.3s | Memory: 6027.6MB | Status: running
+[2025-10-31 12:18:51]   PID 3707: 1988-02-11 | Runtime: 258.3s | Memory: 7427.8MB | Status: sleeping
+[2025-10-31 12:18:51]   PID 3738: 1988-02-12 | Runtime: 254.3s | Memory: 7666.0MB | Status: sleeping
+[2025-10-31 12:18:51]   PID 5887: 1988-02-13 | Runtime: 0.0s | Memory: 2.9MB | Status: running
+[2025-10-31 12:18:51]   PID 5888: 1988-02-14 | Runtime: 0.0s | Memory: 0.5MB | Status: running
+[2025-10-31 12:18:55] FAILED: PID 3695 failed for 1988-02-09 (exit code 1) after 264.3s
+[2025-10-31 12:18:55]   -> Successfully logged failure to data/failed_jobs.json
+[2025-10-31 12:18:55] Launching download 13/13: 1988-02-15
+[2025-10-31 12:18:55] Launched subprocess PID 5905 for 1988-02-15 (log: logs/subprocesses/download_19880215.log)
+[2025-10-31 12:18:55] Active subprocesses: 5
+[2025-10-31 12:18:55]   PID 3707: 1988-02-11 | Runtime: 262.3s | Memory: 7153.6MB | Status: running
+[2025-10-31 12:18:55]   PID 3738: 1988-02-12 | Runtime: 258.3s | Memory: 7997.8MB | Status: sleeping
+[2025-10-31 12:18:55]   PID 5887: 1988-02-13 | Runtime: 4.0s | Memory: 106.4MB | Status: running
+[2025-10-31 12:18:55]   PID 5888: 1988-02-14 | Runtime: 4.0s | Memory: 101.4MB | Status: running
+[2025-10-31 12:18:55]   PID 5905: 1988-02-15 | Runtime: 0.0s | Memory: 1.5MB | Status: running
+[2025-10-31 12:19:03] Memory Stats - Periodic check: Available=281587.3MB/385074.9MB (26.9% used)
+[2025-10-31 12:19:03] Active subprocesses: 5
+[2025-10-31 12:19:03]   PID 3707: 1988-02-11 | Runtime: 270.3s | Memory: 0.0MB | Status: running
+[2025-10-31 12:19:03]   PID 3738: 1988-02-12 | Runtime: 266.3s | Memory: 7355.6MB | Status: sleeping
+[2025-10-31 12:19:03]   PID 5887: 1988-02-13 | Runtime: 12.0s | Memory: 429.7MB | Status: running
+[2025-10-31 12:19:03]   PID 5888: 1988-02-14 | Runtime: 12.0s | Memory: 429.7MB | Status: running
+[2025-10-31 12:19:03]   PID 5905: 1988-02-15 | Runtime: 8.0s | Memory: 244.4MB | Status: running
+[2025-10-31 12:19:03] Progress: 0 completed, 8 failed, 5 active, 0 pending | Elapsed: 540.6s
+[2025-10-31 12:19:04] FAILED: PID 3707 failed for 1988-02-11 (exit code 1) after 271.3s
+[2025-10-31 12:19:04]   -> Successfully logged failure to data/failed_jobs.json
+[2025-10-31 12:19:10] FAILED: PID 3738 failed for 1988-02-12 (exit code 1) after 273.3s
+[2025-10-31 12:19:10]   -> Successfully logged failure to data/failed_jobs.json

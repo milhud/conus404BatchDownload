@@ -1,0 +1,7 @@
+[2025-m-31 11:57:19] Starting process for 1988-02-09
+[2025-m-31 11:57:19] PID: 45539
+[2025-m-31 11:57:19] DOWNLOAD START: 1988-02-09
+[2025-m-31 11:57:19] Memory before download: RSS=93.1MB, System=26.3%
+[2025-m-31 11:57:19]   VERBOSE: Time range set: 1988-02-09 00:00:00 to 1988-02-09 23:59:59
+[2025-m-31 11:57:19]   VERBOSE: Fetching STAC catalog from Planetary Computer...
+[2025-m-31 11:57:19]   VERBOSE: Getting 'conus404' collection...

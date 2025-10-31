@@ -1,0 +1,61 @@
+[2025-10-31 11:40:24] Starting download process for 1988-02-14
+[2025-10-31 11:40:24] PID: 33687
+[2025-10-31 11:40:24] DOWNLOAD START: 1988-02-14
+[2025-10-31 11:40:24] Memory before download: RSS=92.9MB, System=24.7%
+[2025-10-31 11:40:24]   VERBOSE: Time range set: 1988-02-14 00:00:00 to 1988-02-14 23:59:59
+[2025-10-31 11:40:24]   VERBOSE: Fetching STAC catalog from Planetary Computer...
+[2025-10-31 11:40:25]   VERBOSE: Getting 'conus404' collection...
+[2025-10-31 11:40:25]   VERBOSE: Asset found. Getting storage options.
+[2025-10-31 11:40:25]   VERBOSE: Asset Href: az://noaa/conus404.zarr
+[2025-10-31 11:40:25]   VERBOSE: Creating fsspec mapper...
+[2025-10-31 11:40:30]   VERBOSE: Opening Zarr dataset...
+Traceback (most recent call last):
+  File "/gpfsm/dnb33/hpmille1/pipeline/src/single_download.py", line 252, in <module>
+    result = download_single_day(date=date)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/pipeline/src/single_download.py", line 110, in download_single_day
+    ds = get_signed_conus_dataset()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/pipeline/src/single_download.py", line 83, in get_signed_conus_dataset
+    ds = xr.open_zarr(mapper, **open_kwargs)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/backends/zarr.py", line 1586, in open_zarr
+    ds = open_dataset(
+         ^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/backends/api.py", line 602, in open_dataset
+    ds = _dataset_from_backend_dataset(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/backends/api.py", line 297, in _dataset_from_backend_dataset
+    ds = _chunk_ds(
+         ^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/backends/api.py", line 248, in _chunk_ds
+    variables[name] = _maybe_chunk(
+                      ^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/structure/chunks.py", line 141, in _maybe_chunk
+    token2 = tokenize(token or var._data, str(chunks))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/dask/tokenize.py", line 76, in tokenize
+    return _tokenize(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/dask/tokenize.py", line 39, in _tokenize
+    return hashlib.md5(str(token).encode(), usedforsecurity=False).hexdigest()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 666, in _exitfunc
+    f()
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/fsspec/asyn.py", line 76, in sync
+    raise RuntimeError("Loop is not running")
+RuntimeError: Loop is not running
+Traceback (most recent call last):
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 666, in _exitfunc
+    f()
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/fsspec/asyn.py", line 76, in sync
+    raise RuntimeError("Loop is not running")
+RuntimeError: Loop is not running

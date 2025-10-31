@@ -1,0 +1,101 @@
+[2025-10-31 11:43:11] Starting download process for 1988-02-27
+[2025-10-31 11:43:11] PID: 39544
+[2025-10-31 11:43:11] DOWNLOAD START: 1988-02-27
+[2025-10-31 11:43:11] Memory before download: RSS=77.5MB, System=34.0%
+[2025-10-31 11:43:11]   VERBOSE: Time range set: 1988-02-27 00:00:00 to 1988-02-27 23:59:59
+[2025-10-31 11:43:11]   VERBOSE: Fetching STAC catalog from Planetary Computer...
+[2025-10-31 11:43:12]   VERBOSE: Getting 'conus404' collection...
+[2025-10-31 11:43:13]   VERBOSE: Asset found. Getting storage options.
+[2025-10-31 11:43:13]   VERBOSE: Asset Href: az://noaa/conus404.zarr
+[2025-10-31 11:43:13]   VERBOSE: Creating fsspec mapper...
+[2025-10-31 11:43:16]   VERBOSE: Opening Zarr dataset...
+Traceback (most recent call last):
+  File "/gpfsm/dnb33/hpmille1/pipeline/src/single_download.py", line 252, in <module>
+    result = download_single_day(date=date)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/pipeline/src/single_download.py", line 110, in download_single_day
+    ds = get_signed_conus_dataset()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/pipeline/src/single_download.py", line 83, in get_signed_conus_dataset
+    ds = xr.open_zarr(mapper, **open_kwargs)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/backends/zarr.py", line 1586, in open_zarr
+    ds = open_dataset(
+         ^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/backends/api.py", line 596, in open_dataset
+    backend_ds = backend.open_dataset(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/backends/zarr.py", line 1677, in open_dataset
+    ds = store_entrypoint.open_dataset(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/backends/store.py", line 45, in open_dataset
+    vars, attrs, coord_names = conventions.decode_cf_variables(
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/conventions.py", line 412, in decode_cf_variables
+    new_vars[k] = decode_cf_variable(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/conventions.py", line 239, in decode_cf_variable
+    var = decode_times.decode(var, name=name)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/coding/times.py", line 1394, in decode
+    dtype = _decode_cf_datetime_dtype(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/coding/times.py", line 333, in _decode_cf_datetime_dtype
+    [to_numpy(first_n_items(values, 1)), to_numpy(last_item(values))]
+                                                  ^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/core/formatting.py", line 136, in last_item
+    return ravel(to_duck_array(array[indexer]))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/namedarray/pycompat.py", line 143, in to_duck_array
+    return data.get_duck_array()  # type: ignore[no-untyped-call, no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/core/indexing.py", line 664, in get_duck_array
+    return self.array.get_duck_array()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/core/indexing.py", line 737, in get_duck_array
+    array = self.array[self.key]
+            ~~~~~~~~~~^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/backends/zarr.py", line 262, in __getitem__
+    return indexing.explicit_indexing_adapter(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/core/indexing.py", line 1129, in explicit_indexing_adapter
+    result = raw_indexing_method(raw_key.tuple)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/backends/zarr.py", line 225, in _getitem
+    return self._array[key]
+           ~~~~~~~~~~~^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/zarr/core/array.py", line 2806, in __getitem__
+    return self.get_orthogonal_selection(pure_selection, fields=fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/zarr/core/array.py", line 3245, in get_orthogonal_selection
+    return sync(
+           ^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/zarr/core/sync.py", line 156, in sync
+    finished, unfinished = wait([future], return_when=asyncio.ALL_COMPLETED, timeout=timeout)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/concurrent/futures/_base.py", line 305, in wait
+    waiter.event.wait(timeout)
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 666, in _exitfunc
+    f()
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/fsspec/asyn.py", line 76, in sync
+    raise RuntimeError("Loop is not running")
+RuntimeError: Loop is not running
+Traceback (most recent call last):
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 666, in _exitfunc
+    f()
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/fsspec/asyn.py", line 76, in sync
+    raise RuntimeError("Loop is not running")
+RuntimeError: Loop is not running

@@ -1,0 +1,138 @@
+[2025-10-30 03:05:24] Starting download process for 1988-08-08
+[2025-10-30 03:05:24] PID: 30740
+[2025-10-30 03:05:24] DOWNLOAD START: 1988-08-08
+[2025-10-30 03:05:24] Memory before download: RSS=77.0MB, System=25.0%
+[2025-10-30 03:05:24]   VERBOSE: Time range set: 1988-08-08 00:00:00 to 1988-08-08 23:59:59
+[2025-10-30 03:05:24] Opening dataset for 1988-08-08
+[2025-10-30 03:05:24]   VERBOSE: Asset Href: az://noaa/conus404.zarr
+[2025-10-30 03:05:24]   VERBOSE: fsspec mapper created
+[2025-10-30 03:05:25] ERROR: Failed to open dataset. Exception: Server failed to authenticate the request. Make sure the value of Authorization header is formed correctly including the signature.
+RequestId:394407a6-c01e-0067-3e6b-499947000000
+Time:2025-10-30T07:05:25.8856569Z
+ErrorCode:AuthenticationFailed
+authenticationerrordetail:Signature not valid in the specified time frame: Start [Wed, 29 Oct 2025 06:18:06 GMT] - Expiry [Thu, 30 Oct 2025 07:03:06 GMT] - Current [Thu, 30 Oct 2025 07:05:25 GMT]
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthenticationFailed</Code><Message>Server failed to authenticate the request. Make sure the value of Authorization header is formed correctly including the signature.
+RequestId:394407a6-c01e-0067-3e6b-499947000000
+Time:2025-10-30T07:05:25.8856569Z</Message><AuthenticationErrorDetail>Signature not valid in the specified time frame: Start [Wed, 29 Oct 2025 06:18:06 GMT] - Expiry [Thu, 30 Oct 2025 07:03:06 GMT] - Current [Thu, 30 Oct 2025 07:05:25 GMT]</AuthenticationErrorDetail></Error>
+[2025-10-30 03:05:25] CRITICAL: Logged failure to failed_jobs/1988-08-08.json
+[2025-10-30 03:05:25] FAILED: Download unsuccessful (see errors above and failure log)
+Traceback (most recent call last):
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 666, in _exitfunc
+    f()
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/fsspec/asyn.py", line 76, in sync
+    raise RuntimeError("Loop is not running")
+RuntimeError: Loop is not running
+Traceback (most recent call last):
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 666, in _exitfunc
+    f()
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/fsspec/asyn.py", line 76, in sync
+    raise RuntimeError("Loop is not running")
+RuntimeError: Loop is not running
+Exception ignored in: <coroutine object StorePath.get at 0x7fbc54635fc0>
+Traceback (most recent call last):
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/zarr/storage/_common.py", line 168, in get
+    return await self.store.get(self.path, prototype=prototype, byte_range=byte_range)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/zarr/storage/_fsspec.py", line 299, in get
+    value = prototype.buffer.from_bytes(await self.fs._cat_file(path))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/adlfs/spec.py", line 1500, in _cat_file
+    stream = await bc.download_blob(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/core/tracing/decorator_async.py", line 119, in wrapper_use_tracer
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/storage/blob/aio/_blob_client_async.py", line 793, in download_blob
+    await downloader._setup()  # pylint: disable=protected-access
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/storage/blob/aio/_download_async.py", line 332, in _setup
+    self._response = await self._initial_request()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/storage/blob/aio/_download_async.py", line 367, in _initial_request
+    location_mode, response = cast(Tuple[Optional[str], Any], await self._clients.blob.download(
+                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/core/tracing/decorator_async.py", line 119, in wrapper_use_tracer
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/storage/blob/_generated/aio/operations/_blob_operations.py", line 205, in download
+    pipeline_response: PipelineResponse = await self._client._pipeline.run(  # pylint: disable=protected-access
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/core/pipeline/_base_async.py", line 229, in run
+    return await first_node.send(pipeline_request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/core/pipeline/_base_async.py", line 77, in send
+    response = await self.next.send(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/core/pipeline/_base_async.py", line 77, in send
+    response = await self.next.send(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/core/pipeline/_base_async.py", line 77, in send
+    response = await self.next.send(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [Previous line repeated 2 more times]
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/core/pipeline/policies/_redirect_async.py", line 76, in send
+    response = await self.next.send(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/core/pipeline/_base_async.py", line 77, in send
+    response = await self.next.send(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/storage/blob/_shared/policies_async.py", line 125, in send
+    response = await self.next.send(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/core/pipeline/_base_async.py", line 77, in send
+    response = await self.next.send(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/core/pipeline/_base_async.py", line 77, in send
+    response = await self.next.send(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/core/pipeline/_base_async.py", line 77, in send
+    response = await self.next.send(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/storage/blob/_shared/policies_async.py", line 77, in send
+    response = await self.next.send(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/core/pipeline/_base_async.py", line 77, in send
+    response = await self.next.send(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/core/pipeline/_base_async.py", line 77, in send
+    response = await self.next.send(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/core/pipeline/_base_async.py", line 111, in send
+    await self._sender.send(request.http_request, **request.context.options),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/storage/blob/_shared/base_client_async.py", line 253, in send
+    return await self._transport.send(request, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/azure/core/pipeline/transport/_aiohttp.py", line 346, in send
+    result = await self.session.request(  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/aiohttp/client.py", line 786, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/aiohttp/client.py", line 769, in _connect_and_send_request
+    conn.close()
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/aiohttp/connector.py", line 217, in close
+    self._connector._release(self._key, self._protocol, should_close=True)
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/aiohttp/connector.py", line 805, in _release
+    protocol.close()
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/aiohttp/client_proto.py", line 93, in close
+    transport.close()
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/asyncio/sslproto.py", line 116, in close
+    self._ssl_protocol._start_shutdown()
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/asyncio/sslproto.py", line 624, in _start_shutdown
+    self._shutdown_timeout_handle = self._loop.call_later(
+                                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/asyncio/base_events.py", line 761, in call_later
+    timer = self.call_at(self.time() + delay, callback, *args,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/asyncio/base_events.py", line 774, in call_at
+    self._check_closed()
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/asyncio/base_events.py", line 541, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed

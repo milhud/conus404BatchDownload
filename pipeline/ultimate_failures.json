@@ -1,0 +1,210 @@
+{
+    "1988-02-06": {
+        "date": "1988-02-06",
+        "variables_to_retry": [
+            "T2",
+            "Q2",
+            "TD2",
+            "PSFC",
+            "ACRAINLSM",
+            "LAI",
+            "U10",
+            "V10",
+            "Z"
+        ],
+        "error_message": "Retry failed with exit code -9",
+        "last_attempt": "2025-10-31T12:56:00.855150"
+    },
+    "1988-02-05": {
+        "date": "1988-02-05",
+        "variables_to_retry": [
+            "T2",
+            "Q2",
+            "TD2",
+            "PSFC",
+            "ACRAINLSM",
+            "LAI",
+            "U10",
+            "V10",
+            "Z"
+        ],
+        "error_message": "Retry failed with exit code -9",
+        "last_attempt": "2025-10-31T12:54:20.767988"
+    },
+    "1988-02-07": {
+        "date": "1988-02-07",
+        "variables_to_retry": [
+            "T2",
+            "Q2",
+            "TD2",
+            "PSFC",
+            "ACRAINLSM",
+            "LAI",
+            "U10",
+            "V10",
+            "Z"
+        ],
+        "error_message": "Retry failed with exit code 1",
+        "last_attempt": "2025-10-31T12:58:42.968824"
+    },
+    "1988-02-03": {
+        "date": "1988-02-03",
+        "variables_to_retry": [
+            "T2",
+            "Q2",
+            "TD2",
+            "PSFC",
+            "ACRAINLSM",
+            "LAI",
+            "U10",
+            "V10",
+            "Z"
+        ],
+        "error_message": "Retry failed with exit code 1",
+        "last_attempt": "2025-10-31T12:59:42.045751"
+    },
+    "1988-02-04": {
+        "date": "1988-02-04",
+        "variables_to_retry": [
+            "T2",
+            "Q2",
+            "TD2",
+            "PSFC",
+            "ACRAINLSM",
+            "LAI",
+            "U10",
+            "V10",
+            "Z"
+        ],
+        "error_message": "Retry failed with exit code 1",
+        "last_attempt": "2025-10-31T13:01:43.067968"
+    },
+    "1988-02-08": {
+        "date": "1988-02-08",
+        "variables_to_retry": [
+            "T2",
+            "Q2",
+            "TD2",
+            "PSFC",
+            "ACRAINLSM",
+            "LAI",
+            "U10",
+            "V10",
+            "Z"
+        ],
+        "error_message": "Retry failed with exit code 1",
+        "last_attempt": "2025-10-31T13:02:28.077291"
+    },
+    "1988-02-09": {
+        "date": "1988-02-09",
+        "variables_to_retry": [
+            "T2",
+            "Q2",
+            "TD2",
+            "PSFC",
+            "ACRAINLSM",
+            "LAI",
+            "U10",
+            "V10",
+            "Z"
+        ],
+        "error_message": "Retry failed with exit code 1",
+        "last_attempt": "2025-10-31T13:03:50.154074"
+    },
+    "1988-02-11": {
+        "date": "1988-02-11",
+        "variables_to_retry": [
+            "T2",
+            "Q2",
+            "TD2",
+            "PSFC",
+            "ACRAINLSM",
+            "LAI",
+            "U10",
+            "V10",
+            "Z"
+        ],
+        "error_message": "Retry failed with exit code 1",
+        "last_attempt": "2025-10-31T13:04:21.162975"
+    },
+    "1988-02-10": {
+        "date": "1988-02-10",
+        "variables_to_retry": [
+            "T2",
+            "Q2",
+            "TD2",
+            "PSFC",
+            "ACRAINLSM",
+            "LAI",
+            "U10",
+            "V10",
+            "Z"
+        ],
+        "error_message": "Retry failed with exit code 1",
+        "last_attempt": "2025-10-31T13:05:24.175147"
+    },
+    "1988-02-12": {
+        "date": "1988-02-12",
+        "variables_to_retry": [
+            "T2",
+            "Q2",
+            "TD2",
+            "PSFC",
+            "ACRAINLSM",
+            "LAI",
+            "U10",
+            "V10",
+            "Z"
+        ],
+        "error_message": "Retry failed with exit code 1",
+        "last_attempt": "2025-10-31T13:06:02.184709"
+    },
+    "1988-02-13": {
+        "date": "1988-02-13",
+        "variables_to_retry": [
+            "T2",
+            "Q2",
+            "TD2",
+            "PSFC",
+            "ACRAINLSM",
+            "LAI",
+            "U10",
+            "V10",
+            "Z"
+        ],
+        "error_message": "Retry failed with exit code 1",
+        "last_attempt": "2025-10-31T13:07:00.198315"
+    },
+    "1988-02-15": {
+        "date": "1988-02-15",
+        "variables_to_retry": [
+            "T2",
+            "Q2",
+            "TD2",
+            "PSFC",
+            "ACRAINLSM",
+            "LAI",
+            "U10",
+            "V10",
+            "Z"
+        ],
+        "error_message": "Retry failed with exit code 1",
+        "last_attempt": "2025-10-31T13:07:42.206811"
+    },
+    "1988-02-14": {
+        "date": "1988-02-14",
+        "variables_to_retry": [
+            "T2",
+            "Q2",
+            "TD2",
+            "PSFC",
+            "ACRAINLSM",
+            "LAI",
+            "U10",
+            "V10",
+            "Z"
+        ],
+        "error_message": "Retry failed with exit code 1",
+        "last_attempt": "2025-10-31T13:08:28.215691"
+    }
+}

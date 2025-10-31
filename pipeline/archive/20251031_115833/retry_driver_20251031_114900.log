@@ -1,0 +1,6 @@
+[2025-10-31 11:49:00] ================================================================================
+[2025-10-31 11:49:00] Starting Concurrent Failed Job Retry Script
+[2025-10-31 11:49:00] Max concurrent processes: 2
+[2025-10-31 11:49:00] Reading failures from: data/failed_jobs.json
+[2025-10-31 11:49:00] ================================================================================
+[2025-10-31 11:49:00] No failure log file found (data/failed_jobs.json). Exiting.

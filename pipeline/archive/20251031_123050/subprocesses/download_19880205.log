@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/gpfsm/dnb33/hpmille1/pipeline/src/single_download.py", line 12, in <module>
+    import xarray as xr
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/__init__.py", line 3, in <module>
+    from xarray import coders, groupers, indexes, testing, tutorial, ufuncs
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/testing/__init__.py", line 1, in <module>
+    from xarray.testing.assertions import (  # noqa: F401
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/testing/assertions.py", line 14, in <module>
+    from xarray.core.datatree import DataTree
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/core/datatree.py", line 229, in <module>
+    class DatasetView(Dataset):
+  File "<frozen abc>", line 106, in __new__
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/core/common.py", line 276, in __init_subclass__
+    if not hasattr(object.__new__(cls), "__dict__"):
+                   ^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

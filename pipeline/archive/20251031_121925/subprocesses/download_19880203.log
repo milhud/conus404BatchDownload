@@ -1,0 +1,54 @@
+Traceback (most recent call last):
+  File "/gpfsm/dnb33/hpmille1/pipeline/src/single_download.py", line 12, in <module>
+    import xarray as xr
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/__init__.py", line 3, in <module>
+    from xarray import coders, groupers, indexes, testing, tutorial, ufuncs
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/tutorial.py", line 18, in <module>
+    from xarray.backends.api import open_dataset as _open_dataset
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/backends/__init__.py", line 18, in <module>
+    from xarray.backends.scipy_ import ScipyBackendEntrypoint, ScipyDataStore
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/backends/scipy_.py", line 39, in <module>
+    from scipy.io import netcdf_file as netcdf_file_base
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/scipy/io/__init__.py", line 97, in <module>
+    from .matlab import loadmat, savemat, whosmat
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/scipy/io/matlab/__init__.py", line 47, in <module>
+    from ._mio import loadmat, savemat, whosmat
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/scipy/io/matlab/_mio.py", line 9, in <module>
+    from ._mio4 import MatFile4Reader, MatFile4Writer
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/scipy/io/matlab/_mio4.py", line 10, in <module>
+    import scipy.sparse
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/scipy/sparse/__init__.py", line 304, in <module>
+    from ._base import *
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/scipy/sparse/_base.py", line 8, in <module>
+    from ._sputils import (asmatrix, check_reshape_kwargs, check_shape,
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/scipy/sparse/_sputils.py", line 10, in <module>
+    from scipy._lib._util import np_long, np_ulong
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/scipy/_lib/_util.py", line 14, in <module>
+    from scipy._lib._array_api import (Array, array_namespace, is_lazy_array,
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/scipy/_lib/_array_api.py", line 25, in <module>
+    from scipy._lib.array_api_compat import (
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/scipy/_lib/array_api_compat/numpy/__init__.py", line 13, in <module>
+    from ._aliases import *  # noqa: F403
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/scipy/_lib/array_api_compat/numpy/_aliases.py", line 71, in <module>
+    tensordot = get_xp(np)(_aliases.tensordot)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/scipy/_lib/array_api_compat/_internal.py", line 36, in inner
+    sig = signature(f)
+          ^^^^^^^^^^^^
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/inspect.py", line 3341, in signature
+    return Signature.from_callable(obj, follow_wrapped=follow_wrapped,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/inspect.py", line 3081, in from_callable
+    return _signature_from_callable(obj, sigcls=cls,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/inspect.py", line 2593, in _signature_from_callable
+    return _signature_from_function(sigcls, obj,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/inspect.py", line 2420, in _signature_from_function
+    annotations = get_annotations(func, globals=globals, locals=locals, eval_str=eval_str)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/inspect.py", line 176, in get_annotations
+    def get_annotations(obj, *, globals=None, locals=None, eval_str=False):
+    
+KeyboardInterrupt

@@ -1,0 +1,12 @@
+[2025-10-30 02:15:51] ================================================================================
+[2025-10-30 02:15:51] NOTE: Max concurrent processes for retry is hard-coded to: 2
+[2025-10-30 02:15:51] ================================================================================
+[2025-10-30 02:15:51] Found 5 failed job(s) to retry.
+[2025-10-30 02:15:51] Fetching CONUS404 asset from Planetary Computer...
+[2025-10-30 02:15:52] Asset configuration fetched and saved.
+[2025-10-30 02:15:52] Loaded 5 unique dates to retry.
+[2025-10-30 02:15:52] Memory Stats - Retry Initial: Available=288492.9MB/385074.9MB (25.1% used)
+[2025-10-30 02:15:52] Launching retry 1/5: 1988-04-07
+[2025-10-30 02:15:52] Launched RETRY subprocess PID 47800 for 1988-04-07 (log: logs/subprocesses_retry/download_19880407.log)
+[2025-10-30 02:15:52] Launching retry 2/5: 1988-04-06
+[2025-10-30 02:15:52] Launched RETRY subprocess PID 47801 for 1988-04-06 (log: logs/subprocesses_retry/download_19880406.log)

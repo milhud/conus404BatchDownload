@@ -1,0 +1,76 @@
+[2025-10-30 00:17:13] Starting download process for 1988-04-11
+[2025-10-30 00:17:13] PID: 34083
+[2025-10-30 00:17:13] DOWNLOAD START: 1988-04-11
+[2025-10-30 00:17:13] Memory before download: RSS=77.1MB, System=25.4%
+[2025-10-30 00:17:13]   VERBOSE: Time range set: 1988-04-11 00:00:00 to 1988-04-11 23:59:59
+[2025-10-30 00:17:13] Opening dataset for 1988-04-11
+[2025-10-30 00:17:13]   VERBOSE: Asset Href: az://noaa/conus404.zarr
+[2025-10-30 00:17:14]   VERBOSE: fsspec mapper created
+Traceback (most recent call last):
+  File "/gpfsm/dnb33/hpmille1/pipeline/src/single_download.py", line 280, in <module>
+    result = download_single_day(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/pipeline/src/single_download.py", line 105, in download_single_day
+    ds = xr.open_zarr(mapper, **open_kwargs)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/backends/zarr.py", line 1586, in open_zarr
+    ds = open_dataset(
+         ^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/backends/api.py", line 602, in open_dataset
+    ds = _dataset_from_backend_dataset(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/backends/api.py", line 297, in _dataset_from_backend_dataset
+    ds = _chunk_ds(
+         ^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/backends/api.py", line 248, in _chunk_ds
+    variables[name] = _maybe_chunk(
+                      ^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/structure/chunks.py", line 151, in _maybe_chunk
+    var = var.chunk(
+          ^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/core/variable.py", line 2718, in chunk
+    return super().chunk(
+           ^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/namedarray/core.py", line 851, in chunk
+    data_chunked = chunkmanager.from_array(ndata, chunks, **from_array_kwargs)  # type: ignore[arg-type]
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/namedarray/daskmanager.py", line 74, in from_array
+    return da.from_array(
+           ^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/dask/array/core.py", line 3719, in from_array
+    return Array(dsk, name, chunks, meta=meta, dtype=getattr(x, "dtype", None))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/dask/array/core.py", line 1374, in __new__
+    "chunksize": self.chunksize,
+                 ^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/dask/array/core.py", line 1522, in chunksize
+    return tuple(cached_max(c) for c in self.chunks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/dask/array/core.py", line 1522, in <genexpr>
+    return tuple(cached_max(c) for c in self.chunks)
+                 ^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/dask/utils.py", line 2124, in cached_max
+    result = _max(_HashIdWrapper(seq))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/dask/utils.py", line 2101, in _max
+    return max(seq)
+           ^^^^^^^^
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 666, in _exitfunc
+    f()
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/fsspec/asyn.py", line 76, in sync
+    raise RuntimeError("Loop is not running")
+RuntimeError: Loop is not running
+Traceback (most recent call last):
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 666, in _exitfunc
+    f()
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/fsspec/asyn.py", line 76, in sync
+    raise RuntimeError("Loop is not running")
+RuntimeError: Loop is not running

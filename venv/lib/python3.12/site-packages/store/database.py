@@ -1,0 +1,1093 @@
+import json
+import os
+import uuid
+import types
+from copy import deepcopy
+from datetime import datetime
+from pony.orm.ormtypes import TrackedValue
+from pony.orm import (Database, Json, PrimaryKey, Required, commit, count,
+                      db_session, delete, desc, select, raw_sql)
+from store.parser import parse
+
+SCHEMA_CHECK = os.getenv('SCHEMA_CHECK', True)
+
+import collections
+
+def update_nest(orig_dict, new_dict):
+    for key, val in new_dict.items():
+        if isinstance(val, collections.Mapping):
+            k = orig_dict.get(key)
+            k = dict(k) if k else {}
+            tmp = update_nest(k, val)
+            orig_dict[key] = tmp
+        elif isinstance(val, list):
+            k = orig_dict.get(key)
+            k = list(k) if k else []
+            orig_dict[key] = (k + val)
+        elif isinstance(val, str) or isinstance(val, bool) or \
+             isinstance(val, int) or isinstance(val, float) or val is None:
+            orig_dict[key] = new_dict[key]
+        elif isinstance(val, types.FunctionType):
+            tmp = orig_dict.get(key)
+            orig_dict[key] = val(tmp)
+        else:
+            raise StoreException('update nest invalid')
+    return orig_dict
+
+try:
+    from cerberus import Validator
+except Exception:
+    pass
+
+try:
+    import jsonschema
+except Exception:
+    pass
+
+def get_json_value(data, key):
+    result = data
+    keys = key.split('.')
+    for k in keys:
+        try:
+            k = int(k)
+        except:
+            pass
+        result = result.__getitem__(k)
+    return result
+
+def set_json_value(data, key, value):
+    result = data
+    keys = key.split('.')
+    for k in keys[:-1]:
+        try:
+            k = int(k)
+        except:
+            pass
+        result = result.__getitem__(k)
+    result[keys[-1]] = value
+    return data
+    
+def del_json_key(data, key):
+    result = data
+    keys = key.split('.')
+    for k in keys[:-1]:
+        try:
+            k = int(k)
+        except:
+            pass
+        result = result.__getitem__(k)
+    del result[keys[-1]]
+    return result
+
+class StoreException(Exception):
+    pass
+
+class StoreMetas:
+    def __init__(self, elems, store=None):
+        if not elems:
+            elems = []
+        self.elems = [StoreMeta(elem, store=store) for elem in elems]
+
+    def __str__(self):
+        return '\n'.join([str(elem) for elem in self.elems])
+
+    def __len__(self):
+        return len(self.elems)
+
+    @db_session
+    def __getitem__(self, key):
+        if isinstance(key, int):
+            return self.elems[key]
+        return [elem[key] for elem in self.elems]
+
+    @db_session
+    def __setitem__(self, key, data):
+        if isinstance(key, int):
+            self.elems[key] = data
+            return
+        for elem in self.elems:
+            elem[key] = data
+
+
+    @db_session
+    def __getattribute__(self, key):
+        if key in ['elems'] or key.startswith('_'):
+            return object.__getattribute__(self, key)
+
+        return [elem.__getattribute__(key).get_untracked() for elem in self.elems]
+
+    @db_session
+    def __setattr__(self, key, data):
+        if key in ['elems'] or key.startswith('_'):
+            return super().__setattr__(key, data)
+        for elem in self.elems:
+            elem.__setattr__(key, data)
+    
+    # def __iter__(self):
+    #     for elem in self.elems:
+    #         yield elem
+
+STORE_META_SAFE_ATTR = ['store', 'store_obj', 'id', 'key', 'data', 'meta', 'create', 'update',
+                   'update_meta', 'delete_meta',
+                   'replace_data', 'replace_meta', 'replace_all',
+                   'update_data_multi', 'update_meta_multi'
+                   ]
+class StoreMeta:
+
+    def __init__(self, elem, store=None):
+        self.store_obj = store
+        self.store = store.store
+
+        self.id = elem.id
+        self.key = elem.key
+        self.data = elem.data
+        self.meta = elem.meta
+        self.create = elem.create.strftime("%Y-%m-%dT%H:%M:%S")
+        self.update = elem.update.strftime("%Y-%m-%dT%H:%M:%S")
+
+    def __str__(self):
+        return "id: {}, key: {}, data: {}, create: {}, update: {}".format(self.id, self.key, self.data, self.create, self.update)
+
+    @db_session
+    def __assign__(self, data):
+        elem = select(e for e in self.store if e.id == self.id).for_update().first()
+        if elem is None:
+            raise StoreException('elem not found')
+        else:
+            elem.data = data
+            elem.update = datetime.utcnow()
+
+            self.data = elem.data
+            self.update = elem.update.strftime("%Y-%m-%dT%H:%M:%S")
+
+    @db_session
+    def __getattribute__(self, key):
+        if key in STORE_META_SAFE_ATTR or key.startswith('_'):
+            return object.__getattribute__(self, key)
+
+        elem = select(e for e in self.store if e.id == self.id).first()
+        if elem:
+            if isinstance(elem.data, dict):
+                return elem.data.get(key)
+                
+    @db_session
+    def __setattr__(self, key, data):
+        if key in STORE_META_SAFE_ATTR or key.startswith('_'):
+            return super().__setattr__(key, data)
+        elem = select(e for e in self.store if e.id == self.id).for_update().first()
+        if elem is None:
+            raise StoreException('elem not found')
+        else:
+            if isinstance(elem.data, dict):
+                elem.data[key] = data
+                elem.update = datetime.utcnow()
+
+                self.data = elem.data
+                self.update = elem.update.strftime("%Y-%m-%dT%H:%M:%S")
+            else:
+                raise StoreException('data not dict!')
+
+
+    @db_session
+    def __setitem__(self, key, data):
+        elem = select(e for e in self.store if e.id == self.id).for_update().first()
+        if elem is None:
+            raise StoreException('elem not found')
+        else:
+            if isinstance(elem.data, dict) :
+                copied = deepcopy(elem.data)
+                set_json_value(copied, key, data)
+
+                elem.data = copied
+                elem.update = datetime.utcnow()
+
+                self.data = elem.data
+                self.update = elem.update.strftime("%Y-%m-%dT%H:%M:%S")
+            else:
+                raise StoreException('data not dict!')
+
+    @db_session
+    def __getitem__(self, key):
+        elem = select(e for e in self.store if e.id == self.id).first()
+        if elem:
+            return get_json_value(elem.data, key)
+
+    @db_session
+    def __delitem__(self, key):
+        elem = select(e for e in self.store if e.id == self.id).for_update().first()
+        if elem:
+            elem.delete()
+
+
+
+    # similar to __setitem__
+    @db_session(retry=3)
+    def update_meta(self, key, meta, force=False):
+        elem = select(e for e in self.store if e.id == self.id).for_update().first()
+        if isinstance(elem.meta, dict) :
+            copied = deepcopy(elem.meta)
+            set_json_value(copied, key, meta)
+
+            if not force:
+                self.store_obj.validate(elem.data, meta=copied, extra=elem.key)
+
+            elem.meta = copied
+            elem.update = datetime.utcnow()
+
+            self.meta = elem.meta
+            self.update = elem.update.strftime("%Y-%m-%dT%H:%M:%S")
+        else:
+            elem.meta = {}
+
+    # similar to __delitem__
+    @db_session(retry=3)
+    def delete_meta(self, key):
+        elem = select(e for e in self.store if e.id == self.id).for_update().first()
+        if isinstance(elem.meta, dict) :
+            copied = deepcopy(elem.meta)
+            new_meta = del_json_key(copied, key)
+
+            elem.meta = new_meta
+            elem.update = datetime.utcnow()
+
+            self.meta = elem.meta
+            self.update = elem.update.strftime("%Y-%m-%dT%H:%M:%S")
+        else:
+            elem.meta = {}
+
+
+    @db_session(retry=3)
+    def replace_meta(self, meta, force=False):
+        if isinstance(meta, dict):
+            elem = select(e for e in self.store if e.id == self.id).for_update().first()
+
+            if not force:
+                self.store_obj.validate(elem.data, meta=meta, extra=elem.key)
+
+            elem.meta = meta
+            elem.update = datetime.utcnow()
+            self.meta = elem.meta
+            self.update = elem.update.strftime("%Y-%m-%dT%H:%M:%S")
+
+    @db_session(retry=3)
+    def replace_data(self, data, force=False):
+        if isinstance(data, dict):
+            elem = select(e for e in self.store if e.id == self.id).for_update().first()
+
+            if not force:
+                self.store_obj.validate(data, meta=elem.meta, extra=elem.key)
+
+            elem.data = data
+            elem.update = datetime.utcnow()
+            self.data = elem.data
+            self.update = elem.update.strftime("%Y-%m-%dT%H:%M:%S")
+
+    @db_session(retry=3)
+    def replace_all(self, data, meta, force=False):
+        if isinstance(data, dict):
+            elem = select(e for e in self.store if e.id == self.id).for_update().first()
+
+            if not force:
+                self.store_obj.validate(data, meta=meta, extra=elem.key)
+
+            elem.data = data
+            elem.meta = meta
+            elem.update = datetime.utcnow()
+            self.data = elem.data
+            self.meta = elem.meta
+            self.update = elem.update.strftime("%Y-%m-%dT%H:%M:%S")
+
+    @db_session
+    def update_data_multi(self, data, force=False):
+        elem = select(e for e in self.store if e.id == self.id).for_update().first()
+        if elem is None:
+            raise StoreException('elem not found')
+        else:
+            if isinstance(elem.data, dict) :
+                copied = deepcopy(elem.data)
+                for key, value in data.items():
+                    set_json_value(copied, key, value)
+
+                if not force:
+                    self.store_obj.validate(copied, meta=elem.meta, extra=elem.key)
+
+                elem.data = copied
+                elem.update = datetime.utcnow()
+
+                self.data = elem.data
+                self.update = elem.update.strftime("%Y-%m-%dT%H:%M:%S")
+            else:
+                raise StoreException('data not dict!')
+
+    @db_session(retry=3)
+    def update_meta_multi(self, meta, force=False):
+        elem = select(e for e in self.store if e.id == self.id).for_update().first()
+        if isinstance(elem.meta, dict) :
+            copied = deepcopy(elem.meta)
+            for key, value in meta.items():
+                set_json_value(copied, key, value)
+
+            if not force:
+                self.store_obj.validate(elem.data, meta=copied, extra=elem.key)
+
+            elem.meta = copied
+            elem.update = datetime.utcnow()
+
+            self.meta = elem.meta
+            self.update = elem.update.strftime("%Y-%m-%dT%H:%M:%S")
+        else:
+            elem.meta = {}
+
+
+class Store(object):
+    _safe_attrs = ['store', 'database', 'tablename', 
+                   'begin', 'end', 'order', 
+                   'add', 'register_attr', 'slice', 'adjust_slice', 'provider',
+                   'query_key', 'count', 'desc', 'asc',
+                   'query_meta', 'update_meta', 'delete_meta',
+                   'provider', 'user', 'password', 'host', 'port', 'database', 'filename',
+                   'schema', 
+                   'validate', 'model', 'meta',
+                   'search', 'delete','create','update', 'search_multi', 'search_return'
+                   ]
+
+    provider = 'sqlite'
+    user = 'test'
+    password = 'test'
+    host = 'localhost'
+    port = 5432
+    database = 'test'
+    filename = 'database.sqlite'
+    order = 'desc'
+    schema = None
+    begin = None
+    end = None
+    model = None
+    meta = {}
+    
+
+    def __init__(self,
+                 provider=None, user=None, password=None,
+                 host=None, port=None, database=None, filename=None,
+                 begin=None, end=None, order=None,
+                 schema = None, 
+                 validate=None, version="meta", model=None,
+                 meta = None
+                 ):
+        self.provider = provider or self.provider
+        self.filename = filename or self.filename
+        self.user = user or self.user
+        self.password = password or self.password
+        self.host = host or self.host
+        self.port = port or self.port
+        self.database = database or self.database
+        self.schema = schema or self.schema
+        self.begin = begin or self.begin
+        self.end = end or self.end
+        self.order = order or self.order
+        self.model = model or self.model
+        self.meta = meta or self.meta
+
+        if self.provider == 'sqlite':
+            if not self.filename.startswith('/'):
+                self.filename = os.getcwd()+'/' + self.filename
+
+            self.database = Database(
+                provider=self.provider, 
+                filename=self.filename, 
+                create_db=True)
+        elif self.provider == 'mysql':
+            self.database = Database(
+                provider=self.provider, 
+                user=self.user, 
+                password=self.password,
+                host=self.host, 
+                port=self.port, 
+                database=self.database,
+                charset="utf8mb4"
+                )
+        elif self.provider == 'postgres':
+            self.database = Database(
+                provider=self.provider, 
+                user=self.user, 
+                password=self.password,
+                host=self.host, 
+                port=self.port, 
+                database=self.database,
+                )
+        else:
+            raise StoreException(f'provider {provider} not supported')
+
+        self.tablename = self.__class__.__name__
+
+        if not self.model:
+            self.model = dict(
+                id=PrimaryKey(int, auto=True),
+                create=Required(datetime, sql_default='CURRENT_TIMESTAMP', default=lambda: datetime.utcnow()),
+                update=Required(datetime, sql_default='CURRENT_TIMESTAMP', default=lambda: datetime.utcnow()),
+                key=Required(str, index=True, unique=True),
+                data=Required(Json, volatile=True, default={}),
+                meta=Required(Json, volatile=True, default={})
+            )
+
+        self.store = type(self.tablename, (self.database.Entity,), self.model)
+        self.database.generate_mapping(create_tables=True, check_tables=True)
+
+
+
+    def slice(self, begin, end):
+        self.begin, self.end = begin, end
+
+    def desc(self):
+        self.order = 'desc'
+
+    def asc(self):
+        self.order = 'asc'
+
+    @staticmethod
+    def register_attr(name):
+        if isinstance(name, str) and name not in Store._safe_attrs:
+            Store._safe_attrs.append(name)
+
+    @db_session(retry=3)
+    def __setattr__(self, key, data):
+        if key in Store._safe_attrs or key.startswith('_'):
+            return super().__setattr__(key, data)
+
+        self.validate(data, meta=self.meta)
+        item = select(e for e in self.store if e.key == key).first()
+        if item is None:
+            self.store(key=key, data=data, meta=self.meta)
+        else:
+            item.data = data
+            item.update = datetime.utcnow()
+
+    @db_session
+    def __getattribute__(self, key):
+        if key in Store._safe_attrs or key.startswith('_'):
+            return object.__getattribute__(self, key)
+
+        elem = select(e for e in self.store if e.key == key).first()
+        if elem:
+            self.validate(elem.data, meta=elem.meta )
+            return StoreMeta(elem, store=self)
+        return None
+
+    @db_session
+    def count(self, key):
+        if isinstance(key, slice):
+            raise StoreException('not implemented!')
+        elif isinstance(key, tuple):
+            key='.'.join(key)
+
+        # string key
+        filters = parse(key)
+        elems = select(e for e in self.store)
+        if filters:
+            elems = elems.filter(filters)
+        return elems.count()
+
+    @db_session
+    def __getitem__(self, key, for_update=False):
+        if isinstance(key, slice):
+            raise StoreException('not implemented!')
+        elif isinstance(key, tuple):
+            key='.'.join(key)
+
+        # string key
+        filters = parse(key)
+        elems = select(e for e in self.store)
+        if filters:
+            elems = elems.filter(filters)
+        if self.order == 'desc':
+            elems = elems.order_by(lambda o: (desc(o.update), desc(o.id)))
+        else:
+            elems = elems.order_by(lambda o: (o.update, o.id))
+        elems = self.adjust_slice(elems, for_update=for_update)
+        for elem in elems:
+            self.validate(elem.data, meta=elem.meta, extra=elem.key )
+        return StoreMetas(elems, store=self)
+
+
+    @db_session(retry=3)
+    def __setitem__(self, key, data):
+
+        if isinstance(key, slice):
+            raise StoreException('not implemented!')
+        elif isinstance(key, tuple):
+            key='.'.join(key)
+        
+        self.validate(data, meta=self.meta)
+
+        if key.isidentifier():
+            if key in Store._safe_attrs or key.startswith('_'):
+                return super().__setattr__(key, data)
+
+            item = select(e for e in self.store if e.key == key).first()
+            if item is None:
+                self.store(key=key, data=data, meta=self.meta)
+            else:
+                item.data = data
+                item.update = datetime.utcnow()
+            return 
+
+
+        filters = parse(key)
+        elems = select(e for e in self.store)
+        if filters:
+            elems = elems.filter(filters)
+        if self.order_by == 'desc':
+            elems = elems.order_by(lambda o: (desc(o.update), desc(o.id)))
+        else:
+            elems = elems.order_by(lambda o: (o.update, o.id))
+        elems = self.adjust_slice(elems, for_update=True)
+        if elems:
+            now = datetime.utcnow()
+            for elem in elems:
+                elem.data = data
+                elem.update = now
+        else:
+            # for key like 'Pod_xxx-xxx-xxx
+            item = select(e for e in self.store if e.key == key).first()
+            if item is None:
+                self.store(key=key, data=data, meta=self.meta)
+            else:
+                item.data = data
+                item.update = datetime.utcnow()
+
+
+    @db_session
+    def __delitem__(self, key):
+        if isinstance(key, slice):
+            raise StoreException('not implemented!')
+        elif isinstance(key, tuple):
+            key = '.'.join(key)
+        filters = parse(key)
+        elems = select(e for e in self.store)
+        if filters:
+            elems = elems.filter(filters)
+        if self.order_by == 'desc':
+            elems = elems.order_by(lambda o: (desc(o.update), desc(o.id)))
+        else:
+            elems = elems.order_by(lambda o: (o.update, o.id))
+        if elems:
+            for elem in elems:
+                # self.validate(elem.data, meta=elem.meta)
+                elem.delete()
+        return
+       
+
+    @db_session
+    def __delattr__(self, key):
+        delete(e for e in self.store if e.key == key)
+
+
+    @db_session
+    def query_key(self, key, for_update=False):
+        elem = None
+        if for_update:
+            elem = select(e for e in self.store if e.key == key).for_update().first()
+        else:
+            elem = select(e for e in self.store if e.key == key).first()
+        if elem:
+            self.validate(elem.data, meta=elem.meta)
+            return StoreMeta(elem, store=self)
+
+    @db_session
+    def query_meta(self, key, for_update=False):
+        if isinstance(key, slice):
+            raise StoreException('not implemented!')
+        elif isinstance(key, tuple):
+            key='.'.join(key)
+
+        # string key
+        filters = parse(key, "meta")
+        elems = select(e for e in self.store)
+        if filters:
+            elems = elems.filter(filters)
+        if self.order == 'desc':
+            elems = elems.order_by(lambda o: (desc(o.update), desc(o.id)))
+        else:
+            elems = elems.order_by(lambda o: (o.update, o.id))
+        elems = self.adjust_slice(elems, for_update=for_update)
+        for elem in elems:
+            self.validate(elem.data, extra=elem.key, meta=elem.meta)
+        return StoreMetas(elems, store=self)
+
+
+    def adjust_slice(self, elems, for_update=False, begin=None, end=None):
+        if for_update:
+            elems = elems.for_update()
+        begin, end = begin or self.begin, end or self.end
+
+        length = len(self)
+        if begin and end:
+            # pony doesn't support step here
+            if begin < 0:
+                begin = length + begin
+            if end < 0:
+                end = length + end
+            if begin > end:
+                begin, end = end, begin
+            elems = elems[begin:end]
+        elif begin:
+            if begin < 0:
+                begin = length + begin
+            elems = elems[begin:]
+        elif end:
+            if end < 0:
+                end = length + end
+            elems = elems[:end]
+        else:
+            elems = elems[:]
+        return elems
+
+    @db_session
+    def __len__(self):
+        return count(e for e in self.store)
+
+    #### explicity crud
+    def validate(self, data, meta=None, extra=None):
+        if SCHEMA_CHECK and meta:
+            schema_version = meta.get("schema_version")
+            schema_type = meta.get("schema_type")
+            schema = self.schema.get(schema_version) 
+
+            if isinstance(data, TrackedValue):
+                data = data.get_untracked()
+            if isinstance(schema, TrackedValue):
+                schema = schema.get_untracked()
+
+            if schema_type == 'cerberus':
+                validator = Validator()
+                r = validator.validate(deepcopy(data), schema)
+                if not r:
+                    if extra:
+                        raise StoreException(f'{schema_type}:{schema_type} {validator.errors}, extra: {extra}')
+                    raise StoreException(f'{schema_type}:{schema_type} {validator.errors}')
+            elif schema_type == 'jsonschema':
+                validator = jsonschema
+                try:
+                    validator.validate(data, schema)
+                except jsonschema.exceptions.ValidationError as e:
+                    if extra:
+                        raise StoreException(f'{schema_type}:{schema_type} {e}, extra: {extra}')
+                    raise StoreException(f'{schema_type}:{schema_type} {e}')
+            else:
+                raise StoreException(f'schema type invalid: {schema_type}')
+
+    @db_session
+    def add(self, data, meta=None, key=None):
+        if not meta:
+            meta=self.meta
+
+        self.validate(data, meta=meta)
+
+        hex = uuid.uuid1().hex
+        key = f"STORE_{hex}" if not isinstance(key, str) else key
+        elem = select(e for e in self.store if e.key == key).first()
+        if elem is not None:
+            hex = uuid.uuid1().hex
+            key = f"STORE_{hex}"
+            elem = select(e for e in self.store if e.key == key).first()
+            if elem is not None:
+                raise StoreException('add failed')
+        self.store(key=key, data=data, meta=meta)
+        return key
+
+
+    @db_session
+    def create(self, key, data, meta=None, update=True):
+        if not meta:
+            meta=self.meta
+
+        self.validate(data, meta=meta)
+
+        elem = select(e for e in self.store if e.key == key).for_update().first()
+        if elem is None:
+            self.store(key=key, data=data, meta=self.meta)
+        else:
+            if update:
+                elem.data = data
+                elem.meta = meta
+                elem.update = datetime.utcnow()
+            else:
+                detail = f'elem existed, key: {key}'
+                raise StoreException(detail)
+        return key
+
+
+    @db_session
+    def update(self, condition, data=None, meta=None, on='data', fuzzy=True, patch='jsonpath', force=False, begin=begin, end=end, debug=False):
+        elems, _ = self.search(condition, mode='raw', on=on, fuzzy=fuzzy, debug=debug)
+        elems = self.adjust_slice(elems, for_update=True, begin=begin, end=end)
+        keys = []
+        count = 0 
+        for elem in elems:
+            if data:
+                if patch == 'jsonpath':
+                    copied = deepcopy(elem.data)
+                    for key,value in data.items():
+                        if isinstance(value, types.FunctionType):
+                            current_value = get_json_value(copied, key)
+                            value = value(current_value)
+                        set_json_value(copied, key, value)
+                    if not force:
+                        self.validate(copied, meta=elem.meta, extra=elem.key)
+                    elem.data = copied
+                    elem.update = datetime.utcnow()
+                elif patch == 'nest':
+                    copied = deepcopy(elem.data)
+                    update_nest(copied, data)
+                    if not force:
+                        self.validate(copied, meta=elem.meta, extra=elem.key)
+                    elem.data = copied
+                    elem.update = datetime.utcnow()
+                else:
+                    if not force:
+                        self.validate(data, meta=elem.meta, extra=elem.key)
+                    elem.data = data
+                    elem.update = datetime.utcnow()
+            if meta:
+                if patch == 'jsonpath':
+                    copied = deepcopy(elem.meta)
+                    for key,value in meta.items():
+                        if hasattr(value, '__call__'):
+                            current_value = get_json_value(copied, key)
+                            value = value(current_value)
+                        set_json_value(copied, key, value)
+                    if not force:
+                        self.validate(elem.data, meta=copied, extra=elem.key)
+                    elem.meta = copied
+                    elem.update = datetime.utcnow()
+                elif patch == 'nest':
+                    copied = deepcopy(elem.meta)
+                    update_nest(copied, meta)
+
+                    if not force:
+                        self.validate(elem.data, meta=copied, extra=elem.key)
+                    elem.meta = copied
+                    elem.update = datetime.utcnow()
+                else:
+                    if not force:
+                        self.validate(elem.data, meta=meta, extra=elem.key)
+                    elem.meta = meta
+                    elem.update = datetime.utcnow()
+            count += 1
+            keys.append(elem.key)
+        return keys, count
+
+    @db_session
+    def delete(self, condition, on='key', fuzzy=True, begin=None, end=None, debug=False):
+        elems, _ = self.search(condition, on=on, mode='raw', fuzzy=True, debug=debug)
+        elems = self.adjust_slice(elems, for_update=True, begin=begin, end=end)
+        keys = []
+        count = 0 
+        for elem in elems:
+            elem.delete()
+            count += 1
+            keys.append(elem.key)
+        return keys, count
+
+
+    @db_session
+    def search_return(self, elems, mode, order_by, order, for_update, begin, end, force, debug):
+        if mode == 'raw':
+            if debug:
+                print('\n\n----sql----')
+                sql,args, _, _ =elems._construct_sql_and_arguments()
+                print(sql)
+                print('......')
+                print(args)
+                print('-----------\n\n')
+            return elems, -1
+        elif mode == 'count':
+            if debug:
+                print('\n\n----sql----')
+                sql,args, _, _ =elems._construct_sql_and_arguments()
+                print(sql)
+                print('......')
+                print(args)
+                print('-----------\n\n')
+            return [], elems.count()
+        else:
+            total = elems.count() if count else -1
+            if order_by:
+                elems = elems.order_by(order_by)
+            else:
+                if not order:
+                    order = self.order
+                if order == 'desc':
+                    elems = elems.order_by(lambda o: (desc(o.update), desc(o.id)))
+                else:
+                    elems = elems.order_by(lambda o: (o.update, o.id))
+            if debug:
+                print('\n\n----sql----')
+                sql,args, _, _ =elems._construct_sql_and_arguments()
+                print(sql)
+                print('......')
+                print(args)
+                print('-----------\n\n')
+            elems = self.adjust_slice(elems, for_update=for_update, begin=begin, end=end)
+            if not force:
+                for elem in elems:
+                    self.validate(elem.data, meta=elem.meta, extra=elem.key )
+            return StoreMetas(elems, store=self), total
+
+    @db_session
+    def search(self, condition, on='data', for_update=False, fuzzy=True, debug=False, mode='normal', order='desc', order_by=None, begin=None, end=None, force=False):
+        if on == 'key':
+            if isinstance(condition, str):
+                elems = select(e for e in self.store if e.key == condition)
+                return self.search_return(elems, mode=mode, order_by=order_by, order=order, for_update=for_update, begin=begin, end=end, force=force, debug=debug)    
+            elif isinstance(condition, list):
+                elems = select(e for e in self.store if e.key in condition)
+                return self.search_return(elems, mode=mode, order_by=order_by, order=order, for_update=for_update, begin=begin, end=end, force=force, debug=debug)    
+            raise StoreException('on key invalid')
+        if on not in ['data', 'meta']:
+            raise StoreException('on invalid')
+        elems = select(e for e in self.store)
+        if condition:
+            for key, value in condition.items():
+                if isinstance(value, list):
+                    if '.' in key:
+                        keys = key.split('.')
+                    else:
+                        keys = [key]
+
+                    if self.provider == 'mysql':
+                        for i,k in enumerate(keys):
+                            if i == 0:
+                                sql = f'e.{on}["{k}"]'
+                            else:
+                                sql += f'["{k}"]'
+                        sql += f' in {value}'
+
+                        elems = elems.filter(sql)
+                    else:
+                        sql = f'e.data'
+                        for i,k in enumerate(keys):
+                            if i == len(keys) - 1:
+                                sql += '->>'
+                            else:
+                                sql += '->'
+                            sql += f"'{k}'"
+                        v = []
+                        cast = None
+                        for e in value:
+                            if isinstance(e, bool):
+                                cast = 'boolean'
+                                if e == True:
+                                    v.append("true")
+                                elif e == False:
+                                    v.append("false")
+                            elif isinstance(e, float):
+                                ee = f'{e}'
+                                v.append(ee)
+                                cast = 'float'
+                            elif isinstance(e, int):
+                                ee = f'{e}'
+                                v.append(ee)
+                                cast = 'integer'
+                            elif isinstance(e, str):
+                                ee = f"'{e}'"
+                                v.append(ee)
+                            else: 
+                                raise StoreException('k invalid')
+                        value_str = ', '.join(v)
+                        if cast:
+                            sql = f'cast({sql} as {cast}) in ({value_str})'
+                        else:
+                            sql += f' in ({value_str})'
+
+                        elems = elems.filter(lambda e: raw_sql(sql))
+                elif isinstance(value, dict):
+                    op = value.get('operator') or value.get('op')  
+                    val = value.get('value') or value.get('val') 
+                    if op is None or val is None:
+                        raise StoreException('operator and value not found')
+                    if op == 'in' or op == 'any_in':
+                        if isinstance(val, list):
+                            if self.provider == 'mysql':
+                                sqls = []
+                                for v in val:
+                                    # sql = f'(json_contains(`e`.`data`, \'["{v}"]\', \'$$.{key}\') or json_contains_path(`e`.`data`, \'one\', \'$$.{key}.{v}\'))'
+                                    sql = f'json_contains(`e`.`{on}`, \'["{v}"]\', \'$$.{key}\')'
+                                    sqls.append(sql)
+                                sql = ' OR '.join(sqls)
+                                elems = elems.filter(lambda e: raw_sql(sql))
+                            else:
+                                if '.' in key:
+                                    key = key.replace('.', ',')
+                                    # raise StoreException('jsonpath not support for in operator')
+                                sqls = []
+                                for v in val:
+                                    sql = f'("e"."{on}" #> \'{{ {key} }}\' ? \'{v}\')'
+                                    sqls.append(sql)
+                                sql = ' OR '.join(sqls)
+                                elems = elems.filter(lambda e: raw_sql(sql))
+
+                        else:
+                            if self.provider == 'mysql':
+                                # sql = f'(json_contains(`e`.`data`, \'["{val}"]\', \'$$.{key}\') or json_contains_path(`e`.`data`, \'one\', \'$$.{key}.{val}\'))'
+                                sql = f'json_contains(`e`.`{on}`, \'["{val}"]\', \'$$.{key}\')'# or json_contains_path(`e`.`data`, \'one\', \'$$.{key}.{val}\'))'
+                                elems = elems.filter(lambda e: raw_sql(sql))
+                            else:
+                                if '.' in key:
+                                    key = key.replace('.', ',')
+                                sql = f'("e"."{on}" #> \'{{ {key} }}\' ? \'{val}\')'
+                                elems = elems.filter(lambda e: raw_sql(sql))
+                    elif op == 'ain' or op == 'all_in':
+                        if isinstance(val, list):
+                            if self.provider == 'mysql':
+                                sql = f'json_contains(`e`.`{on}`, \'{json.dumps(val)}\', \'$$.{key}\')'
+                                elems = elems.filter(lambda e: raw_sql(sql))
+                            else:
+                                if '.' in key:
+                                    key = key.replace('.', ',')
+                                    # raise StoreException('jsonpath not support for in operator')
+                                for v in val:
+                                    sql = f'("e"."{on}" #> \'{{ {key} }}\' ? \'{v}\')'
+                                    elems = elems.filter(lambda e: raw_sql(sql))
+                        else:
+                            if self.provider == 'mysql':
+                                # sql = f'(json_contains(`e`.`data`, \'["{val}"]\', \'$$.{key}\') or json_contains_path(`e`.`data`, \'one\', \'$$.{key}.{val}\'))'
+                                sql = f'json_contains(`e`.`{on}`, \'["{val}"]\', \'$$.{key}\')'# or json_contains_path(`e`.`data`, \'one\', \'$$.{key}.{val}\'))'
+                                elems = elems.filter(lambda e: raw_sql(sql))
+                            else:
+                                if '.' in key:
+                                    key = key.replace('.', ',')
+                                    # raise StoreException('jsonpath not support for in operator')
+                                sql = f'("e"."{on}" #> \'{{ {key} }}\' ? \'{val}\')'
+                                elems = elems.filter(lambda e: raw_sql(sql))
+                    else:
+                        if self.provider == 'mysql':
+                            if op == '==':
+                                op = '='
+                            sql = None
+                            if isinstance(val, bool):
+                                if val == True:
+                                    sql = f'json_extract(`e`.`{on}`, "$$.{key}") {op} true'
+                                else:
+                                    sql = f'json_extract(`e`.`{on}`, "$$.{key}") {op} false'
+                            elif isinstance(val, int) or isinstance(val, float):
+                                sql = f'json_extract(`e`.`{on}`, "$$.{key}") {op} {val}'
+                            elif isinstance(val, str):
+                                sql = f'json_extract(`e`.`{on}`, "$$.{key}") {op} "{val}"'
+                            else:
+                                detail = f'val {val} type {type(val)} invalid'
+                                raise StoreException(detail)
+                            if sql:
+                                elems = elems.filter(lambda e: raw_sql(sql))
+                        else:
+                            if op == '=':
+                                op = '=='
+                            sql = None
+                            if isinstance(val, bool):
+                                if val == True:
+                                    sql = f'jsonb_path_exists("e"."{on}", \'$$.{key} ? (@ == true)\')'
+                                else:
+                                    sql = f'jsonb_path_exists("e"."{on}", \'$$.{key} ? (@ == false)\')'
+                            elif isinstance(val, int) or isinstance(val, float):
+                                sql = f'jsonb_path_exists("e"."{on}", \'$$.{key} ? (@ {op} {val})\')'
+                            elif isinstance(val, str):
+                                sql = f'jsonb_path_exists("e"."{on}", \'$$.{key} ? (@ {op} "{val}")\')'
+                            else:
+                                detail = f'val {val} type {type(val)} invalid'
+                                raise StoreException(detail)
+                            if sql:
+                                elems = elems.filter(lambda e: raw_sql(sql))
+                elif isinstance(value, bool):
+                    if self.provider == 'mysql':
+                        if value == True:
+                            sql = f'json_extract(`e`.`{on}`, "$$.{key}") = true'
+                        else:
+                            sql = f'json_extract(`e`.`{on}`, "$$.{key}") = false'
+                        elems = elems.filter(lambda e: raw_sql(sql))
+                    else: 
+                        if value == True:
+                            sql = f'jsonb_path_exists("e"."{on}", \'$$.{key} ? (@ == true)\')'
+                        else:
+                            sql = f'jsonb_path_exists("e"."{on}", \'$$.{key} ? (@ == false)\')'
+                        elems = elems.filter(lambda e: raw_sql(sql))
+                elif isinstance(value, int) or isinstance(value, float):
+                    if self.provider == 'mysql':
+                        sql = f'json_extract(`e`.`{on}`, "$$.{key}") = {value}'
+                        elems = elems.filter(lambda e: raw_sql(sql))
+                    else:
+                        sql = f'jsonb_path_exists("e"."{on}", \'$$.{key} ? (@ == {value})\')'
+                        elems = elems.filter(lambda e: raw_sql(sql))
+                elif isinstance(value, str):
+                    if fuzzy:
+                        if self.provider == 'mysql':
+                            sql = f'json_search(`e`.`{on}`, "all", "%%{value}%%", NULL, "$$.{key}")'
+                            elems = elems.filter(lambda e: raw_sql(sql))
+                        else:
+                            sql = f'jsonb_path_exists("e"."{on}", \'$$.{key} ? (@ like_regex "{value}" flag "i")\')'
+                            elems = elems.filter(lambda e: raw_sql(sql))
+                    else:
+                        if self.provider == 'mysql':
+                            sql = f'json_extract(`e`.`{on}`, "$$.{key}") = "{value}"'
+                            elems = elems.filter(lambda e: raw_sql(sql))
+                        else:
+                            sql = f'jsonb_path_exists("e"."{on}", \'$$.{key} ? (@ == "{value}")\')'
+                            elems = elems.filter(lambda e: raw_sql(sql))
+                else:
+                    raise StoreException('value type not support')
+        return self.search_return(elems, mode=mode, order_by=order_by, order=order, for_update=for_update, begin=begin, end=end, force=force, debug=debug)    
+
+
+    @db_session
+    def search_multi(self, conditions, on='data', for_update=False, fuzzy=True, debug=False, mode='normal', order='desc', order_by=None, begin=None, end=None, force=False):
+        if on not in ['data', 'meta']:
+            raise StoreException('on invalid')
+        elems = select(e for e in self.store)
+        or_sqls = []
+        for condition in conditions:
+            and_sqls = []
+            for key, value in condition.items():
+                if isinstance(value, bool):
+                    if self.provider == 'mysql':
+                        if value == True:
+                            sql = f'json_extract(`e`.`{on}`, "$$.{key}") = true'
+                        else:
+                            sql = f'json_extract(`e`.`{on}`, "$$.{key}") = false'
+                        # elems = elems.filter(lambda e: raw_sql(sql))
+                    else:
+                        if value == True:
+                            sql = f'jsonb_path_exists("e"."{on}", \'$$.{key} ? (@ == true)\')'
+                        else:
+                            sql = f'jsonb_path_exists("e"."{on}", \'$$.{key} ? (@ == false)\')'
+                        # elems = elems.filter(lambda e: raw_sql(sql))
+                elif isinstance(value, int) or isinstance(value, float):
+                    if self.provider == 'mysql':
+                        sql = f'json_extract(`e`.`{on}`, "$$.{key}") = {value}'
+                        # elems = elems.filter(lambda e: raw_sql(sql))
+                    else:
+                        sql = f'jsonb_path_exists("e"."{on}", \'$$.{key} ? (@ == {value})\')'
+                        # elems = elems.filter(lambda e: raw_sql(sql))
+                elif isinstance(value, str):
+                    if fuzzy:
+                        if self.provider == 'mysql':
+                            sql = f'json_search(`e`.`{on}`, "all", "%%{value}%%", NULL, "$$.{key}")'
+                            # elems = elems.filter(lambda e: raw_sql(sql))
+                        else:
+                            sql = f'jsonb_path_exists("e"."{on}", \'$$.{key} ? (@ like_regex "{value}" flag "i")\')'
+                            # elems = elems.filter(lambda e: raw_sql(sql))
+                    else:
+                        if self.provider == 'mysql':
+                            sql = f'json_extract(`e`.`{on}`, "$$.{key}") = "{value}"'
+                            # elems = elems.filter(lambda e: raw_sql(sql))
+                        else:
+                            sql = f'jsonb_path_exists("e"."{on}", \'$$.{key} ? (@ == "{value}")\')'
+                            # elems = elems.filter(lambda e: raw_sql(sql))
+                else:
+                    raise StoreException('value type not support')
+                and_sqls.append(sql)
+            
+            and_sql = ' AND '.join(and_sqls)
+            or_sqls.append(and_sql)
+            
+        or_sql = ' OR '.join(or_sqls)
+        elems = elems.filter(lambda e: raw_sql(or_sql))
+        return self.search_return(elems, mode=mode, order_by=order_by, order=order, for_update=for_update, begin=begin, end=end, force=force, debug=debug)    

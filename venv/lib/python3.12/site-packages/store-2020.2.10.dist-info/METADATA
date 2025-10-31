@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: store
+Version: 2020.2.10
+Summary: simple storage library
+Home-page: https://github.com/mergeforward/store.git
+Author: dameng
+Author-email: pingf0@gmail.com
+License: MIT
+Platform: any
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: pony
+
+
+store
+-------------
+
+simple storage library
+
+

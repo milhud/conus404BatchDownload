@@ -1,0 +1,42 @@
+[2025-10-31 12:18:58] ================================================================================
+[2025-10-31 12:18:58] CONUS404 Download Driver Starting
+[2025-10-31 12:18:58] ================================================================================
+[2025-10-31 12:18:58] Cleared old failure log: data/failed_jobs.json
+[2025-10-31 12:18:58] Date range: 1988-02-03 to 1988-02-15
+[2025-10-31 12:18:58] Max concurrent processes: 5
+[2025-10-31 12:18:58] Log file: logs/driver_20251031_121858.log
+[2025-10-31 12:18:58] Memory Stats - Initial: Available=276619.6MB/385074.9MB (28.2% used)
+[2025-10-31 12:18:58] Total dates to process: 13
+[2025-10-31 12:18:58] ================================================================================
+[2025-10-31 12:18:58] Starting download processes
+[2025-10-31 12:18:58] ================================================================================
+[2025-10-31 12:18:58] Launching download 1/13: 1988-02-03
+[2025-10-31 12:18:58] Launched subprocess PID 6043 for 1988-02-03 (log: logs/subprocesses/download_19880203.log)
+[2025-10-31 12:18:58] Active subprocesses: 1
+[2025-10-31 12:18:58]   PID 6043: 1988-02-03 | Runtime: 0.0s | Memory: 0.0MB | Status: running
+[2025-10-31 12:18:58] Launching download 2/13: 1988-02-04
+[2025-10-31 12:18:58] Launched subprocess PID 6044 for 1988-02-04 (log: logs/subprocesses/download_19880204.log)
+[2025-10-31 12:18:58] Active subprocesses: 2
+[2025-10-31 12:18:58]   PID 6043: 1988-02-03 | Runtime: 0.0s | Memory: 1.8MB | Status: running
+[2025-10-31 12:18:58]   PID 6044: 1988-02-04 | Runtime: 0.0s | Memory: 0.0MB | Status: running
+[2025-10-31 12:18:58] Launching download 3/13: 1988-02-05
+[2025-10-31 12:18:58] Launched subprocess PID 6045 for 1988-02-05 (log: logs/subprocesses/download_19880205.log)
+[2025-10-31 12:18:58] Active subprocesses: 3
+[2025-10-31 12:18:58]   PID 6043: 1988-02-03 | Runtime: 0.1s | Memory: 8.6MB | Status: running
+[2025-10-31 12:18:58]   PID 6044: 1988-02-04 | Runtime: 0.1s | Memory: 8.6MB | Status: running
+[2025-10-31 12:18:58]   PID 6045: 1988-02-05 | Runtime: 0.0s | Memory: 0.5MB | Status: running
+[2025-10-31 12:18:58] Launching download 4/13: 1988-02-06
+[2025-10-31 12:18:58] Launched subprocess PID 6046 for 1988-02-06 (log: logs/subprocesses/download_19880206.log)
+[2025-10-31 12:18:58] Active subprocesses: 4
+[2025-10-31 12:18:58]   PID 6043: 1988-02-03 | Runtime: 0.1s | Memory: 8.8MB | Status: running
+[2025-10-31 12:18:58]   PID 6044: 1988-02-04 | Runtime: 0.1s | Memory: 8.9MB | Status: running
+[2025-10-31 12:18:58]   PID 6045: 1988-02-05 | Runtime: 0.0s | Memory: 3.2MB | Status: running
+[2025-10-31 12:18:58]   PID 6046: 1988-02-06 | Runtime: 0.0s | Memory: 0.5MB | Status: running
+[2025-10-31 12:18:58] Launching download 5/13: 1988-02-07
+[2025-10-31 12:18:58] Launched subprocess PID 6047 for 1988-02-07 (log: logs/subprocesses/download_19880207.log)
+[2025-10-31 12:18:58] Active subprocesses: 5
+[2025-10-31 12:18:58]   PID 6043: 1988-02-03 | Runtime: 0.1s | Memory: 8.8MB | Status: running
+[2025-10-31 12:18:58]   PID 6044: 1988-02-04 | Runtime: 0.1s | Memory: 9.1MB | Status: running
+[2025-10-31 12:18:58]   PID 6045: 1988-02-05 | Runtime: 0.0s | Memory: 5.1MB | Status: running
+[2025-10-31 12:18:58]   PID 6046: 1988-02-06 | Runtime: 0.0s | Memory: 2.9MB | Status: running
+[2025-10-31 12:18:58]   PID 6047: 1988-02-07 | Runtime: 0.0s | Memory: 0.5MB | Status: running

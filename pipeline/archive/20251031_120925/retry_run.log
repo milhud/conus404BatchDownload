@@ -1,0 +1,11 @@
+Waiting for driver (PID 46972) to finish...
+bash: line 2: wait: pid 46972 is not a child of this shell
+Driver finished. Now running src/retry_failed.py...
+[2025-10-31 12:00:17] ================================================================================
+[2025-10-31 12:00:17] Starting Concurrent Failed Job Retry Script
+[2025-10-31 12:00:17] Max concurrent processes: 2
+[2025-10-31 12:00:17] Reading failures from: data/failed_jobs.json
+[2025-10-31 12:00:17] Will write ultimate failures to: ultimate_failures.json
+[2025-10-31 12:00:17] ================================================================================
+[2025-10-31 12:00:17] No failure log file found (data/failed_jobs.json). Exiting.
+Retry script finished.

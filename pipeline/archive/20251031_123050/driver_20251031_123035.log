@@ -1,0 +1,42 @@
+[2025-10-31 12:30:35] ================================================================================
+[2025-10-31 12:30:35] CONUS404 Download Driver Starting
+[2025-10-31 12:30:35] ================================================================================
+[2025-10-31 12:30:35] Cleared old failure log: data/failed_jobs.json
+[2025-10-31 12:30:35] Date range: 1988-02-03 to 1988-02-15
+[2025-10-31 12:30:35] Max concurrent processes: 5
+[2025-10-31 12:30:35] Log file: logs/driver_20251031_123035.log
+[2025-10-31 12:30:35] Memory Stats - Initial: Available=267831.1MB/385074.9MB (30.4% used)
+[2025-10-31 12:30:35] Total dates to process: 13
+[2025-10-31 12:30:35] ================================================================================
+[2025-10-31 12:30:35] Starting download processes
+[2025-10-31 12:30:35] ================================================================================
+[2025-10-31 12:30:35] Launching download 1/13: 1988-02-03
+[2025-10-31 12:30:35] Launched subprocess PID 17108 for 1988-02-03 (log: logs/subprocesses/download_19880203.log)
+[2025-10-31 12:30:35] Active subprocesses: 1
+[2025-10-31 12:30:35]   PID 17108: 1988-02-03 | Runtime: 0.0s | Memory: 0.0MB | Status: running
+[2025-10-31 12:30:35] Launching download 2/13: 1988-02-04
+[2025-10-31 12:30:35] Launched subprocess PID 17109 for 1988-02-04 (log: logs/subprocesses/download_19880204.log)
+[2025-10-31 12:30:35] Active subprocesses: 2
+[2025-10-31 12:30:35]   PID 17108: 1988-02-03 | Runtime: 0.0s | Memory: 1.7MB | Status: running
+[2025-10-31 12:30:35]   PID 17109: 1988-02-04 | Runtime: 0.0s | Memory: 0.4MB | Status: running
+[2025-10-31 12:30:35] Launching download 3/13: 1988-02-05
+[2025-10-31 12:30:35] Launched subprocess PID 17110 for 1988-02-05 (log: logs/subprocesses/download_19880205.log)
+[2025-10-31 12:30:35] Active subprocesses: 3
+[2025-10-31 12:30:35]   PID 17108: 1988-02-03 | Runtime: 0.0s | Memory: 2.8MB | Status: running
+[2025-10-31 12:30:35]   PID 17109: 1988-02-04 | Runtime: 0.0s | Memory: 2.1MB | Status: running
+[2025-10-31 12:30:35]   PID 17110: 1988-02-05 | Runtime: 0.0s | Memory: 0.4MB | Status: running
+[2025-10-31 12:30:35] Launching download 4/13: 1988-02-06
+[2025-10-31 12:30:35] Launched subprocess PID 17111 for 1988-02-06 (log: logs/subprocesses/download_19880206.log)
+[2025-10-31 12:30:35] Active subprocesses: 4
+[2025-10-31 12:30:35]   PID 17108: 1988-02-03 | Runtime: 0.0s | Memory: 4.7MB | Status: running
+[2025-10-31 12:30:35]   PID 17109: 1988-02-04 | Runtime: 0.0s | Memory: 3.4MB | Status: running
+[2025-10-31 12:30:35]   PID 17110: 1988-02-05 | Runtime: 0.0s | Memory: 1.9MB | Status: running
+[2025-10-31 12:30:35]   PID 17111: 1988-02-06 | Runtime: 0.0s | Memory: 0.5MB | Status: running
+[2025-10-31 12:30:35] Launching download 5/13: 1988-02-07
+[2025-10-31 12:30:35] Launched subprocess PID 17112 for 1988-02-07 (log: logs/subprocesses/download_19880207.log)
+[2025-10-31 12:30:35] Active subprocesses: 5
+[2025-10-31 12:30:35]   PID 17108: 1988-02-03 | Runtime: 0.0s | Memory: 5.1MB | Status: running
+[2025-10-31 12:30:35]   PID 17109: 1988-02-04 | Runtime: 0.0s | Memory: 4.8MB | Status: running
+[2025-10-31 12:30:35]   PID 17110: 1988-02-05 | Runtime: 0.0s | Memory: 3.1MB | Status: running
+[2025-10-31 12:30:35]   PID 17111: 1988-02-06 | Runtime: 0.0s | Memory: 2.1MB | Status: running
+[2025-10-31 12:30:35]   PID 17112: 1988-02-07 | Runtime: 0.0s | Memory: 0.5MB | Status: running

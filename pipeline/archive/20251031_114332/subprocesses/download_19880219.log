@@ -1,0 +1,72 @@
+[2025-10-31 11:40:24] Starting download process for 1988-02-19
+[2025-10-31 11:40:24] PID: 33694
+[2025-10-31 11:40:24] DOWNLOAD START: 1988-02-19
+[2025-10-31 11:40:24] Memory before download: RSS=92.9MB, System=24.7%
+[2025-10-31 11:40:24]   VERBOSE: Time range set: 1988-02-19 00:00:00 to 1988-02-19 23:59:59
+[2025-10-31 11:40:24]   VERBOSE: Fetching STAC catalog from Planetary Computer...
+[2025-10-31 11:40:25]   VERBOSE: Getting 'conus404' collection...
+[2025-10-31 11:40:25]   VERBOSE: Asset found. Getting storage options.
+[2025-10-31 11:40:25]   VERBOSE: Asset Href: az://noaa/conus404.zarr
+[2025-10-31 11:40:25]   VERBOSE: Creating fsspec mapper...
+[2025-10-31 11:40:30]   VERBOSE: Opening Zarr dataset...
+Traceback (most recent call last):
+  File "/gpfsm/dnb33/hpmille1/pipeline/src/single_download.py", line 252, in <module>
+    result = download_single_day(date=date)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/pipeline/src/single_download.py", line 110, in download_single_day
+    ds = get_signed_conus_dataset()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/pipeline/src/single_download.py", line 83, in get_signed_conus_dataset
+    ds = xr.open_zarr(mapper, **open_kwargs)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/backends/zarr.py", line 1586, in open_zarr
+    ds = open_dataset(
+         ^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/backends/api.py", line 602, in open_dataset
+    ds = _dataset_from_backend_dataset(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/backends/api.py", line 297, in _dataset_from_backend_dataset
+    ds = _chunk_ds(
+         ^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/backends/api.py", line 247, in _chunk_ds
+    var_chunks = _get_chunk(var, chunks, chunkmanager)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/structure/chunks.py", line 86, in _get_chunk
+    chunk_shape = chunkmanager.normalize_chunks(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/xarray/namedarray/daskmanager.py", line 57, in normalize_chunks
+    return normalize_chunks(
+           ^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/dask/array/core.py", line 3212, in normalize_chunks
+    chunks = _convert_int_chunk_to_tuple(shape, chunks)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/dask/array/core.py", line 3238, in _convert_int_chunk_to_tuple
+    return sum(
+           ^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/dask/array/core.py", line 3241, in <genexpr>
+    blockdims_from_blockshape((s,), (c,))
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/dask/array/core.py", line 1260, in blockdims_from_blockshape
+    if not all(map(is_integer, chunks)):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/dask/utils.py", line 565, in is_integer
+    def is_integer(i) -> bool:
+    
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 666, in _exitfunc
+    f()
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/fsspec/asyn.py", line 76, in sync
+    raise RuntimeError("Loop is not running")
+RuntimeError: Loop is not running
+Traceback (most recent call last):
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 666, in _exitfunc
+    f()
+  File "/usr/local/other/GEOSpyD/24.3.0-0/2024-08-29/envs/py3.12/lib/python3.12/weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfsm/dnb33/hpmille1/venv/lib/python3.12/site-packages/fsspec/asyn.py", line 76, in sync
+    raise RuntimeError("Loop is not running")
+RuntimeError: Loop is not running

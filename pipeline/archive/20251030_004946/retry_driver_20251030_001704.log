@@ -1,0 +1,23 @@
+[2025-10-30 00:17:04] ================================================================================
+[2025-10-30 00:17:04] Starting Concurrent Failed Job Retry Script
+[2025-10-30 00:17:04] ================================================================================
+[2025-10-30 00:17:04] Found 13 failed job(s) to retry.
+[2025-10-30 00:17:04] Fetching CONUS404 asset from Planetary Computer...
+[2025-10-30 00:17:11] Asset configuration fetched and saved.
+[2025-10-30 00:17:11] Loaded 13 unique dates to retry.
+[2025-10-30 00:17:11] Launching retry 1/13: 1988-04-01
+[2025-10-30 00:17:11] Launched RETRY subprocess PID 34081 for 1988-04-01 (log: logs/subprocesses_retry/download_19880401.log)
+[2025-10-30 00:17:11] Launching retry 2/13: 1988-04-05
+[2025-10-30 00:17:11] Launched RETRY subprocess PID 34082 for 1988-04-05 (log: logs/subprocesses_retry/download_19880405.log)
+[2025-10-30 00:17:11] Launching retry 3/13: 1988-04-11
+[2025-10-30 00:17:11] Launched RETRY subprocess PID 34083 for 1988-04-11 (log: logs/subprocesses_retry/download_19880411.log)
+[2025-10-30 00:17:11] Launching retry 4/13: 1988-04-09
+[2025-10-30 00:17:11] Launched RETRY subprocess PID 34084 for 1988-04-09 (log: logs/subprocesses_retry/download_19880409.log)
+[2025-10-30 00:17:11] Launching retry 5/13: 1988-04-07
+[2025-10-30 00:17:11] Launched RETRY subprocess PID 34085 for 1988-04-07 (log: logs/subprocesses_retry/download_19880407.log)
+[2025-10-30 00:17:11] Launching retry 6/13: 1988-04-04
+[2025-10-30 00:17:11] Launched RETRY subprocess PID 34086 for 1988-04-04 (log: logs/subprocesses_retry/download_19880404.log)
+[2025-10-30 00:17:11] Launching retry 7/13: 1988-03-31
+[2025-10-30 00:17:11] Launched RETRY subprocess PID 34087 for 1988-03-31 (log: logs/subprocesses_retry/download_19880331.log)
+[2025-10-30 00:17:11] Launching retry 8/13: 1988-04-12
+[2025-10-30 00:17:11] Launched RETRY subprocess PID 34088 for 1988-04-12 (log: logs/subprocesses_retry/download_19880412.log)

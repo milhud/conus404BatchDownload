@@ -1,0 +1,50 @@
+{
+    "1988-02-05": {
+        "date": "1988-02-05",
+        "variables_to_retry": [
+            "T2",
+            "Q2",
+            "TD2",
+            "PSFC",
+            "ACRAINLSM",
+            "LAI",
+            "U10",
+            "V10",
+            "Z"
+        ],
+        "error_message": "Subprocess failed with exit code 1",
+        "last_attempt": "2025-10-31T12:56:56.949213"
+    },
+    "1988-02-03": {
+        "date": "1988-02-03",
+        "variables_to_retry": [
+            "T2",
+            "Q2",
+            "TD2",
+            "PSFC",
+            "ACRAINLSM",
+            "LAI",
+            "U10",
+            "V10",
+            "Z"
+        ],
+        "error_message": "Subprocess failed with exit code 1",
+        "last_attempt": "2025-10-31T12:57:06.951743"
+    },
+    "1988-02-04": {
+        "date": "1988-02-04",
+        "variables_to_retry": [
+            "T2",
+            "Q2",
+            "TD2",
+            "PSFC",
+            "ACRAINLSM",
+            "LAI",
+            "U10",
+            "V10",
+            "Z"
+        ],
+        "error_message": "Subprocess failed with exit code 1",
+        "last_attempt": "2025-10-31T12:57:10.953327"
+    }
+}
