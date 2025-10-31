@@ -1,300 +1,229 @@
-"""Single day download process for CONUS404 data."""
+"""
+Single day download, aggregation, and validation process for CONUS404 data.
+
+This script is self-contained. It fetches its own fresh STAC token,
+downloads and aggregates data for one day, validates the data,
+and then exits with 0 (success) or 1 (failure).
+"""
 
 import datetime as dt
 import os
 import sys
-import subprocess
 import xarray as xr
 import numpy as np
 import pandas as pd
 import fsspec
-import psutil
-import gc
-import json
-import traceback
+import pystac_client
+import planetary_computer
 
+# Import config from the parent directory
 from config import (
     VARIABLE_AGG_MAP,
     DERIVED_VARS,
     DATA_DIR,
 )
 
-# --- VERBOSE LOGGING FLAG ---
-VERBOSE_LOGGING = True
-# --- ------------------------ ---
-
-# Define the new directory for logging failed jobs
-FAILED_JOBS_DIR = "failed_jobs"
-
-
 def print_with_timestamp(message: str):
-    """Print message with timestamp."""
     timestamp = dt.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print(f"[{timestamp}] {message}", flush=True)
 
-
-def print_verbose(message: str):
-    """Print message only if VERBOSE_LOGGING is True."""
-    if VERBOSE_LOGGING:
-        print_with_timestamp(f"  VERBOSE: {message}")
-
-
-def get_memory_info():
-    """Get current memory usage."""
-    process = psutil.Process()
-    mem_info = process.memory_info()
-    virtual_mem = psutil.virtual_memory()
-    
-    rss_mb = mem_info.rss / (1024 * 1024)
-    percent_used = virtual_mem.percent
-    
-    return rss_mb, percent_used
-
-
-def log_failure(date_str: str, variables: list, error_message: str):
-    """Logs the failed job to a JSON file."""
+def get_signed_conus_dataset():
+    print_with_timestamp("Fetching fresh STAC token from Planetary Computer...")
     try:
-        os.makedirs(FAILED_JOBS_DIR, exist_ok=True)
-        failure_file = os.path.join(FAILED_JOBS_DIR, f"{date_str}.json")
+        catalog = pystac_client.Client.open(
+            "https://planetarycomputer.microsoft.com/api/stac/v1",
+            modifier=planetary_computer.sign_inplace, # This gets a fresh token
+        )
         
-        failure_data = {
-            "date": date_str,
-            "variables_to_retry": variables,
-            "error_message": error_message,
-            "last_attempt": dt.datetime.now().isoformat()
-        }
+        collection = catalog.get_collection("conus404")
+        asset = collection.assets["zarr-abfs"]
         
-        with open(failure_file, 'w') as f:
-            json.dump(failure_data, f, indent=4)
-            
-        print_with_timestamp(f"CRITICAL: Logged failure to {failure_file}")
+        storage_options = asset.extra_fields["xarray:storage_options"]
+        open_kwargs = asset.extra_fields["xarray:open_kwargs"]
+        asset_href = asset.href
+        
+        print_with_timestamp("Opening Zarr dataset...")
+        mapper = fsspec.get_mapper(asset_href, **storage_options)
+        ds = xr.open_zarr(mapper, **open_kwargs)
+        return ds
     except Exception as e:
-        print_with_timestamp(f"CRITICAL: Failed to log failure for {date_str}. Error: {e}")
+        print_with_timestamp(f"  ERROR: Failed to open dataset. Exception: {e}")
+        return None
 
+def validate_daily_file(daily_file_path: str) -> bool:
+    print_with_timestamp(f"VALIDATION START: {daily_file_path}")
 
-def download_single_day(date: dt.date,
-                        asset_href: str,
-                        storage_options: dict,
-                        open_kwargs: dict,
-                        data_dir: str = DATA_DIR):
-    """
-    Download and process a single day of CONUS404 data.
-    ...
-    """
+    # Define the "common sense" rules
+    QC_RULES = {
+        # Variable: {min: min_val, max: max_val}
+        "T2": {"min": 220, "max": 330},      # Temp: -53°C to 57°C
+        "ACRAINLSM": {"min": -1},           # Precip: Allow for near-zero
+        "Q2": {"min": -1},                  # Humidity: Allow for near-zero
+        "W": {"min": -1},                   # Wind Speed: Allow for near-zero
+        "LAI": {"min": -1},                 # Leaf Area Index: Allow for near-zero
+    }
     
+    # Internal consistency check: Dewpoint (TD2) cannot be > Temperature (T2)
+    TD2_T2_CHECK = True
+
+    try:
+        with xr.open_dataset(daily_file_path) as ds:
+            for var, rules in QC_RULES.items():
+                if var in ds:
+                    data = ds[var].values
+                    
+                    if "min" in rules:
+                        min_val = np.nanmin(data)
+                        if min_val < rules["min"]:
+                            print_with_timestamp(f"  QC FAIL: {var} min value {min_val:.6f} is below threshold {rules['min']}")
+                            return False
+                    
+                    if "max" in rules:
+                        max_val = np.nanmax(data)
+                        if max_val > rules["max"]:
+                            print_with_timestamp(f"  QC FAIL: {var} max value {max_val:.2f} is above threshold {rules['max']}")
+                            return False
+            
+            if TD2_T2_CHECK and "T2" in ds and "TD2" in ds:
+                # Allow for floating point noise (1e-3)
+                if (ds["TD2"] > ds["T2"] + 1e-3).any():
+                    print_with_timestamp(f"  QC FAIL: Internal consistency error. Found TD2 > T2.")
+                    return False
+
+    except Exception as e:
+        print_with_timestamp(f"  QC FAIL: Could not open or read file. Error: {e}")
+        return False
+    
+    print_with_timestamp(f"VALIDATION SUCCESS: {daily_file_path}")
+    return True
+
+def run_download_and_validation(date: dt.date) -> (str | None, bool):
     date_str = date.strftime('%Y-%m-%d')
     print_with_timestamp(f"DOWNLOAD START: {date_str}")
     
-    # Get the full list of variables intended for today
-    all_vars_list = list(VARIABLE_AGG_MAP.keys())
-    
-    rss_mb, mem_pct = get_memory_info()
-    print_with_timestamp(f"Memory before download: RSS={rss_mb:.1f}MB, System={mem_pct:.1f}%")
-    
-    # Define time range for the day
-    start = pd.Timestamp(date.year, date.month, date.day, 0, 0, 0)
-    end = pd.Timestamp(date.year, date.month, date.day, 23, 59, 59)
-    print_verbose(f"Time range set: {start} to {end}")
-    
-    # Open the dataset
+    ds = get_signed_conus_dataset()
+    if ds is None:
+        return None, False
+
     try:
-        print_with_timestamp(f"Opening dataset for {date_str}")
-        print_verbose(f"Asset Href: {asset_href}")
-        mapper = fsspec.get_mapper(asset_href, **storage_options)
-        print_verbose("fsspec mapper created")
-        ds = xr.open_zarr(mapper, **open_kwargs)
-        print_verbose(f"xr.open_zarr complete. Dataset keys: {list(ds.keys())}")
-    except Exception as e:
-        error_msg = f"Failed to open dataset. Exception: {e}"
-        print_with_timestamp(f"ERROR: {error_msg}")
-        log_failure(date_str, all_vars_list, error_msg)
-        return None
-    
-    # Select time range
-    try:
-        print_with_timestamp(f"Selecting time range for {date_str}")
+        start = pd.Timestamp(date.year, date.month, date.day, 0, 0, 0)
+        end = pd.Timestamp(date.year, date.month, date.day, 23, 59, 59)
         sel = ds.sel(time=slice(start, end))
-        print_verbose(f"Time slice selected. Found {sel.time.size} time steps.")
+        
+        print_with_timestamp("Manually decoding CF conventions (fill values)...")
+        sel = xr.decode_cf(sel)
+        
     except Exception as e:
-        error_msg = f"Failed to select time. Exception: {e}"
-        print_with_timestamp(f"ERROR: {error_msg}")
-        log_failure(date_str, all_vars_list, error_msg)
+        print_with_timestamp(f"ERROR: Failed to select or decode time for {date_str}. Exception: {e}")
         ds.close()
-        return None
-    
+        return None, False  
     if sel.time.size == 0:
-        error_msg = "No data available for this time range."
-        print_with_timestamp(f"WARNING: {error_msg}")
-        log_failure(date_str, all_vars_list, error_msg)
+        print_with_timestamp(f"WARNING: No data available for {date_str}")
         ds.close()
-        return None
+        return None, False
     
-    print_with_timestamp(f"Found {sel.time.size} hourly records for {date_str}")
+    print_with_timestamp(f"Found {sel.time.size} hourly records.")
     
-    # Select only the variables we need
-    vars_to_save = [v for v in VARIABLE_AGG_MAP.keys() if v in sel]
-    print_with_timestamp(f"Selected {len(vars_to_save)} variables: {', '.join(vars_to_save)}")
-    
-    # Aggregate to daily
-    agg_vars = {}
     try:
-        print_with_timestamp(f"Aggregating to daily data for {date_str}")
+        agg_vars = {}
         for var, is_intensive in VARIABLE_AGG_MAP.items():
             if var not in sel:
                 print_with_timestamp(f"WARNING: Variable {var} not found for {date_str}, skipping")
                 continue
             
-            print_verbose(f"Aggregating variable: {var}")
             da = sel[var]
             if is_intensive:
-                print_verbose(f"  Averaging {var} (intensive)...")
                 da_agg = da.mean(dim="time", keep_attrs=True)
             else:
-                print_verbose(f"  Summing {var} (extensive)...")
                 da_agg = da.sum(dim="time", keep_attrs=True)
             
-            print_verbose(f"  Expanding dims for {var}...")
             da_agg = da_agg.expand_dims(time=[pd.Timestamp(date.year, date.month, date.day)])
             agg_vars[var] = da_agg
-            print_verbose(f"  Finished {var}")
         
-        print_verbose("Creating final aggregated xr.Dataset")
         agg_ds = xr.Dataset(agg_vars)
-
     except Exception as e:
-        error_msg = f"Failed during daily aggregation loop. Exception: {e}"
-        print_with_timestamp(f"ERROR: {error_msg}")
-        log_failure(date_str, all_vars_list, error_msg)
+        print_with_timestamp(f"ERROR: Failed during daily aggregation. Exception: {e}")
         ds.close()
-        return None
+        return None, False
     
-    # Add derived variables
     try:
         if DERIVED_VARS:
-            print_with_timestamp(f"Computing derived variables")
             for new_var, info in DERIVED_VARS.items():
-                print_verbose(f"Checking derived variable: {new_var}")
                 deps = info["depends_on"]
                 if all(dep in agg_ds for dep in deps):
-                    print_verbose(f"  Computing {new_var} from {deps}")
                     computed = info["calc_fn"](*(agg_ds[dep] for dep in deps))
                     computed = computed.assign_coords(time=agg_ds.time)
                     agg_ds[new_var] = computed
-                else:
-                    print_verbose(f"  Skipping {new_var}, missing dependencies: {deps}")
     except Exception as e:
-        error_msg = f"Failed during derived variable calculation. Exception: {e}"
-        print_with_timestamp(f"ERROR: {error_msg}")
-        log_failure(date_str, all_vars_list, error_msg)
+        print_with_timestamp(f"ERROR: Failed during derived var calculation. Exception: {e}")
         ds.close()
-        return None
-
-    # Close original dataset to free memory
-    try:
-        print_verbose("Closing source Zarr dataset.")
-        ds.close()
-    except Exception as e:
-        print_with_timestamp(f"WARNING: Error closing dataset for {date_str}: {e}")
+        return None, False
     
+    # Close source dataset
+    ds.close()
     del sel
-    gc.collect()
     
-    rss_mb, mem_pct = get_memory_info()
-    print_with_timestamp(f"Memory after aggregation (before save): RSS={rss_mb:.1f}MB, System={mem_pct:.1f}%")
-    
-    # Save daily aggregated data
-    daily_dir = os.path.join(data_dir, "unprocessed", "daily")
+    daily_dir = os.path.join(DATA_DIR, "unprocessed", "daily")
     os.makedirs(daily_dir, exist_ok=True)
     daily_file = os.path.join(daily_dir, f"conus404_daily_{date.strftime('%Y%m%d')}.nc")
     
     try:
         print_with_timestamp(f"Saving daily aggregate to {daily_file}")
-        print_verbose(f"Calling agg_ds.compute().to_netcdf('{daily_file}')...")
         agg_ds.compute().to_netcdf(daily_file)
-        print_verbose("... .compute() and save complete.")
+        print_with_timestamp(f"DOWNLOAD COMPLETE: {date_str}")
     except Exception as e:
-        error_msg = f"Failed to save final NetCDF file. Exception: {e}"
-        print_with_timestamp(f"ERROR: {error_msg}")
-        log_failure(date_str, all_vars_list, error_msg)
-        return None
-        
-    file_size_mb = os.path.getsize(daily_file) / (1024 * 1024)
-    print_with_timestamp(f"Saved daily file: {file_size_mb:.1f}MB")
+        print_with_timestamp(f"ERROR: Failed to save final NetCDF file. Exception: {e}")
+        return None, False
     
-    # Delete aggregated dataset from memory
-    del agg_ds
-    gc.collect()
+    validation_passed = validate_daily_file(daily_file)
     
-    rss_mb, mem_pct = get_memory_info()
-    print_with_timestamp(f"Memory after daily save: RSS={rss_mb:.1f}MB, System={mem_pct:.1f}%")
-    
-    print_with_timestamp(f"DOWNLOAD COMPLETE: {date_str}")
-    
-    return daily_file
+    return daily_file, validation_passed
 
 
 if __name__ == "__main__":
-    # This main block is executed when run as a subprocess
-    if len(sys.argv) != 5:
-        print("Usage: python single_download.py <date_str> <asset_href> <storage_options_file> <open_kwargs_file>")
-        # Log failure to a generic file if args are wrong
-        log_failure(
-            f"unknown_date_{dt.datetime.now().strftime('%Y%m%d_%H%M%S')}", 
-            list(VARIABLE_AGG_MAP.keys()), 
-            f"Invalid arguments: {sys.argv}"
-        )
+    if len(sys.argv) != 2:
+        print("Usage: python single_download.py <date_str>")
         sys.exit(1)
     
     date_str = sys.argv[1]
-    asset_href = sys.argv[2]
-    storage_options_file = sys.argv[3]
-    open_kwargs_file = sys.argv[4]
     
-    # Parse date
     try:
         date = dt.datetime.strptime(date_str, "%Y-%m-%d").date()
     except ValueError as e:
-        error_msg = f"Could not parse date '{date_str}'. Error: {e}"
-        print_with_timestamp(f"FATAL: {error_msg}")
-        log_failure(date_str, list(VARIABLE_AGG_MAP.keys()), error_msg)
+        print(f"FATAL: Could not parse date '{date_str}'. Error: {e}")
         sys.exit(1)
         
-    # Load storage options and open kwargs
-    try:
-        with open(storage_options_file, 'r') as f:
-            storage_options = json.load(f)
-        
-        with open(open_kwargs_file, 'r') as f:
-            open_kwargs = json.load(f)
-    except Exception as e:
-        error_msg = f"Could not load config files. Error: {e}"
-        print_with_timestamp(f"FATAL: {error_msg}")
-        log_failure(date_str, list(VARIABLE_AGG_MAP.keys()), error_msg)
-        sys.exit(1)
+    print_with_timestamp(f"Starting process for {date_str} (PID: {os.getpid()})")
     
-    print_with_timestamp(f"Starting download process for {date_str}")
-    print_with_timestamp(f"PID: {os.getpid()}")
+    daily_file = None
+    validation_passed = False
     
-    result = None
     try:
-        result = download_single_day(
-            date=date,
-            asset_href=asset_href,
-            storage_options=storage_options,
-            open_kwargs=open_kwargs
-        )
-    except Exception as e:
-        # Catchall for any unhandled exceptions in the main function
-        error_msg = f"An unhandled exception occurred. Traceback: {traceback.format_exc()}"
-        print_with_timestamp(f"FATAL: {error_msg}")
-        log_failure(date_str, list(VARIABLE_AGG_MAP.keys()), error_msg)
-        sys.exit(1)
+        # Run the main function
+        daily_file, validation_passed = run_download_and_validation(date=date)
         
-    if result:
-        print_with_timestamp(f"SUCCESS: {result}")
-        sys.exit(0)
-    else:
-        print_with_timestamp(f"FAILED: Download unsuccessful (see errors above and failure log)")
-        # Note: log_failure() was already called inside download_single_day
-        sys.exit(1)
+    except Exception as e:
+        print_with_timestamp(f"FATAL: An unhandled exception occurred. Exception: {e}")
+        import traceback
+        traceback.print_exc()
+        
+    finally:
+        # Exit with the correct code
+        if daily_file and validation_passed:
+            print_with_timestamp(f"SUCCESS: {daily_file} created and validated.")
+            sys.exit(0)
+            
+        elif daily_file and not validation_passed:
+            print_with_timestamp(f"FAILED: File {daily_file} was created but FAILED validation.")
+            try:
+                os.remove(daily_file)
+                print_with_timestamp(f"Cleaned up corrupt file: {daily_file}")
+            except Exception as e:
+                print_with_timestamp(f"ERROR: Could not clean up corrupt file. Error: {e}")
+            sys.exit(1)
+            
+        else:
+            print_with_timestamp("FAILED: Download unsuccessful, no file created.")
+            sys.exit(1)
+
 

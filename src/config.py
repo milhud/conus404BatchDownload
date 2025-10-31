@@ -5,8 +5,8 @@ from typing import Dict
 import numpy as np
 
 # Date range for download
-START_DATE = dt.date(1988, 3, 31)
-END_DATE = dt.date(1988, 4, 17)
+START_DATE = dt.date(1988, 2, 3)
+END_DATE = dt.date(1988, 2, 5)
 
 # Variable aggregation map: True = intensive (average), False = extensive (sum)
 VARIABLE_AGG_MAP: Dict[str, bool] = {
@@ -31,11 +31,19 @@ DERIVED_VARS = {
 }
 
 # Subprocess settings (replaces CONCURRENT_DAYS)
-MAX_CONCURRENT_PROCESSES = 8  # Number of parallel subprocess workers
+MAX_CONCURRENT_PROCESSES = 5  # Number of parallel subprocess workers
 
 # Directory paths
 DATA_DIR = "data"
 LOG_DIR = "logs"
+
+
+
+
+
+
+
+
 
 # Memory monitoring settings
 MEMORY_CHECK_INTERVAL = 30  # seconds between memory checks
